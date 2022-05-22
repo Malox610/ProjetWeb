@@ -1,0 +1,443 @@
+/****************************
+ * DESKTOP FIRST
+****************************/
+
+/* GENERAL SETTINGS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comfortaa', sans-serif;
+  color: rgba(153, 153, 153, .7);
+}
+
+/* TYPOGRAPHY */
+
+h2,
+h4,
+h5 {
+  font-weight: 700;
+  color: #fff;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+a {
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(153, 153, 153, .7);
+  transition: color .5s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+/* UTILITIES */
+
+.txt-center {
+  text-align: center;
+}
+
+ul.h-list {
+  display: flex;
+  align-items: center;
+  list-style: none
+}
+
+ul.h-list.center {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+ul.h-list.center li {
+  margin: 10px 20px;
+}
+
+ul.v-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 20px 0;
+}
+
+ul.v-list li {
+  margin: 5px 0;
+}
+
+.d-flex.vertical-center {
+  align-items: center;
+}
+
+.img-responsive {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* BUTTONS */
+
+.btn {
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 15px 40px;
+}
+
+.btn-outline {
+  border-radius: 40px;
+  color: #fff;
+  border:solid 1px;
+  transition: transform .3s;
+}
+
+.btn-outline:hover {
+  transform: scale(1.1);
+}
+
+/* APP */
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* MAIN WINDOW */
+
+.main-window {
+  flex-grow: 1;
+  display: flex;
+  background: #141921;
+}
+
+/* NAVBAR LEFT */
+
+.navbar-left {
+  display: flex;
+  flex-basis: 230px;
+  flex-direction: column;
+  padding-top: 20px;
+  background: #000;
+}
+
+/* NAVBAR LEFT MENU */
+
+.navbar-left-menu {
+  flex-grow: 1;
+}
+
+.navbar-left-menu h5 {
+  margin-left: 20px;
+}
+
+.navbar-left-menu .navbar-logo {
+  margin-left: 20px;
+  max-width: 130px;
+}
+
+.navbar-left-menu .navbar-logo.mobile {
+  height: 40px;
+  display: none;
+}
+
+.navbar-left-menu ul li {
+  padding: 0 20px;
+}
+
+.navbar-left-menu ul li {
+  border-left: solid 1px transparent;
+  transition: border .5s;
+}
+
+.navbar-left-menu ul li:hover {
+  border-left: solid 4px #6D00F8;
+
+}
+
+.navbar-left-menu ul li.active {
+  border-left: solid 4px #6D00F8;
+
+}
+
+.navbar-left-menu ul li .fa-plus {
+  background: #fff;
+  color: #000;
+  font-size: 20px;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.navbar-left-menu ul img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.navbar-left-menu .nav span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* NAVBAR LEFT USER */
+
+.navbar-left-user {
+  padding: 20px 20px 0;
+}
+
+.navbar-left-user i {
+  margin-right: 5px;
+}
+
+.navbar-left-user .install {
+  padding-bottom: 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+.navbar-left-user .user {
+  display: flex;
+  align-items: center;
+  border-top: solid 1px #999;
+  padding: 15px 0 10px;
+}
+
+.navbar-left-user .user img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  background: #999;
+  border-radius: 50%;
+}
+
+.navbar-left-user .user h6 {
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* SCROLLABLE WINDOW */
+
+.scrollable-container {
+  position: relative;
+  flex-grow: 1;
+}
+
+.scrollable-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items:center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100px;
+  width: 100%;
+  padding-right: 20px;
+  background: rgba(0, 0, 0, .5);
+}
+
+/* SCROLLABLE CONTENT */
+
+.scrollable-content {
+  position: absolute;
+  padding: 110px 20px 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.albums-container {
+  margin: 30px 0;
+}
+
+.albums-row {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.albums-item {
+  width: calc((100% / 6) - 20px);
+  margin: 10px;
+  cursor: pointer;
+}
+
+.albums-item:first-child {
+  margin-left: 0;
+}
+
+.albums-item.rounded img {
+  border-radius: 50%;
+}
+
+.img-album {
+  position: relative;
+}
+
+.albums-item img {
+  filter: opacity(1);
+  transition: filter .5s;
+}
+
+.albums-item:hover img {
+  filter: opacity(.5);
+}
+
+.albums-item i {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -20%);
+  opacity: 0;
+  transition: transform .5s,
+              opacity .5s
+}
+
+.albums-item:hover i {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  font-size: 18px;
+  font-family: "Comfortaa";
+  font-weight: bold;
+  transition: transform .5s,
+              opacity .5s,
+              color .5s;
+}
+
+.albums-item:hover i:hover {
+  color: #6D00F8;
+  font-family: "Comfortaa";
+  font-weight: bold;
+}
+
+.albums-item img {
+  margin-bottom: 10px;
+}
+
+.albums-item p {
+  font-size: 12px;
+}
+
+/* FOOTER */
+
+.player i {
+  font-size: 18px;
+}
+
+.player h4 {
+  margin-bottom: 0;
+}
+
+.player h4 a {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* PLAYER */
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #272727;
+}
+
+.player-song {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-basis: 230px;
+  padding: 20px 0 20px 10px;
+}
+
+.player-song .song-info {
+  display: flex;
+  align-items: center;
+}
+
+/* MEDIA QUERY */
+/* TABLET */
+@media screen and (max-width: 1024px) {
+
+  /* GENERAL SETTINGS */
+
+  /* TYPOGRAPHY */
+
+  h2 {
+    font-size: 26px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  /* SCROLLABLE CONTENT */
+
+  .albums-item {
+    width: calc((100% / 4) - 20px);
+  }
+}
+
+/* SMARTPHONE */
+@media screen and (max-width: 600px) {
+
+  /* NAVBAR LEFT */
+  .navbar-left {
+    flex-basis: 60px;
+  }
+
+  .navbar-left-menu .nav span,
+  .navbar-left-menu h5,
+  .navbar-left-user span,
+  .navbar-left-user h6,
+  .navbar-left-menu .navbar-logo.desktop {
+    display: none;
+  }
+
+  .navbar-left-user {
+    text-align: center;
+  }
+
+  .navbar-left-user .user {
+    border-top: none;
+  }
+
+  .navbar-left-user .user img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .navbar-left-menu .navbar-logo.mobile {
+    display: block;
+  }
+
+  /* SCROLLABLE CONTENT */
+
+  .albums-item {
+    width: calc((100% / 2) - 20px);
+  }
+}
