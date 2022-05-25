@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Coach</title>
+    <title>Création Coach</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -62,6 +62,43 @@
           </div>
         </div>
       </aside>
-      <h1>Monsieur le coach - Inserer sport</h1>
+
+      <h1> Ajouter un coach</h1>
+      <form action="GestionAdmin.php" method="post">
+        <fieldset>
+          <label>Nom : </label>
+          <input type="text" name="nom" placeholder="nom" value="" required/><br> <!--php directement dans l'input-->
+
+          <label>Prenom :</label>
+          <input type="text" name="prenom" placeholder="prenom" value="" required/><br>
+
+          <label>Email :</label>
+          <input type="text" name="email" placeholder="email" value="" required/><br>
+
+
+          <label for="Specialite">Choisir Specialite:</label>
+
+          <select name="spe" id="Specialite">
+              <option value="">--Choisir specialite--</option>
+              <option value="musculation">Musculation</option>
+              <option value="football">Football</option>
+              <option value="volleyball">Volleyball</option>
+              <option value="sabrelaser">Sabre Laser</option>
+              <option value="quidditch">Quidditch</option>
+          </select>
+          <br>
+
+          <label>Bureau :</label>
+          <input type="text" name="bureau" placeholder="bureau" value="G0-" required/><br>
+          <label>Telephone :</label>
+          <input type="number" name="telephone" placeholder="telephone" value="" required/><br>
+          <label>Mot de passe:</label>
+          <input type="password" name="mdp" placeholder="Mot de passe" value="" required/><br>
+          <label>Confirmation Mot de passe:</label>
+          <input type="password" name="mdpc" placeholder="Mot de passe" value="" required/><br>
+
+          <input type="submit" name="envoi" value="submit"/>
+        </fieldset>
+      </form>
   </body>
 </html>
