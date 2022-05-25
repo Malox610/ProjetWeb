@@ -68,6 +68,57 @@
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
+            <form action="InscriptionClient.php" method="post">
+              <fieldset>
+                <label>Nom : </label>
+                <input type="text" name="nom" placeholder="nom" value="" required/> <!--php directement dans l'input-->
+    
+                <label> Prénom :</label>
+                <input type="text" name="prenom" placeholder="prenom" value="" required/>
+               
+                <label> Numéro Etudiant :</label>
+                <input type="number" name="numEtudiant" placeholder="Numéro Etudiant" value="" required/><br>
+               
+                <label>Email :</label>
+                <input type="text" name="email" placeholder="email" value="" required/>
+
+                <label>Telephone :</label>
+                <input type="number" name="telephone" placeholder="telephone" value="33" required/><br>
+                
+                <label>Numero :</label>
+                <input type="number" name="numero" placeholder="numero" value="" required/>
+                
+                <label>Adresse :</label>
+                <input type="text" name="adresse" placeholder="adresse" value="" /><br>
+                
+                <label>Ville :</label>
+                <input type="text" name="ville" placeholder="ville" value="" required/>
+
+                <label>Code Postal :</label>
+                <input type="number" name="codepostal" placeholder="code postal" value="" required/><br>
+                
+                <label for="Pays">Pays:</label>
+
+                <select name="pays" id="Pays">
+                <option value="">--Pays--</option>
+                <option value="france">France</option>
+                <option value="espagne">Espagne</option>
+                <option value="belgique">Belgique</option>
+                <option value="italie">Italie</option>
+                <option value="royaume-uni">Royaume-Uni</option>
+                </select>
+                <br>
+
+                <label>Mot de passe:</label>
+                <input type="password" name="mdp" placeholder="Mot de passe" value="" required/>
+               
+                <label>Confirmation Mot de passe:</label>
+                <input type="password" name="mdpc" placeholder="Mot de passe" value="" required/><br>
+    
+                <input type="submit" name="envoi" value="Inscription"/>
+              </fieldset>
+            </form>
+
           </div>
         </div>
       </section>
