@@ -1,22 +1,34 @@
 <?php
 //identifier le nom de base de données
-    $database = "ProjetWeb";
-    $login = login ;// recuperation du string mis dans le login
-    $mdp = mdp ; // recuperation du string mis dans le mdp
+    $database = "web";
+    $login = "" ;// recuperation du string mis dans le login
+    $mdp ="" ; // recuperation du string mis dans le mdp
 
+    if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
+        $login = $_POST["Login"];
+        $mdp = $_POST["mdp"];
+    
+    }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
     $db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
-            $sql = "SELECT 'mdp' FROM 'client' WHERE 'email'=$login ";
+            $sql = "SELECT * FROM client WHERE email LIKE '$login'";
             $result = mysqli_query($db_handle, $sql);
-                    if($data['ID']== $mdp ){
-                     header('Location:accueil.html'); // connexion reussi chargement de la page suivante
+            if ($data = mysqli_fetch_assoc($result)){
+                    if($data['password']== $mdp ){
+                        //$_SESSION["id_admin"] =$data['id_client'];
+                        //session_start();
+                        //header('Location:PageLogin-Client.html'); // connexion reussi chargement de la page suivante
                     }
                     else 
-                    { echo "Utilisateur non trouvé mot de passe ou login erroné";}
+                    { echo "Mot de passe incorrect";}
+                }
+                else {
+                    echo "Utilisateur introuvable";
+                }
            
         }//end if
     //si le BDD n'existe pas
