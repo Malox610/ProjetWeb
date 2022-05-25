@@ -373,7 +373,7 @@ ul.v-list li {
   display: flex;
   align-items: center;
   flex-basis: 270px;
-  padding: 30px 0 30px 10px;
+  padding: 25px 0 25px 10px;
 }
 
 .player-song .song-info {
@@ -471,23 +471,53 @@ ul.v-list li {
  }
 
 .resultat_recherche{
-  border-top: solid 2px rgb(153,153,153);
-  border-bottom: solid 1px rgb(153,153,153);
-  width: 95%;
   justify-content: center;
   margin-top: 3%;
-  margin-left: 2.5%;
+  margin: 3% 2.5%;
+  border-top: solid 2px rgb(153,153,153);
 }
 
-ul.r-list {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 20px 0;
+.tableau_resultat{
+    width: 100%;
+    margin-top: 1vh;
+    vertical-align: middle;
 }
 
-.resultat_recherche ul li{
-  font-size: 1vw;
-  margin-right: 10vh;
-  font-weight: lighter;
+.tableau_resultat tr{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    color: grey;
+    font-weight: lighter;
+    font-size: 12px;
+    font-style: normal;
+    text-align: left;
+    width: 10%;
+}
+
+.tableau_resultat th{
+    margin-bottom: 1vh;
+}
+
+.tableau_resultat td{
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    color: white;
+    width: 10%;
+}
+
+.tableau_resultat button{
+  width: 100%;
+  color: #6D00F8;
+  font-family: "Comfortaa";
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid #6D00F8;
+  border-radius: 30px;
+  padding: 1vh;
+}
+
+.tableau_resultat button:hover{
+  color: white;
+  background-color: #6D00F8;
+  border: 1px solid white;
 }

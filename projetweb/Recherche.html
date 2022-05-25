@@ -27,13 +27,13 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.html">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="Recherche.html">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
@@ -62,34 +62,53 @@
             </div>
           </div>
         </aside>
-        <!-- SCROLLABLE WINDOW -->
-        <div class="scrollable-container">
-          <!-- SCROLLABLE CONTENT -->
-          <div class="scrollable-content">
-            <h2 id="new-title">Recherche</h2>
-            <!-- input tag -->
-            <input id="searchbar" onkeyup="rechercher()" type="text" name="search" placeholder="Rechercher..">
-            <div class="resultat_recherche">
-              <div class="menu_resultat">
-                <ul class="r-list recherche">
-                  <li>
-                      <span># Nom Prénom</span>
-                  </li>
-                  <li>
-                      <span>Spécialitiés</span>
-                  </li>
-                  <li>
-                      <span>Salle</span>
-                  </li>
-                  <li>
-                      <span>Rendez-vous</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+      <!-- SCROLLABLE WINDOW -->
+      <div class="scrollable-container">
+        <!-- SCROLLABLE CONTENT -->
+        <div class="scrollable-content">
+          <h2 id="new-title">Recherche</h2>
+          <!-- input tag -->
+          <input id="searchbar" onkeyup="rechercher()" type="text" name="search" placeholder="Rechercher..">
+          <div class="resultat_recherche">
+            <table class="tableau_resultat">
+              <thead class="head_resultat">
+                <tr class="ligne_head">
+                  <th># Nom Prénom</th>
+                  <th>Spécialitié</th>
+                  <th>Établissement</th>
+                  <th>Service</th>
+                  <th>Jours</th>
+                  <th><img src="./img/icons/autre/clock.svg" alt=""></th>
+                  <th>Places disponibles</th>
+                </tr>
+              </thead>
+              <tbody class="list-body">
+                 <tr class="ligne_body">
+                  <td>Jean Neymar</td>
+                  <td>Football</td>
+                  <td>ECE Paris</td>
+                  <td>Salle de sport</td>
+                  <td>Lundi - Vendredi</td>
+                  <td>10h à 18h</td>
+                  <td>20</td>
+                  <td><button href="">J'y vais !</button></td>
+                </tr>
+                <tr class="ligne_body">
+                 <td>Jean Neymar</td>
+                 <td>Football</td>
+                 <td>ECE Paris</td>
+                 <td>Salle de sport</td>
+                 <td>Lundi - Vendredi</td>
+                 <td>10h à 18h</td>
+                  <td>20</td>
+                 <td><button href="">J'y vais !</button></td>
+               </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
       <!-- FOOTER -->
       <footer class="player">
         <!-- PLAYER SONG -->
