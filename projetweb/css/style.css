@@ -2,6 +2,8 @@
  * DESKTOP FIRST
 ****************************/
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
 /* GENERAL SETTINGS */
 
 * {
@@ -20,7 +22,7 @@ body {
 h2,
 h4,
 h5 {
-  font-weight: 700;
+  font-weight: 400;
   color: #fff;
 }
 
@@ -260,7 +262,7 @@ ul.v-list li {
 
 .scrollable-content {
   position: absolute;
-  padding: 110px 20px 20px;
+  padding: 50px 20px 20px;
   top: 0;
   left: 0;
   width: 100%;
@@ -370,8 +372,8 @@ ul.v-list li {
   position: relative;
   display: flex;
   align-items: center;
-  flex-basis: 230px;
-  padding: 20px 0 20px 10px;
+  flex-basis: 270px;
+  padding: 30px 0 30px 10px;
 }
 
 .player-song .song-info {
@@ -440,4 +442,52 @@ ul.v-list li {
   .albums-item {
     width: calc((100% / 2) - 20px);
   }
+}
+
+/* Recherche */
+
+#searchbar{
+   margin-top: 2vh;
+   margin-left: 2%;
+   padding: 1.5vh;
+   border-radius: 1vh;
+ }
+
+ input[type=text] {
+    width: 30%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+ }
+
+ /* When the input field gets focus,
+      change its width to 100% */
+ input[type=text]:focus {
+   width: 70%;
+ }
+
+ #new-title{
+   margin-top: 0vh;
+   margin-left: 2%;
+ }
+
+.resultat_recherche{
+  border-top: solid 2px rgb(153,153,153);
+  border-bottom: solid 1px rgb(153,153,153);
+  width: 95%;
+  justify-content: center;
+  margin-top: 3%;
+  margin-left: 2.5%;
+}
+
+ul.r-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 20px 0;
+}
+
+.resultat_recherche ul li{
+  font-size: 1vw;
+  margin-right: 10vh;
+  font-weight: lighter;
 }

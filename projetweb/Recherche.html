@@ -62,12 +62,31 @@
             </div>
           </div>
         </aside>
-        <h1>Recherche</h1>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <!-- mettre le contenu de la page ici -->
+            <h2 id="new-title">Recherche</h2>
+            <!-- input tag -->
+            <input id="searchbar" onkeyup="rechercher()" type="text" name="search" placeholder="Rechercher..">
+            <div class="resultat_recherche">
+              <div class="menu_resultat">
+                <ul class="r-list recherche">
+                  <li>
+                      <span># Nom Prénom</span>
+                  </li>
+                  <li>
+                      <span>Spécialitiés</span>
+                  </li>
+                  <li>
+                      <span>Salle</span>
+                  </li>
+                  <li>
+                      <span>Rendez-vous</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
