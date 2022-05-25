@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  color: white !important;
+}
+
+.column {
+  padding: 5px;
+
+}
+
+.text-over {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 150%;
+}
+
+.sectionHeader {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 33px;
+  color: black;
+  padding-bottom: 5px;
+}
+
+.imgRound {
+  border-radius: 2rem;
+}
+
+.section {
+  padding-left: 20px;
+  padding-right: 20px;
+  background: linear-gradient(180deg, #3C3F41 0%, #000000 100%)
+}
+
+.sportCompet {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  padding-top: 5px;
+  background-color: #181818;
+  ;
+  text-align: center;
+  color: white;
+}
+
+.iconColor {
+  color: brown;
+}
+
+.test {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top-color: white;
+  border-top: 1px solid;
+}

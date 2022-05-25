@@ -1,0 +1,54 @@
+  .feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+  }
+
+  /*
+   * Sidebar
+   */
+  .sidebar-sticky {
+    top: 0;
+    height: calc(100vh - 80px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+  }
+
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sidebar-sticky {
+      position: -webkit-sticky;
+      position: sticky;
+    }
+  }
+
+
+  .sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+  }
+
+  .sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+  }
+
+  .sidebar .nav-link.active {
+    color: #007bff;
+  }
+
+  .sidebar {
+    background-color: black;
+  }
+
+  /*
+   * Content
+   */
+
+  @media (min-width: 768px) {
+    [role="main"] {
+      padding-top: 48px;
+      /* Space for fixed navbar */
+    }
+  }
