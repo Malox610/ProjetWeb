@@ -491,7 +491,7 @@ ul.v-list li {
     font-size: 12px;
     font-style: normal;
     text-align: left;
-    width: 10%;
+    width: 15%;
 }
 
 .tableau_resultat th{
@@ -502,18 +502,41 @@ ul.v-list li {
     padding-top: 1.5vh;
     padding-bottom: 1.5vh;
     color: white;
-    width: 10%;
+}
+
+.big-td{
+  width: 15%;
+}
+
+.normal-td{
+  width: 9%;
+}
+
+.little-td{
+  width: 4%;
+}
+
+.tableau_resultat td img{
+    width: 7vh;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 200px;
+}
+
+.pic-coach-rdv{
+    padding-right: 1vh;
 }
 
 .tableau_resultat button{
-  width: 100%;
+  width: 80%;
   color: #6D00F8;
   font-family: "Comfortaa";
   font-weight: bold;
   background-color: transparent;
   border: 1px solid #6D00F8;
+  justify-content: center;
   border-radius: 30px;
-  padding: 1vh;
+  padding: 1.5vh;
 }
 
 .tableau_resultat button:hover{
