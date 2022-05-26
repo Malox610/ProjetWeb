@@ -68,7 +68,14 @@
         <div class="scrollable-content">
           <h2 id="new-title">Recherche</h2>
           <!-- input tag -->
-          <input id="searchbar" onkeyup="rechercher()" type="text" name="search" placeholder="Rechercher..">
+          <form action="Recherche.php" method="post">
+          <!-- <input id="searchbar" onkeyup="rechercher()" type="text" name="search" placeholder="Rechercher.."> -->
+          <label>Recherche : </label>
+          <input type="text" name="recherche" placeholder="recherche" value="" required/>
+          <input type="submit" name="submit" value="Search">
+          <input type="radio" name="choix" value="1">Recherche un coach par son nom<br>
+          <input type="radio" name="choix" value="2">Rechercher un coach par sa spécialité<br>
+          <input type="radio" name="choix" value="3">Recherche une salle par son numero<br>
           <div class="resultat_recherche">
             <table class="tableau_resultat">
               <thead class="head_resultat">
@@ -103,9 +110,10 @@
                   <td class="normal-td">20</td>
                   <td class="big-td"><button onclick="#">J'y vais !</button></td>
                </tr>
-              </tbody>
-            </table>
+              </tbody>            
+            </table> 
           </div>
+        </form>
         </div>
       </div>
     </section>
