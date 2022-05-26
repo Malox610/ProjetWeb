@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Parcourir</title>
+    <title>Mes rendez-vous</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -62,12 +62,38 @@
             </div>
           </div>
         </aside>
-        <h1>Mes rendez-vous</h1>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <!-- mettre le contenu de la page ici -->
+            <h2 id="new-title">Mes rendez-vous</h2>
+            <div class="resultat_recherche">
+              <table class="tableau_resultat">
+                <thead class="head_resultat">
+                  <tr class="ligne_head">
+                    <th># Coach</th>
+                    <th>Sport</th>
+                    <th>Établissement</th>
+                    <th>Service</th>
+                    <th>Jour</th>
+                    <th><img src="./img/icons/autre/clock.svg" alt=""></th>
+                    <th>Informations complémentaires</th>
+                  </tr>
+                </thead>
+                <tbody class="list-body">
+                   <tr class="ligne_body">
+                    <td class="big-td"><img src="./img/albums/neymar.png" alt="coach-neymar" class="pic-coach-rdv">Jean Neymar</td>
+                    <td class="normal-td">Football</td>
+                    <td class="normal-td">ECE Paris</td>
+                    <td class="normal-td">Salle de sport</td>
+                    <td class="normal-td">Lundi 13/03/2022</td>
+                    <td class="little-td">13h</td>
+                    <td class="big-td">Digicode : 4230</td>
+                    <td class="big-td" align="center"><button onclick="#">Annuler</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
