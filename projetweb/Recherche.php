@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Recherche</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
@@ -82,7 +81,7 @@
     $choix = (int)$choix;
 
     if (isset($_POST["submit"])){ //si $_POST est declare. si formulaire soumis
-        $_recherche = $_POST["recherche"]; 
+        $_recherche = $_POST["recherche"];
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -95,7 +94,7 @@
             $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom LIKE '$_recherche'";
             $result = mysqli_query($db_handle, $sql);
             echo "<table border=1>";
-            
+
             echo "<th>" . "Nom" . "</th>";
             echo "<th>" . "Prénom" . "</th>";
             echo "<th>" . "Spécialité" . "</th>";
@@ -104,7 +103,7 @@
             echo "<th>" . "Téléphone" . "</th>";
             echo "<th>" . "Email" . "</th>";
             echo "</tr>";
-          
+
             //afficher le resultat
             while ($data = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
@@ -117,7 +116,7 @@
                 echo "<td>" . $data['email'] . "</td>";
                 echo "</tr>";
             }
-            echo "</table>";  
+            echo "</table>";
             break;
             case 2:
             $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom_sport LIKE '$_recherche'";
@@ -162,13 +161,13 @@
                 echo "<td>" . $data['email'] . "</td>";
                 echo "<td>" . $data['num_rue'] . $data['nom_rue']  . $data['code_postal'] . $data['ville']  . $data['pays'] ."</td>";
               //  echo "<td> class="big-td"><button onclick="#">J'y vais !</button></td>
-              
+
                 echo "</tr>";
             }
             echo "</table>";
             break;
         }
-           
+
 }//end if
     //si le BDD n'existe pas
     else {
@@ -205,4 +204,3 @@
     </main>
   </body>
 </html>
-
