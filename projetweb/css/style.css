@@ -481,6 +481,11 @@ ul.v-list li {
  }
 
  #new-title{
+   margin-top: 1vh;
+   margin-left: 2%;
+ }
+
+ #new-title2{
    margin-top: 30vh;
    margin-left: 2%;
  }
