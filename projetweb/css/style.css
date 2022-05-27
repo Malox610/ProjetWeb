@@ -460,19 +460,13 @@ ul.v-list li {
   background-color: transparent;
   padding: 1.5vh 2.5vh;
   border-radius: 1vh;
-
-  &:hover{
-    color: white;
-    border: 1px solid white;
-    background-color: #6D00F8;
-  }
 }
 
-/* .submit:hover{
+.submit:hover{
   color: white;
   border: 1px solid white;
   background-color: #6D00F8;
-} */
+}
 
  input[type=text] {
     width: 30%;
@@ -496,6 +490,10 @@ ul.v-list li {
   margin-left: 2%;
 }
 
+label{
+  padding-right: 2vh;
+  padding-left: 1vh;
+}
 
 
 .resultat_recherche{
