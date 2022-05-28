@@ -496,8 +496,8 @@ ul.v-list li {
 }
 
 label{
-  padding-right: 2vh;
-  padding-left: 1vh;
+  padding-right: 1vh;
+  padding-left: 3vh;
 }
 
 
@@ -642,7 +642,7 @@ label{
 } */
 
 .text--sub {
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: 0.5rem;
 	text-transform: uppercase;
 	margin-bottom: 40px;
@@ -650,15 +650,21 @@ label{
 
 .text--big {
 	font-family: 'Comfortaa', sans-serif;
-	font-size: 7.5em;
+	font-size: 6em;
 	font-weight: 700;
-	line-height: 110px;
+  margin-left: -8px;
+}
+
+.text--semibig {
+	font-family: 'Comfortaa', sans-serif;
+	font-size: 3em;
+	font-weight: 700;
   margin-left: -8px;
 }
 
 .text--normal {
 	font-size: 13px;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 1);
 	line-height: 22px;
 	margin-top: 25px;
 }
@@ -667,7 +673,6 @@ label{
 	font-family: 'Comfortaa', sans-serif;
 	position: absolute;
 	left: 72px;
-	bottom: -60px;
 	color: rgba(0,0,0,0.05);
 	font-size: 170px;
 	font-weight: 700;
@@ -723,11 +728,11 @@ label{
 /* Pikachu */
 
 .flex--pikachu .flex__item--left {
-	background: #f8d41f;
+	background: #6D00F8;
 }
 
 .flex--pikachu .flex__item--right {
-	background: #f4ecc5;
+	background: #AF00FF;
 }
 
 /* Blaziken */
@@ -821,18 +826,37 @@ label{
 }
 
 .LigneForm{
-  padding: 1.5vh 6vh;
+  padding: 1.5vh 4vh;
 }
 
 #searchbar2{
    margin-top: 2vh;
-   margin-left: 2%;
-   margin-right: 1%;
    padding: 1vh;
    border-radius: 1vh;
  }
 
 #payer{
-  padding-right: 4vh;
-  padding-left: 4vh;
+  padding-right: 5vh;
+  padding-left: 5vh;
+  margin-left: 45%;
+  transform: translateX(-45%); /* Pour éviter que le champs soit trop décalé */
+}
+
+/* INSCRIPTION */
+#form2{
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 1000px;
+  height: 600px;
+  margin-left: 6%;
+}
+
+fieldset{
+  border:0px;
+}
+
+#Pays{
+  margin-top: 2vh;
+  padding: 1vh;
 }
