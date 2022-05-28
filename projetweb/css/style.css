@@ -272,6 +272,7 @@ ul.v-list li {
 
 .albums-container {
   margin: 30px 0;
+  padding-top: 3vh;
 }
 
 .albums-row {
@@ -481,13 +482,18 @@ ul.v-list li {
  }
 
  #new-title{
-   margin-top: 1vh;
+   margin-top: 3vh;
    margin-left: 2%;
  }
 
  #new-title2{
-   margin-top: 30vh;
+   margin-top: 25vh;
    margin-left: 2%;
+ }
+
+ .soustitre{
+   margin-left: 3%;
+   margin-top: 1vh;
  }
 
 .boutonradio{
