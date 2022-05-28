@@ -831,6 +831,10 @@ label{
   border-radius: 38px;
 }
 
+#connexion{
+  height: 250px;
+}
+
 .LigneForm{
   padding: 1.5vh 4vh;
 }
@@ -847,6 +851,14 @@ label{
   margin-left: 45%;
   transform: translateX(-45%); /* Pour éviter que le champs soit trop décalé */
 }
+
+#connecter{
+  padding-right: 5vh;
+  padding-left: 5vh;
+  margin-left: 3%;
+  margin-top: 1vh;
+}
+
 
 /* INSCRIPTION */
 #form2{

@@ -27,7 +27,7 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.html">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
@@ -67,18 +67,21 @@
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
-            <h1>Login</h1>
-            <h3>Administrateur</h3>
-            <form action="ConnexionAdmin.php" method="post">
+            <h2 id="new-title">Connexion</h2>
+            <h3 class="soustitre">Administrateur</h3>
+            <form class="formulaire" id="connexion" action="ConnexionAdmin.php" method="post">
               <fieldset>
-
-                <label>Login</label>
-                <input type="text" name="Login" placeholder="Login" value="" required/>
-                <label>Mot de passse :</label>
-                <input type="password" name="mdp" placeholder="mdp" value="" required/>
-
-
-                <input type="submit" name="envoi" value="submit"/>
+                <div class="LigneForm">
+                  <label>Id ou email</label>
+                  <input id=searchbar2 type="text" name="Login" placeholder="Login" value="" required/>
+                </div>
+                <div class="LigneForm">
+                  <label>Mot de passse</label>
+                  <input id=searchbar2 type="password" name="mdp" placeholder="mdp" value="" required/>
+                </div>
+                <div class="LigneForm">
+                <input class="submit" id="connecter" type="submit" name="envoi" value="Se connecter"/>
+              </div>
               </fieldset>
             </form>
           </div>

@@ -12,26 +12,26 @@
         $password = $_POST["mdp"];
         $bureau = $_POST["bureau"];
         $spe = $_POST["spe"];
-        
 
-    
+
+
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-    $db_handle = mysqli_connect('localhost', 'root', '' );
+    $db_handle = mysqli_connect('localhost', 'root', 'root' );
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
             $sport = "SELECT id_sport FROM sport WHERE nom_sport LIKE '$spe'";
             $result1 = mysqli_query($db_handle, $sport);
-            if ($data = mysqli_fetch_assoc($result1)){  
+            if ($data = mysqli_fetch_assoc($result1)){
                 $spe = $data['id_sport'];
 
             }
             $sql = "INSERT INTO coach (`nom`, `prenom`, `telephone`, `email`, `password`, `bureau`, `id_sport`) VALUES ('$nom','$prenom','$telephone','$email','$password','$bureau','$spe')";
             $result = mysqli_query($db_handle, $sql);
             echo "Inscription réussie";
-          
+
         }//end if
     //si le BDD n'existe pas
     else {
