@@ -27,7 +27,7 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.html">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
@@ -62,26 +62,24 @@
             </div>
           </div>
         </aside>
-
-        <h1>Login</h1>
-        <h3>Coach</h3>
-        <form action="ConnexionCoach.php" method="post">
-          <fieldset>
-
-            <label>Email</label>
-            <input type="text" name="Login" placeholder="Login" value="" required/><br>
-            <label>Mot de passse :</label>
-            <input type="password" name="mdp" placeholder="mdp" value="" required/><br>
-
-
-            <input type="submit" name="envoi" value="submit"/>
-          </fieldset>
-        </form>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
+            <h1>Login</h1>
+            <h3>Coach</h3>
+            <form action="ConnexionCoach.php" method="post">
+              <fieldset>
+
+                <label>Email</label>
+                <input type="text" name="Login" placeholder="Login" value="" required/>
+                <label>Mot de passse :</label>
+                <input type="password" name="mdp" placeholder="mdp" value="" required/>
+
+                <input type="submit" name="envoi" value="submit"/>
+              </fieldset>
+            </form>
           </div>
         </div>
       </section>
