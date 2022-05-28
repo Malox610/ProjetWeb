@@ -62,46 +62,49 @@
             </div>
           </div>
         </aside>
-
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <h1> Ajouter un coach</h1>
-            <form action="GestionAdmin.php" method="post">
+            <h1 id="new-title"> Ajouter un coach</h1>
+            <form class="formulaire" id="ajoutcoach" action="AjoutCoach.php" method="post" enctype="multipart/form-data">
               <fieldset>
-                <label>Nom : </label>
-                <input type="text" name="nom" placeholder="nom" value="" required/><br> <!--php directement dans l'input-->
-
-                <label>Prenom :</label>
-                <input type="text" name="prenom" placeholder="prenom" value="" required/><br>
-
-                <label>Email :</label>
-                <input type="text" name="email" placeholder="email" value="" required/><br>
-
-
-                <label for="Specialite">Choisir Specialite:</label>
-
-                <select name="spe" id="Specialite">
-                    <option value="">--Choisir specialite--</option>
-                    <option value="musculation">Musculation</option>
-                    <option value="football">Football</option>
-                    <option value="volleyball">Volleyball</option>
-                    <option value="sabre laser">Sabre Laser</option>
-                    <option value="quidditch">Quidditch</option>
-                </select>
-                <br>
-
-                <label>Bureau :</label>
-                <input type="text" name="bureau" placeholder="bureau" value="G0-" required/><br>
-                <label>Telephone :</label>
-                <input type="number" name="telephone" placeholder="telephone" value="" required/><br>
-                <label>Mot de passe:</label>
-                <input type="password" name="mdp" placeholder="Mot de passe" value="" required/><br>
-                <label>Confirmation Mot de passe:</label>
-                <input type="password" name="mdpc" placeholder="Mot de passe" value="" required/><br>
-
-                <input type="submit" name="envoi" value="submit"/>
+                <div class="LigneForm">
+                  <label class="inputform">Nom</label>
+                  <input id="searchbar2" type="text" name="nom" placeholder="nom" value="" required/> <!--php directement dans l'input-->
+                  <label class="inputform">Prenom</label>
+                  <input id="searchbar2" type="text" name="prenom" placeholder="prenom" value="" required/>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Email</label>
+                  <input id="searchbar2" type="text" name="email" placeholder="email" value="" required/>
+                  <label class="inputform" for="Specialite">Choisir Specialite</label>
+                  <select class="custom-select" name="spe" id="Specialite">
+                      <option value="">--Choisir specialite--</option>
+                      <option value="musculation">Musculation</option>
+                      <option value="football">Football</option>
+                      <option value="volleyball">Volleyball</option>
+                      <option value="sabre laser">Sabre Laser</option>
+                      <option value="quidditch">Quidditch</option>
+                  </select>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Bureau</label>
+                  <input id="searchbar2" type="text" name="bureau" placeholder="bureau" value="G-" required/>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Telephone</label>
+                  <input id="searchbar2" type="number" name="telephone" placeholder="telephone" value="" required/>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Mot de passe</label>
+                  <input id="searchbar2" type="password" name="mdp" placeholder="Mot de passe" value="" required/>
+                  <label class="inputform">Insérer une image</label>
+                  <input type="file" name="image"/>
+                </div>
+                <div class="LigneForm">
+                  <input class="submit" id="payer" type="submit" name="envoi" value="Valider"/>
+                </div>
               </fieldset>
             </form>
           </div>
