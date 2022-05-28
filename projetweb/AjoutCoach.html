@@ -64,7 +64,7 @@
         </aside>
 
         <h1> Ajouter un coach</h1>
-        <form action="GestionAdmin.php" method="post">
+        <form action="AjoutCoach.php" method="post" enctype="multipart/form-data">
           <fieldset>
             <label>Nom : </label>
             <input type="text" name="nom" placeholder="nom" value="" required/><br> <!--php directement dans l'input-->
@@ -89,15 +89,14 @@
             <br>
 
             <label>Bureau :</label>
-            <input type="text" name="bureau" placeholder="bureau" value="G0-" required/><br>
+            <input type="text" name="bureau" placeholder="bureau" value="G-" required/><br>
             <label>Telephone :</label>
             <input type="number" name="telephone" placeholder="telephone" value="" required/><br>
             <label>Mot de passe:</label>
             <input type="password" name="mdp" placeholder="Mot de passe" value="" required/><br>
-            <label>Confirmation Mot de passe:</label>
-            <input type="password" name="mdpc" placeholder="Mot de passe" value="" required/><br>
-
-            <input type="submit" name="envoi" value="submit"/>
+            <label>Image:</label>
+            <input type="file" name="image"/>
+            <input type="submit" name="envoi" value="Inscription"/>
           </fieldset>
         </form>
         <!-- SCROLLABLE WINDOW -->
