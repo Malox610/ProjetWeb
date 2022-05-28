@@ -27,7 +27,7 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.html">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
@@ -66,7 +66,7 @@
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <h1 id="new-title"> Ajouter un coach</h1>
+            <h2 id="new-title"> Ajouter un coach</h2>
             <form class="formulaire" id="ajoutcoach" action="AjoutCoach.php" method="post" enctype="multipart/form-data">
               <fieldset>
                 <div class="LigneForm">
@@ -87,7 +87,6 @@
                       <option value="sabre laser">Sabre Laser</option>
                       <option value="quidditch">Quidditch</option>
                   </select>
-                </div>
                 <div class="LigneForm">
                   <label class="inputform">Bureau</label>
                   <input id="searchbar2" type="text" name="bureau" placeholder="bureau" value="G-" required/>
@@ -100,7 +99,7 @@
                   <label class="inputform">Mot de passe</label>
                   <input id="searchbar2" type="password" name="mdp" placeholder="Mot de passe" value="" required/>
                   <label class="inputform">Insérer une image</label>
-                  <input type="file" name="image"/>
+                  <input class="custom-select" id="fichier" type="file" name="image"/>
                 </div>
                 <div class="LigneForm">
                   <input class="submit" id="payer" type="submit" name="envoi" value="Valider"/>

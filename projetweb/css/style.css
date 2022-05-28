@@ -456,16 +456,16 @@ ul.v-list li {
  }
 
 .submit{
-  color: white;
-  border: 1px solid #6D00F8;
-  background-color: transparent;
+  color: #6D00F8;
+  border: 0.5vh solid #6D00F8;
+  background-color: white;
   padding: 1.5vh 2.5vh;
-  border-radius: 1vh;
+  border-radius: 30px;
 }
 
 .submit:hover{
   color: white;
-  border: 1px solid white;
+  border: 0.5vh solid white;
   background-color: #6D00F8;
 }
 
@@ -881,4 +881,26 @@ fieldset{
 #Pays{
   margin-top: 2vh;
   padding: 1vh;
+}
+
+/* SELECT */
+.custom-select {
+  position: relative;
+  width: 25vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  border-radius: 30px;
+  text-align: center;
+  color: #6D00F8;
+  background-color: white;
+  border: 0.5vh solid #6D00F8;
+}
+
+.custom-select:hover{
+  color: white;
+  background-color: #6D00F8;
+}
+
+#fichier{
+  width: 30vh;
 }
