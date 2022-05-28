@@ -494,6 +494,11 @@ ul.v-list li {
  .soustitre{
    margin-left: 3%;
    margin-top: 1vh;
+   margin-bottom: 0.5vh;
+ }
+
+ #surbouton{
+   padding-bottom: 3vh;
  }
 
 .boutonradio{
@@ -903,4 +908,10 @@ fieldset{
 
 #fichier{
   width: 30vh;
+}
+
+/* PAS CONNETCÉ */
+
+.soustableau{
+  padding: 5vh;
 }
