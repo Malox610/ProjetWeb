@@ -27,7 +27,7 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.html">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
@@ -62,22 +62,32 @@
             </div>
           </div>
         </aside>
-        <h1> Ajout dispo </h1>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
-            <form action="AjoutDispo.php" method="post">
-              <label>Quel Coach?:</label>
-              <input type="text" name="coach" value="" required/><br>
-              <label>Date à ajouter:</label>
-              <input type="date" name="date" value="" required/><br>
-              <label>Dispo matin:</label>
-              <input type="checkbox" name="matin" value="1"><br>
-              <label>Dispo aprem:</label>
-              <input type="checkbox" name="aprem" value="1"><br> 
-              <input type="submit" name="button" value="Soumettre">
+            <h2 id="new-title">Ajout disponibilités</h2>
+            <form class="formulaire" action="AjoutDispo.php" method="post">
+              <div class="LigneForm">
+                <label class="inputform">Quel Coach?</label>
+                <input id=searchbar2 type="text" name="coach" value="" required/>
+              </div>
+              <div class="LigneForm">
+                <label class="inputform">Date à ajouter</label>
+                <input type="date" name="date" value="" required/>
+              </div>
+              <div class="LigneForm">
+                <label class="inputform">Disponible le matin</label>
+                <input type="checkbox" name="matin" value="1">
+              </div>
+              <div class="LigneForm">
+                <label class="inputform">Disponible l'aprem</label>
+                <input type="checkbox" name="aprem" value="1">
+              </div>
+              <div class="LigneForm">
+                <input class="submit" id="payer" type="submit" name="button" value="Payer">
+              </div>
             </form>
           </div>
         </div>
