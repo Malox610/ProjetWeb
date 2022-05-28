@@ -75,100 +75,97 @@
     $mdp ="" ; // recuperation du string mis dans le mdp
     $_recherche="";
 
-    $choix = isset($_POST["choix"])? $_POST["choix"] : "";
-    if (empty($choix)) {
-    $choix = 0;
-    }
-    $choix = (int)$choix;
-
-    if (isset($_POST["submit"])){ //si $_POST est declare. si formulaire soumis
-        $_recherche = $_POST["recherche"]; 
-    }
+   
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
     $db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
-        switch ($choix) {
-            case 1:
-            $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom LIKE '$_recherche'";
+        $_idcoach=2;
+        $heure1=0;
+        $heure2=0;
+        $heure3=0;
+        $heure4=0;
+
+
+            $sql = "SELECT * FROM dispo NATURAL JOIN coach WHERE id_coach LIKE '$_idcoach'";
             $result = mysqli_query($db_handle, $sql);
             echo "<table border=1>";
             
-            echo "<th>" . "Nom" . "</th>";
-            echo "<th>" . "Prénom" . "</th>";
-            echo "<th>" . "Spécialité" . "</th>";
-            echo "<th>" . "Etablissement" . "</th>";
-            echo "<th>" . "Bureau" . "</th>";
-            echo "<th>" . "Téléphone" . "</th>";
-            echo "<th>" . "Email" . "</th>";
+            echo "<th>" . "Jour" . "</th>";
+            echo "<th>" . "08H00" . "</th>";
+            echo "<th>" . "10H00" . "</th>";
+            echo "<th>" . "14H00" . "</th>";
+            echo "<th>" . "16H00" . "</th>";
             echo "</tr>";
-          
-            //afficher le resultat
             while ($data = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $data['nom'] . "</td>";
-                echo "<td>" . $data['prenom'] . "</td>";
-                echo "<td>" . $data['nom_sport'] . "</td>";
-                echo "<td>" . "ECE Paris" . "</td>";
-                echo "<td>" . $data['bureau'] . "</td>";
-                echo "<td>" . $data['telephone'] . "</td>";
-                echo "<td>" . $data['email'] . "</td>";
+                $date = $data['Jours'];
+                $sql1 = "SELECT heure FROM rdv WHERE id_coach LIKE '$_idcoach' AND date like '$date' ";
+                $result1 = mysqli_query($db_handle, $sql1);
+            if($data['Matin']=="1")
+            {
+                    while($data1 = mysqli_fetch_assoc($result1))
+                    {
+                       if($data1['heure']='08:00:00')
+                       {
+
+                        $heure1=1;
+                       }
+                       if($data1['heure']='10:00:00')
+                       {
+                        $heure2=1;
+                       }
+
+                    }
+                            
+            }else 
+            {
+
+                $heure1=1;
+                $heure2=1;
+            }
+            if($data['Aprem']==1)
+            {
+                    while($data1 = mysqli_fetch_assoc($result1))
+                    {
+                       if($data1['heure']='14:00:00')
+                       {
+
+                        $heure3=1;
+                       }
+                       if($data1['heure']='16:00:00')
+                       {
+                        $heure4=1;
+                       }
+
+                    }
+                            
+            }else 
+            {
+                $heure3=1;
+                $heure4=1;
+            }
+
+            $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'venndredi', 'samedi');
+            // extraction des jour, mois, an de la date
+            list($annee, $mois,$jour ) = explode('-', $date);
+            // calcul du timestamp
+            $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
+            
+            // affichage du jour de la semaine
+            //afficher le resultat
+            
+                echo "<tr >";
+                    echo "<td >" . $joursem[date("w",$timestamp)] . "</td>";
+                    echo "<td >" . $heure1 . "</td>";
+                    echo "<td >" . $heure2 . "</td>";
+                    echo "<td>" . $heure3 . "</td>";
+                    echo "<td >" . $heure4 . "</td>";
+                   
                 echo "</tr>";
             }
-            echo "</table>";  
-            break;
-            case 2:
-            $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom_sport LIKE '$_recherche'";
-            $result = mysqli_query($db_handle, $sql);
-            echo "<table border=1>";
-            echo "<tr>";
-            echo "<th>" . "Spécialité" . "</th>";
-            echo "<th>" . "Nom" . "</th>";
-            echo "<th>" . "Prénom" . "</th>";
-            echo "<th>" . "Etablissement" . "</th>";
-            echo "<th>" . "Bureau" . "</th>";
-            echo "<th>" . "Téléphone" . "</th>";
-            echo "<th>" . "Email" . "</th>";
-            //afficher le resultat
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $data['nom_sport'] . "</td>";
-                echo "<td>" . $data['nom'] . "</td>";
-                echo "<td>" . $data['prenom'] . "</td>";
-                echo "<td>" . "ECE Paris" . "</td>";
-                echo "<td>" . $data['bureau'] . "</td>";
-                echo "<td>" . $data['telephone'] . "</td>";
-                echo "<td>" . $data['email'] . "</td>";
-                echo "</tr>";
-            }
-            echo "</table>";
-            break;
-            case 3:
-            $sql = "SELECT * FROM salle NATURAL JOIN adresse WHERE num_salle LIKE '$_recherche'";
-            $result = mysqli_query($db_handle, $sql);
-            echo "<table border=1>";
-            echo "<tr>";
-            echo "<th>" . "Numéro de la salle" . "</th>";
-            echo "<th>" . "Téléphone" . "</th>";
-            echo "<th>" . "Email" . "</th>";
-            echo "<th>" . "Adresse" . "</th>";
-            //afficher le resultat
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "<tr>";
-                echo "<td>" . $data['num_salle'] . "</td>";
-                echo "<td>" . $data['telephone'] . "</td>";
-                echo "<td>" . $data['email'] . "</td>";
-                echo "<td>" . $data['num_rue'] . $data['nom_rue']  . $data['code_postal'] . $data['ville']  . $data['pays'] ."</td>";
-              //  echo "<td> class="big-td"><button onclick="#">J'y vais !</button></td>
-              
-                echo "</tr>";
-            }
-            echo "</table>";
-            break;
-        }
-           
+         
 }//end if
     //si le BDD n'existe pas
     else {
@@ -185,7 +182,7 @@
         <!-- PLAYER SONG -->
         <div class="player-song">
             <div class="song-txt">
-              <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819">37 Quai de Grenelles</a></h4></address>
+              <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819">37 Quai de Grenelle</a></h4></address>
               <span><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819">75015, Paris, France</a></span>
             </div>
         </div>
