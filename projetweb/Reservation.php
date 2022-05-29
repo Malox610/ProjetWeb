@@ -8,7 +8,20 @@
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
-    <script type="text/javascript" src="./js/script.js"></script>
+    <script type="text/javascript" src="./js/script.js">
+
+    function redirection(pp)
+    {
+
+     signe = window.prompt("caca");
+       /* $('#conteneur-parent > button').click(function(){
+    var x = $(this).attr('id');
+    alert(x);
+        });*/
+
+    }
+
+    </script>
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -156,26 +169,31 @@
                                 }
 
                       }
-                                $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'venndredi', 'samedi');
+                                $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
                                 // extraction des jour, mois, an de la date
                                 list($annee, $mois,$jour ) = explode('-', $date);
                                 // calcul du timestamp
 
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
-                                {
+                                {  $bout = $date ."/heure1";
                                   $heure1="<button onclick=\"#\">" . "Réserver" . "</button>";
                                 }
                                 if($heure2 == 0)
                                 {
-                                  $heure2="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                    $bout = $date ."/heure2";
+                                    $script = '<script type="text/javascript">reservation(that);</script>' ;
+                                  $heure2="<button id=.$bout. onclick=\"$script\">" . "Réserver" . "</button>";
+                                 // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
                                 }
                                 if($heure3 == 0)
                                 {
+                                    $bout = $date ."/heure3";
                                   $heure3="<button onclick=\"#\">" . "Réserver" . "</button>";
                                 }
                                 if($heure4 == 0)
                                 {
+                                    $bout = $date ."/heure4";
                                   $heure4="<button onclick=\"#\">" . "Réserver" . "</button>";
                                 }
                                 // affichage du jour de la semaine
