@@ -112,47 +112,39 @@
                         echo $heure2;
                         if($data['Matin']=="1")
                         { //il est present
-                            echo " present matin ";
                                 if($data1['heure']=='08:00:00')
                                 {
                                     //ducoup il est pas dispo
-                                    echo "rdv 8h ";
                                     $heure1=1;
                                 }
                                 if($data1['heure']=='10:00:00')
                                 {// ducoup il est pas dispo
-                                    echo "rdv 10h ";
                                     $heure2=1;
                                 }
                                 }else{
                                 //il est  pas present
-                                echo " pas rdv matin ";
                                     $heure1=1;
                                     $heure2=1;
                                 }
                                 echo $heure1;
                                 echo $heure2;
-                                echo " aprem : " ;
                                 echo $heure3;
                                 echo $heure4;
                         if($data['Aprem']==1)
                         { //il est present
-                        echo " present aprem ";
 
                                 if($data1['heure']=='14:00:00')
-                                { echo "rdv 14h ";
+                                {
                                     //ducoup il est pas dispo
                                     $heure3=1;
                                 }
                                 if($data1['heure']=='16:00:00')
                                 {
                                         //ducoup il est pas dispo
-                                        echo "rdv 16h";
                                     $heure4=1;
                                 }
                                 }else
                                 {
-                                    echo "pas rdv aprem";
                                     $heure3=1;
                                     $heure4=1;
                                 }
@@ -164,15 +156,30 @@
                                 list($annee, $mois,$jour ) = explode('-', $date);
                                 // calcul du timestamp
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
-
+                                if($heure1 == 0)
+                                {
+                                  $heure1="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                }
+                                if($heure2 == 0)
+                                {
+                                  $heure2="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                }
+                                if($heure3 == 0)
+                                {
+                                  $heure3="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                }
+                                if($heure4 == 0)
+                                {
+                                  $heure4="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                }
                                 // affichage du jour de la semaine
                                 //afficher le resultat
                                     echo "<tr>";
-                                        echo "<td >" . $joursem[date("w",$timestamp)] . "</td>";
-                                        echo "<td >" . $heure1 . "</td>";
-                                        echo "<td >" . $heure2 . "</td>";
+                                        echo "<td>" . $joursem[date("w",$timestamp)] . "</td>";
+                                        echo "<td>" . $heure1 . "</td>";
+                                        echo "<td>" . $heure2 . "</td>";
                                         echo "<td>" . $heure3 . "</td>";
-                                        echo "<td >" . $heure4 . "</td>";
+                                        echo "<td>" . $heure4 . "</td>";
                                     echo "</tr>";
                           }
                           echo "</table>";
