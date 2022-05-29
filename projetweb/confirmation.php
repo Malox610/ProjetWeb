@@ -34,19 +34,19 @@
                 </a>
               </li>
               <li>
-                <a href="Recherche.php">
+                <a href="Recherche1.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
               </li>
               <li>
-                <a href="Parcourir.html">
+                <a href="Parcourir.php">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
                 </a>
               </li>
               <li>
-                <a href="rendezvous.html">
+                <a href="rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
@@ -55,7 +55,7 @@
           </div>
           <div class="navbar-left-user">
             <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
+              <a class="vertical-center" href="MonCompte-Client.html">
                 <img src="./img/icons/left-nav/profile.png" alt="">
                 <h6>Votre compte</h6>
               </a>

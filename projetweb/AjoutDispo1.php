@@ -1,10 +1,14 @@
+<?php
+session_start();
+if($_SESSION["role"] == "administrateur"){
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Salle</title>
+    <title>Reservation</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -27,26 +31,26 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.php">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
                 </a>
               </li>
               <li>
-                <a href="Recherche.php">
+                <a href="Recherche1.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
               </li>
               <li>
-                <a href="Parcourir.html">
+                <a href="Parcourir.php">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
                 </a>
               </li>
               <li>
-                <a href="rendezvous.html">
+                <a href="rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
@@ -55,19 +59,45 @@
           </div>
           <div class="navbar-left-user">
             <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
+              <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+            </div>
+          </div>
+          <div class="navbar-left-user">
+            <div class="user">
+              <a class="vertical-center" href="MonCompte-Client.html">
                 <img src="./img/icons/left-nav/profile.png" alt="">
                 <h6>Votre compte</h6>
               </a>
             </div>
           </div>
         </aside>
-        <h1>Salle</h1>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
+            <h2 id="new-title">Ajout disponibilités</h2>
+            <form class="formulaire" action="AjoutDispo.php" method="post">
+              <div class="LigneForm">
+                <label class="inputform">Quel Coach?</label>
+                <input id="searchbar2" type="text" name="coach" value="" required/>
+              </div>
+              <div class="LigneForm">
+                <label class="inputform">Date à ajouter</label>
+                <input type="date" name="date" value="" required/>
+              </div>
+              <div class="LigneForm">
+                <label class="inputform">Disponible le matin</label>
+                <input type="checkbox" name="matin" value="1">
+              </div>
+              <div class="LigneForm">
+                <label class="inputform">Disponible l'aprem</label>
+                <input type="checkbox" name="aprem" value="1">
+              </div>
+              <div class="LigneForm">
+                <input class="submit" id="payer" type="submit" name="button" value="Payer">
+              </div>
+            </form>
           </div>
         </div>
       </section>
@@ -96,3 +126,6 @@
     </main>
   </body>
 </html>
+<?php
+}
+?>

@@ -34,33 +34,46 @@
                 </a>
               </li>
               <li>
-                <a href="Recherche.php">
+                <a href="Recherche1.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
               </li>
               <li>
-                <a href="Parcourir.html">
+                <a href="Parcourir.php">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
                 </a>
               </li>
               <li>
-                <a href="rendezvous.html">
+                <a href="rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+              </div>
             </div>
-          </div>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="vertical-center" href="MonCompte-Client.html">
+                  <img src="./img/icons/left-nav/profile.png" alt="">
+                  <h6>Votre compte</h6>
+                </a>
+              </div>
+            </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
+            </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
@@ -72,12 +85,7 @@
             <?php
             //identifier le nom de base de données
             $database = "web";
-            
             $_recherche="";
-
-            session_start();
-           
-
             //connectez-vous dans votre BDD
             //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
             $db_handle = mysqli_connect('localhost', 'root', '' );
@@ -105,12 +113,12 @@
                 $heure3=0;
                 $heure4=0;
                 $date = $data['jour'];
-              
+
                 $sql1 = "SELECT heure FROM rdv WHERE id_coach LIKE '$_idcoach' AND date like '$date' ";
                 $result1 = mysqli_query($db_handle, $sql1);
                     while($data1 = mysqli_fetch_assoc($result1))
                     {
-                      
+
                         if($data['matin']=="1")
                         { //il est present
                                 if($data1['heure']=='08:00:00')
@@ -127,7 +135,7 @@
                                     $heure1=1;
                                     $heure2=1;
                                 }
-                               
+
                         if($data['aprem']==1)
                         { //il est present
 
@@ -146,13 +154,13 @@
                                     $heure3=1;
                                     $heure4=1;
                                 }
-                               
+
                       }
                                 $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'venndredi', 'samedi');
                                 // extraction des jour, mois, an de la date
                                 list($annee, $mois,$jour ) = explode('-', $date);
                                 // calcul du timestamp
-                               
+
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
                                 {

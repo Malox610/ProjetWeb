@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon Compte - Client</title>
+    <title>Paiement</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -27,53 +28,90 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li>
+              <li class="active">
                 <a href="index.php">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
                 </a>
               </li>
               <li>
-                <a href="Recherche.php">
+                <a href="Recherche1.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
               </li>
               <li>
-                <a href="Parcourir.html">
+                <a href="Parcourir.php">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
                 </a>
               </li>
               <li>
-                <a href="rendezvous.html">
+                <a href="rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="Login-Client.html">Se déconnecter</a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+              </div>
             </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="vertical-center" href="MonCompte-Client.html">
+                  <img src="./img/icons/left-nav/profile.png" alt="">
+                  <h6>Votre compte</h6>
+                </a>
+              </div>
             </div>
-          </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
+            </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <!-- mettre le contenu de la page ici -->
-            <h2 id="new-title">Compte</h2>
-            <h3>administrateur</h3>
+            <h1 id="new-title"> Paiement</h1>
+            <form class="formulaire" id="paiement" action="Paiement.php" method="post">
+              <fieldset>
+                <div class="LigneForm">
+                <label class="inputform" for="Paiement">Moyen de paiement</label>
+                  <select class="custom-select" name="paiement" id="Paiement">
+                      <option value="">--Moyen de paiement--</option>
+                      <option value="musculation">Visa</option>
+                      <option value="football">MasterCard</option>
+                      <option value="volleyball">American Express</option>
+                      <option value="sabre laser">Paypal</option>
+                  </select>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Numéro de carte</label>
+                  <input id="searchbar2" type="number" name="num" placeholder="" value="" required/>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Nom du titulaire</label>
+                  <input id="searchbar2" type="text" name="nom" placeholder="" value="" required/>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Date d'expiration</label>
+                  <input id="searchbar2" type="date" name="date" placeholder="date" value="" required/>
+                  <label class="inputform">Code de décurité</label>
+                  <input id="searchbar2" type="number" name="code" placeholder="3 ou 4 chiffres" value="" required/>
+                </div>
+                <div class="LigneForm">
+                  <input class="submit" id="payer" type="submit" name="envoi" value="Valider"/>
+                </div>
+              </fieldset>
+            </form>
           </div>
         </div>
       </section>

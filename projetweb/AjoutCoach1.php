@@ -1,10 +1,14 @@
+<?php
+session_start();
+if($_SESSION["role"] == "administrateur"){
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login - Client</title>
+    <title>Création Coach</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -53,34 +57,69 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+              </div>
             </div>
-          </div>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="vertical-center" href="MonCompte-Client.html">
+                  <img src="./img/icons/left-nav/profile.png" alt="">
+                  <h6>Votre compte</h6>
+                </a>
+              </div>
+            </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
+            </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <!-- mettre le contenu de la page ici -->
-            <h2 id="new-title">Connexion</h2>
-            <h3 class="soustitre">Client</h3>
-            <form class="formulaire" id="connexion" action="ConnexionClient.php" method="post">
+            <h2 id="new-title"> Ajouter un coach</h2>
+            <form class="formulaire" id="ajoutcoach" action="AjoutCoach.php" method="post" enctype="multipart/form-data">
               <fieldset>
                 <div class="LigneForm">
+                  <label class="inputform">Nom</label>
+                  <input id="searchbar2" type="text" name="nom" placeholder="nom" value="" required/> <!--php directement dans l'input-->
+                  <label class="inputform">Prenom</label>
+                  <input id="searchbar2" type="text" name="prenom" placeholder="prenom" value="" required/>
+                </div>
+                <div class="LigneForm">
                   <label class="inputform">Email</label>
-                  <input id=searchbar2 type="text" name="Login" placeholder="Login" value="" required/>
+                  <input id="searchbar2" type="text" name="email" placeholder="email" value="" required/>
+                  <label class="inputform" for="Specialite">Choisir Specialite</label>
+                  <select class="custom-select" name="spe" id="Specialite">
+                      <option value="">--Choisir specialite--</option>
+                      <option value="musculation">Musculation</option>
+                      <option value="football">Football</option>
+                      <option value="volleyball">Volleyball</option>
+                      <option value="sabre laser">Sabre Laser</option>
+                      <option value="quidditch">Quidditch</option>
+                  </select>
+                <div class="LigneForm">
+                  <label class="inputform">Bureau</label>
+                  <input id="searchbar2" type="text" name="bureau" placeholder="bureau" value="G-" required/>
                 </div>
                 <div class="LigneForm">
-                  <label class="inputform">Mot de passse :</label>
-                  <input id=searchbar2 type="password" name="mdp" placeholder="mdp" value="" required/>
+                  <label class="inputform">Telephone</label>
+                  <input id="searchbar2" type="number" name="telephone" placeholder="telephone" value="" required/>
                 </div>
                 <div class="LigneForm">
-                  <input class="submit" id="connecter" type="submit" name="envoi" value="Se connecter"/>
-                  <input class="submit" id="connecter" onclick="window.location.href ='Inscription.html'" type="submit" name="envoi" value="S'inscrire"/>
-                  <input class="submit" id="connecter" onclick="window.location.href ='Login-Coach.html'" type="submit" name="envoi" value="Coach"/>
-                  <input class="submit" id="connecter" onclick="window.location.href ='Login-Admin.html'" type="submit" name="envoi" value="Admin"/>
+                  <label class="inputform">Mot de passe</label>
+                  <input id="searchbar2" type="password" name="mdp" placeholder="Mot de passe" value="" required/>
+                  <label class="inputform">Insérer une image</label>
+                  <input class="custom-select" id="fichier" type="file" name="image"/>
+                </div>
+                <div class="LigneForm">
+                  <input class="submit" id="payer" type="submit" name="envoi" value="Valider"/>
                 </div>
               </fieldset>
             </form>
@@ -112,3 +151,7 @@
     </main>
   </body>
 </html>
+
+<?php
+}
+?>

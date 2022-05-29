@@ -1,6 +1,6 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,38 +38,46 @@
                             </a>
                         </li>
                         <li>
-                            <a href="Recherche.php">
+                            <a href="Recherche1.php">
                                 <img src="./img/icons/left-nav/search.svg" alt="">
                                 <span>Recherche</span>
                             </a>
                         </li>
                         <li class="active">
-                            <a href="Parcourir.html">
+                            <a href="Parcourir.php">
                                 <img src="./img/icons/left-nav/football.svg" alt="">
                                 <span>Tout Parcourir</span>
                             </a>
                         </li>
                         <li>
-                            <a href="rendezvous.html">
+                            <a href="rendezvous.php">
                                 <img src="./img/icons/left-nav/calendar.svg" alt="">
                                 <span>Rendez-vous</span>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="navbar-left-user">
-                  <div class="user">
-                    <a class="submit" id="seconnecter" href="Login-Client.html">Se déconnecter</a>
-                  </div>
-                </div>
-                <div class="navbar-left-user">
+                <?php if($_SESSION["id_client"] != 0){ ?>
+                  <div class="navbar-left-user">
                     <div class="user">
-                        <a class="vertical-center" href="Login-Client.html">
-                            <img src="./img/icons/left-nav/profile.png" alt="">
-                            <h6>Votre compte</h6>
-                        </a>
+                      <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
                     </div>
-                </div>
+                  </div>
+                  <div class="navbar-left-user">
+                    <div class="user">
+                      <a class="vertical-center" href="MonCompte-Client.html">
+                        <img src="./img/icons/left-nav/profile.png" alt="">
+                        <h6>Votre compte</h6>
+                      </a>
+                    </div>
+                  </div>
+                <?php }else{ ?>
+                  <div class="navbar-left-user">
+                    <div class="user">
+                      <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+                    </div>
+                  </div>
+                <?php } ?>
             </aside>
 
             <!-- SCROLLABLE WINDOW -->

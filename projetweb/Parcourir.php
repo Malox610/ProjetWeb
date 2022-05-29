@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Création Coach</title>
+    <title>Parcourir</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -34,83 +35,80 @@
                 </a>
               </li>
               <li>
-                <a href="Recherche.php">
+                <a href="Recherche1.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
               </li>
-              <li>
-                <a href="Parcourir.html">
+              <li class="active">
+                <a href="Parcourir.php">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
                 </a>
               </li>
               <li>
-                <a href="rendezvous.html">
+                <a href="rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="Login-Client.html">Se déconnecter</a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+              </div>
             </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="vertical-center" href="MonCompte-Client.html">
+                  <img src="./img/icons/left-nav/profile.png" alt="">
+                  <h6>Votre compte</h6>
+                </a>
+              </div>
             </div>
-          </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
+            </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
+
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <h2 id="new-title"> Ajouter un coach</h2>
-            <form class="formulaire" id="ajoutcoach" action="AjoutCoach.php" method="post" enctype="multipart/form-data">
-              <fieldset>
-                <div class="LigneForm">
-                  <label class="inputform">Nom</label>
-                  <input id="searchbar2" type="text" name="nom" placeholder="nom" value="" required/> <!--php directement dans l'input-->
-                  <label class="inputform">Prenom</label>
-                  <input id="searchbar2" type="text" name="prenom" placeholder="prenom" value="" required/>
-                </div>
-                <div class="LigneForm">
-                  <label class="inputform">Email</label>
-                  <input id="searchbar2" type="text" name="email" placeholder="email" value="" required/>
-                  <label class="inputform" for="Specialite">Choisir Specialite</label>
-                  <select class="custom-select" name="spe" id="Specialite">
-                      <option value="">--Choisir specialite--</option>
-                      <option value="musculation">Musculation</option>
-                      <option value="football">Football</option>
-                      <option value="volleyball">Volleyball</option>
-                      <option value="sabre laser">Sabre Laser</option>
-                      <option value="quidditch">Quidditch</option>
-                  </select>
-                <div class="LigneForm">
-                  <label class="inputform">Bureau</label>
-                  <input id="searchbar2" type="text" name="bureau" placeholder="bureau" value="G-" required/>
-                </div>
-                <div class="LigneForm">
-                  <label class="inputform">Telephone</label>
-                  <input id="searchbar2" type="number" name="telephone" placeholder="telephone" value="" required/>
-                </div>
-                <div class="LigneForm">
-                  <label class="inputform">Mot de passe</label>
-                  <input id="searchbar2" type="password" name="mdp" placeholder="Mot de passe" value="" required/>
-                  <label class="inputform">Insérer une image</label>
-                  <input class="custom-select" id="fichier" type="file" name="image"/>
-                </div>
-                <div class="LigneForm">
-                  <input class="submit" id="payer" type="submit" name="envoi" value="Valider"/>
-                </div>
-              </fieldset>
-            </form>
+            <h2>Parcourir</h2>
+            <div class="encadrer">
+              <img src="./img/albums/Activitésport.png" alt="" />
+              <div class="descri">
+                <h2> Activités sportives</h2>
+                  <br>
+                <p>Tu souhaites pratiqué une activité physique amusante, atypique, mais tu ne sais pas laquelle choisir?</p>
+                  <a href="index.php"class="direction"> J'y vais </a>
+              </div>
+            </div>
+            <div class="encadrer">
+              <img src="./img/albums/SportCompet.png" alt="" />
+              <div class="descri">
+                <h2> Les Sports de compétitions</h2>
+                  <br>
+                <p>Tu es quelqu'un à la recherche de sport plus traditionnel où tu pourras faire de la compétition et t'amuser en même temps?  </p>
+                  <a href="SportCompet.html"class="direction"> J'y vais </a>
+              </div>
+            </div>
+            <div class="encadrer">
+              <img src="./img/albums/Salle.png" alt="" />
+              <div class="descri">
+                <h2> Salle de sport OMNES</h2>
+                  <br>
+                <p>Découvre ta salle de sport pour faire un max d'exercice , viens on s'amuse comme des petits fous</p>
+                  <a href="Salle.php"class="direction"> J'y vais </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

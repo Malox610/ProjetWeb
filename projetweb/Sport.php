@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Coach</title>
+    <title>Sport</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -34,96 +37,52 @@
                 </a>
               </li>
               <li>
-                <a href="Recherche.php">
+                <a href="Recherche1.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
               </li>
               <li>
-                <a href="Parcourir.html">
+                <a href="Parcourir.php">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
                 </a>
               </li>
               <li>
-                <a href="rendezvous.html">
+                <a href="rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+              </div>
             </div>
-          </div>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="vertical-center" href="MonCompte-Client.html">
+                  <img src="./img/icons/left-nav/profile.png" alt="">
+                  <h6>Votre compte</h6>
+                </a>
+              </div>
+            </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
+            </div>
+          <?php } ?>
         </aside>
-
+        <h1>Sport</h1>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <h2> Profil Coach</h2>
-            <div class="Profil">
-              <img src="./img/albums/ron.png" alt="" />
-              <div class="Info">
-                <h2> Ron le roux</h2>
-                  <br>
-                  <br>
-                <p>Coach, Musculation
-                  <br>
-                  <br>
-                  Salle: G-010
-                  <br>
-                  <br>
-                  Téléphone: +33 01 23 45 67 89
-                  <br>
-                  <br>
-                  Email: guy.dumais@omnessports.fr</p>
-
-              </div>
-
-
-
-            </div>
-            <div class="Calendar">
-              <table>
-                <tr>
-                  <th> Heure </th>
-                  <th> Lundi </th>
-                  <th> Mardi </th>
-                  <th> Mercredi </th>
-                  <th> Jeudi </th>
-                  <th> Vendredi </th>
-                  <th> Samedi </th>
-
-                </tr>
-                <tr>
-                  <td> AM</td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-
-                </tr>
-                <tr>
-                  <td> PM </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                </tr>
-              </table>
-            </div>
-
             <!-- mettre le contenu de la page ici -->
           </div>
         </div>
