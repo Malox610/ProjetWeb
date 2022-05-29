@@ -23,7 +23,7 @@
                         $_SESSION["id_client"] =$data['id_client'];
                         echo "<script>alert(".$data['id_client'].")</script>";
                         
-                        header("Refresh: 1;URL=Paiement.html"); // connexion reussi chargement de la page suivante
+                        header("Refresh: 1;URL=index.html"); // connexion reussi chargement de la page suivante
                         exit();
                     }
                     else 
