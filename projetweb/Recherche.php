@@ -102,7 +102,7 @@
               $db_found = mysqli_select_db($db_handle, $database);
               //si le BDD existe, faire le traitement
               if ($db_found) {
-                session_start();
+              
                   switch ($choix) {
 
                       case 1:
