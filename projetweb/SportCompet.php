@@ -88,7 +88,7 @@ session_start();
                 <div class=" albums-item albums-item2 txt-center">
 
                   <div class="img-album">
-                    <a href="Coach-SportComper.html?${foot}">
+                    <a href="Coach-SportComper.php?${foot}">
                     <img class="img-responsive" src="./img/albums/football.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                     </a>
@@ -99,7 +99,7 @@ session_start();
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
-                    <a href="Coach-SportComper.html?${basketball}" >
+                    <a href="Coach-SportComper.php?${basketball}" >
                     <img class="img-responsive" src="./img/albums/iverson.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>
@@ -109,7 +109,7 @@ session_start();
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
-                    <a href="Coach-SportComper.html?${pingpong}">
+                    <a href="Coach-SportComper.php?${pingpong}">
                     <img class="img-responsive" src="./img/albums/pingpong.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>
@@ -119,7 +119,7 @@ session_start();
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
-                    <a href="Coach-SportComper.html?${badminton}">
+                    <a href="Coach-SportComper.php?${badminton}">
                     <img class="img-responsive" src="./img/albums/sabrelaser.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>
@@ -129,7 +129,7 @@ session_start();
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
-                    <a href="Coach-SportComper.html?${tennis}">
+                    <a href="Coach-SportComper.php?${tennis}">
                     <img class="img-responsive" src="./img/albums/quidditch.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>
@@ -139,7 +139,7 @@ session_start();
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
-                    <a href="Coach-SportComper.html?${rugby}">
+                    <a href="Coach-SportComper.php?${rugby}">
                     <img class="img-responsive" src="./img/albums/cornemuse.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>

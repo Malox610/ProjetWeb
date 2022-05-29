@@ -97,7 +97,7 @@
                 <h2> Les Sports de compétitions</h2>
                   <br>
                 <p>Tu es quelqu'un à la recherche de sport plus traditionnel où tu pourras faire de la compétition et t'amuser en même temps?  </p>
-                  <a href="SportCompet.html"class="direction"> J'y vais </a>
+                  <a href="SportCompet.php"class="direction"> J'y vais </a>
               </div>
             </div>
             <div class="encadrer">
@@ -108,6 +108,7 @@
                 <p>Découvre ta salle de sport pour faire un max d'exercice , viens on s'amuse comme des petits fous</p>
                   <a href="Salle.php"class="direction"> J'y vais </a>
               </div>
+              <button id="" onclick="" ></button>
             </div>
           </div>
         </div>
