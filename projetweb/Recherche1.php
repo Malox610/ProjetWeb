@@ -37,7 +37,7 @@ session_start();
                 </a>
               </li>
               <li class="active">
-                <a href="Recherche.html">
+                <a href="Recherche.php">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
                 </a>
