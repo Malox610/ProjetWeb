@@ -72,16 +72,19 @@
             <?php
             //identifier le nom de base de données
             $database = "web";
-            $login = "" ;// recuperation du string mis dans le login
-            $mdp ="" ; // recuperation du string mis dans le mdp
+            
             $_recherche="";
+
+            session_start();
+           
+
             //connectez-vous dans votre BDD
             //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-            $db_handle = mysqli_connect('localhost', 'root', 'root' );
+            $db_handle = mysqli_connect('localhost', 'root', '' );
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
-                $_idcoach=2;
+                $_idcoach= $_SESSION['id_coach'];
 
             $sql = "SELECT * FROM dispo NATURAL JOIN coach WHERE id_coach LIKE '$_idcoach'";
             $result = mysqli_query($db_handle, $sql);
@@ -101,16 +104,14 @@
                 $heure2=0;
                 $heure3=0;
                 $heure4=0;
-                $date = $data['Jours'];
-                echo "<br>".$date ;
+                $date = $data['jour'];
+              
                 $sql1 = "SELECT heure FROM rdv WHERE id_coach LIKE '$_idcoach' AND date like '$date' ";
                 $result1 = mysqli_query($db_handle, $sql1);
                     while($data1 = mysqli_fetch_assoc($result1))
                     {
-                        echo " matin : " ;
-                        echo $heure1;
-                        echo $heure2;
-                        if($data['Matin']=="1")
+                      
+                        if($data['matin']=="1")
                         { //il est present
                                 if($data1['heure']=='08:00:00')
                                 {
@@ -126,11 +127,8 @@
                                     $heure1=1;
                                     $heure2=1;
                                 }
-                                echo $heure1;
-                                echo $heure2;
-                                echo $heure3;
-                                echo $heure4;
-                        if($data['Aprem']==1)
+                               
+                        if($data['aprem']==1)
                         { //il est present
 
                                 if($data1['heure']=='14:00:00')
@@ -148,13 +146,13 @@
                                     $heure3=1;
                                     $heure4=1;
                                 }
-                                echo $heure3;
-                                echo $heure4;
+                               
                       }
                                 $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'venndredi', 'samedi');
                                 // extraction des jour, mois, an de la date
                                 list($annee, $mois,$jour ) = explode('-', $date);
                                 // calcul du timestamp
+                               
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
                                 {
