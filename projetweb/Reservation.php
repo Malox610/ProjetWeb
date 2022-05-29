@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Recherche</title>
+    <title>Reservation</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -75,21 +75,21 @@
     $mdp ="" ; // recuperation du string mis dans le mdp
     $_recherche="";
 
-   
+
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-    $db_handle = mysqli_connect('localhost', 'root', '' );
+    $db_handle = mysqli_connect('localhost', 'root', 'root' );
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
         $_idcoach=2;
-       
+
 
 
             $sql = "SELECT * FROM dispo NATURAL JOIN coach WHERE id_coach LIKE '$_idcoach'";
             $result = mysqli_query($db_handle, $sql);
             echo "<table border=1>";
-            
+
             echo "<th>" . "Jour" . "</th>";
             echo "<th>" . "08H00" . "</th>";
             echo "<th>" . "10H00" . "</th>";
@@ -110,27 +110,27 @@
                         echo " matin : " ;
                         echo $heure1;
                         echo $heure2;
-                        
+
                         if($data['Matin']=="1")
-                        { //il est present 
+                        { //il est present
                             echo " present matin ";
                                 if($data1['heure']=='08:00:00')
                                 {
                                         //ducoup il est pas dispo
                                         echo "rdv 8h ";
                                     $heure1=1;
-                                
+
                                 }
                                 if($data1['heure']=='10:00:00')
-                                {// ducoup il est pas dispo 
+                                {// ducoup il est pas dispo
                                     echo "rdv 10h ";
                                     $heure2=1;
-                                
+
                                 }
-                            
-                                }else 
+
+                                }else
                                 {
-                                //il est  pas present 
+                                //il est  pas present
                                 echo " pas rdv matin ";
                                     $heure1=1;
                                     $heure2=1;
@@ -141,9 +141,9 @@
                                 echo $heure3;
                                 echo $heure4;
                                 if($data['Aprem']==1)
-                                { //il est present 
+                                { //il est present
                                 echo " present aprem ";
-                                    
+
                                         if($data1['heure']=='14:00:00')
                                         { echo "rdv 14h ";
                                             //ducoup il est pas dispo
@@ -155,8 +155,8 @@
                                                 echo "rdv 16h ";
                                             $heure4=1;
                                         }
-                                                
-                                }else 
+
+                                }else
                                 {
                                     echo " pas rdv aprem ";
                                     $heure3=1;
@@ -170,29 +170,26 @@
                                 list($annee, $mois,$jour ) = explode('-', $date);
                                 // calcul du timestamp
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
-                                
+
                                 // affichage du jour de la semaine
                                 //afficher le resultat
-                                
+
                                     echo "<tr >";
                                         echo "<td >" . $joursem[date("w",$timestamp)] . "</td>";
                                         echo "<td >" . $heure1 . "</td>";
                                         echo "<td >" . $heure2 . "</td>";
                                         echo "<td>" . $heure3 . "</td>";
                                         echo "<td >" . $heure4 . "</td>";
-                                    
                                     echo "</tr>";
-                                
-                    
-            }
-        }//end if
-    //si le BDD n'existe pas
-    else {
-        echo "Database not found";
-        }//end else
-    //fermer la connection
-    mysqli_close($db_handle);
-?>
+                          }
+                      }//end if
+                  //si le BDD n'existe pas
+                  else {
+                      echo "Database not found";
+                      }//end else
+                  //fermer la connection
+                  mysqli_close($db_handle);
+              ?>
           </div>
         </div>
       </section>
@@ -221,4 +218,3 @@
     </main>
   </body>
 </html>
-
