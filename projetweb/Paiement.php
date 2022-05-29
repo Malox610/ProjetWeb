@@ -1,9 +1,9 @@
 <?php
+if(isset($_SESSION['id_client']))
+{
 //identifier le nom de base de données
     $database = "web";
-    $login = "" ;// recuperation du string mis dans le login
-    $mdp ="" ; // recuperation du string mis dans le mdp
-
+   
     if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
         $type = $_POST["paiement"];
         $numero = $_POST["num"];
@@ -16,21 +16,27 @@
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
     $db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
-    //si le BDD existe, faire le traitement
+    //si le BDD existe, faire le traitements
     if ($db_found) {
-        $sql = "SELECT * FROM paiement WHERE id_paiement LIKE $id_paiement"; // $id_paiement de la session...
-        $result = mysqli_query($db_handle, $sql);
-        if ($data = mysqli_fetch_assoc($result)){
-            $type1 = $data['type'];
-            $numero1 = $data['numero'];
-            $nom1 = $data['nom'];
-            $date1 = $data['expiration'];
-            $code1 = $data['securite'];
+        $id_client = $_SESSION['id_client'];
+        $sql1 = "SELECT * FROM client WHERE id_client LIKE  $id_client "; // $id_paiement de la session...
+        $result1 = mysqli_query($db_handle, $sql1);
+        if($data1 = mysqli_fetch_assoc($result1))
+        {
+            $id_paiement = $data1['id_paiement'];
+            $sql = "SELECT * FROM paiement WHERE id_paiement LIKE $id_paiement"; // $id_paiement de la session...
+            $result = mysqli_query($db_handle, $sql);
+            if ($data = mysqli_fetch_assoc($result)){
+                $type1 = $data['type'];
+                $numero1 = $data['numero'];
+                $nom1 = $data['nom'];
+                $date1 = $data['expiration'];
+                $code1 = $data['securite'];
+            }
+            if ($type == $type1 && $numero == $numero1 && $nom == $nom1 && $date == $date1 && $code == $code1){
+                echo "Paiement réussi";
+            }
         }
-        if ($type == $type1 && $numero == $numero1 && $nom == $nom1 && $date == $date1 && $code == $code1){
-            echo "Paiement réussi";
-        }
-
         }//end if
     //si le BDD n'existe pas
     else {
@@ -38,4 +44,9 @@
         }//end else
     //fermer la connection
     mysqli_close($db_handle);
+}else 
+{
+
+    header ('location: ConnexionClient.html');
+}
 ?>

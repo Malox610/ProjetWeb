@@ -242,6 +242,17 @@ ul.v-list li {
   font-size: 15px;
 }
 
+.deconnexionnn a{
+  color: #6D00F8;
+  font-family: "Comfortaa";
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid #6D00F8;
+  justify-content: center;
+  border-radius: 30px;
+  padding: 1.5vh;
+}
+
 /* SCROLLABLE WINDOW */
 
 .scrollable-container {
@@ -290,12 +301,12 @@ ul.v-list li {
   width: calc((100% / 6) - 20px);
   margin: 10px;
   cursor: pointer;
-  
+
 }
 .albums-item2 {
   width: calc((100% / 4) - 20px);
-  
-  
+
+
 }
 
 .albums-item:first-child {
@@ -495,16 +506,23 @@ ul.v-list li {
  #new-title{
    margin-top: 3vh;
    margin-left: 2%;
+   color: white;
  }
 
  #new-title2{
    margin-top: 25vh;
    margin-left: 2%;
+   color: white;
  }
 
  .soustitre{
    margin-left: 3%;
    margin-top: 1vh;
+   margin-bottom: 0.5vh;
+ }
+
+ #surbouton{
+   padding-bottom: 3vh;
  }
 
 .boutonradio{
@@ -920,8 +938,8 @@ label{
   padding: 1.5vh 2.5vh;
   border-radius: 30px;
   position: relative;
-  top: 13%;
-  left: 37%
+  top: 25%;
+  left: 37%;
 }
 .encadrer .descri a:hover{
   color: white;
@@ -1004,23 +1022,28 @@ fieldset{
   width: 30vh;
 }
 
+/* PAS CONNETCÉ */
+
+.soustableau{
+  padding: 5vh;
+}
+
 .card {
   height: 280px;
   width: 192px;
   background: var(--card);
   border-radius: 20px;
   padding: 10px;
-  font-family: Montserrat;
   display: flex;
   color: var(--text);
   flex-direction: column;
   align-items: center;
- 
-  
 }
+
 .card:hover{
     transform: scale(1.09);
 }
+
 .card img{
     width: 172px;
     height: 128px;
@@ -1028,14 +1051,17 @@ fieldset{
     object-fit: cover;
 
 }
+
 .card__title {color: var(--text);
     margin-top: 21px;
     font-size: 13px;
     transition: color 0.3s;
     opacity: 0.6;
 }
+
 .card__description{
     margin-top: 8px;
+    margin-bottom: 10px;
     display: block;
     font-size: 15px;
     transition: color 0.3s;
@@ -1048,13 +1074,15 @@ fieldset{
     font-size: 15px;
     transition: color 0.3s;
     padding: 10%;
-    background-color: #4523c6;}
+    background-color: #4523c6;
+}
+
 .card__action span{
     color: rgb(255, 255, 255);
       font-size: 28px;
 }
+
 .cardbody{
-  
   display: flex;
   justify-content: center;
   flex-wrap:wrap;

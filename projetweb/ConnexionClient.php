@@ -19,9 +19,10 @@
             $result = mysqli_query($db_handle, $sql);
             if ($data = mysqli_fetch_assoc($result)){
                     if($data['password']== $mdp ){
-                        //$_SESSION["id_admin"] =$data['id_client'];
-                        //session_start();
-                        //header('Location:PageLogin-Client.html'); // connexion reussi chargement de la page suivante
+                        session_start();
+                        $_SESSION["id_client"] =$data['id_client'];
+                       
+                        header('Location:indexs.html'); // connexion reussi chargement de la page suivante
                     }
                     else 
                     { echo "Mot de passe incorrect";}
