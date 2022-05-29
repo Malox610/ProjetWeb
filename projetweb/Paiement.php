@@ -1,6 +1,11 @@
 <?php
+session_start();
+
+
+
 if(isset($_SESSION['id_client']))
 {
+  
 //identifier le nom de base de données
     $database = "web";
    
@@ -18,12 +23,13 @@ if(isset($_SESSION['id_client']))
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitements
     if ($db_found) {
-        $id_client = $_SESSION['id_client'];
+        $id_client = $_SESSION['id_client']; 
         $sql1 = "SELECT * FROM client WHERE id_client LIKE  $id_client "; // $id_paiement de la session...
         $result1 = mysqli_query($db_handle, $sql1);
         if($data1 = mysqli_fetch_assoc($result1))
         {
             $id_paiement = $data1['id_paiement'];
+            echo $id_paiement;
             $sql = "SELECT * FROM paiement WHERE id_paiement LIKE $id_paiement"; // $id_paiement de la session...
             $result = mysqli_query($db_handle, $sql);
             if ($data = mysqli_fetch_assoc($result)){
@@ -35,18 +41,22 @@ if(isset($_SESSION['id_client']))
             }
             if ($type == $type1 && $numero == $numero1 && $nom == $nom1 && $date == $date1 && $code == $code1){
                 echo "Paiement réussi";
+            }else{
+                echo "Paiement échoué";
+                header("Refresh: 1;URL=Paiement.html");
             }
         }
         }//end if
     //si le BDD n'existe pas
-    else {
+        else {
         echo "Database not found";
         }//end else
     //fermer la connection
     mysqli_close($db_handle);
 }else 
 {
+  
+   header("Refresh: 1;URL=Login-Client.html");
 
-    header ('location: ConnexionClient.html');
 }
 ?>

@@ -21,8 +21,10 @@
                     if($data['password']== $mdp ){
                         session_start();
                         $_SESSION["id_client"] =$data['id_client'];
-                       
-                        header('Location:indexs.html'); // connexion reussi chargement de la page suivante
+                        echo "<script>alert(".$data['id_client'].")</script>";
+                        
+                        header("Refresh: 1;URL=Paiement.html"); // connexion reussi chargement de la page suivante
+                        exit();
                     }
                     else 
                     { echo "Mot de passe incorrect";}
