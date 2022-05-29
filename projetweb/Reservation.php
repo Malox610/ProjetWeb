@@ -8,20 +8,7 @@
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
-    <script type="text/javascript" src="./js/script.js">
-
-    function redirection(pp)
-    {
-
-     signe = window.prompt("caca");
-       /* $('#conteneur-parent > button').click(function(){
-    var x = $(this).attr('id');
-    alert(x);
-        });*/
-
-    }
-
-    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./css/style.css">
   </head>

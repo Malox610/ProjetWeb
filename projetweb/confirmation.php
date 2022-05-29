@@ -68,7 +68,19 @@
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Confirmation</h2>
-            <p class="soustitre"> Demande bien prise en compte.</p>
+            <p class="soustitre">Demande bien prise en compte.</p>
+            <div class="LigneForm">
+              <label class="inputform">Heure</label>
+              <input id=searchbar2 type="text" name="nom" placeholder="nom" value="" required/> <!--php directement dans l'input-->
+              <label class="inputform">Jour</label>
+              <input id=searchbar2 type="text" name="prenom" placeholder="prenom" value="" required/>
+              </div>
+              <div class="LigneForm">
+              <label class="inputform">Coach</label>
+              <input id=searchbar2 type="number" name="numEtudiant" placeholder="Numéro Etudiant" value="" required/>
+              <label class="inputform">Spécialité</label>
+              <input id=searchbar2 type="text" name="email" placeholder="Sport" value="" required/>
+            </div>
           </div>
         </div>
       </section>

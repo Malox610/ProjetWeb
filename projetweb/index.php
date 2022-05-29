@@ -114,7 +114,7 @@ session_start();
                     <div class="flex__content">
                       <p class="text--sub">Match de Quidditch universitaire</p>
                       <h2 class="text--big">ECE VS</h2><h1 class="text--semibig">ESILV</h1>
-                      <p class="text--normal">Alors POOOOOOTTER, on fait du quidditch ?</p>
+                      <p class="text--normal">Alors POTTER, on fait du quidditch ?</p>
                     </div>
                     <p class="text__background">POTTER</p>
                   </div>
@@ -160,50 +160,62 @@ session_start();
               <h2 id="new-title2">Quelques activités</h2>
               <div class="albums-row">
                 <div class="albums-item txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/football.png" alt="">
-                    <i class="far fa-text">J'y vais</i>
-                  </div>
+                  <a href="Coach-SportComper.php?${foot}">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/football.png" alt="">
+                      <i class="far fa-text">J'y vais</i>
+                    </div>
+                  </a>
                   <h4>Football</h4>
                   <p>Le sport le plus populaire du monde et de OMNES Sport.</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/iverson.png" alt="">
-                    <i class="far fa-text">J'y vais</i>
-                  </div>
+                    <a href="Coach-SportComper.php?${basketball}">
+                      <div class="img-album">
+                        <img class="img-responsive" src="./img/albums/iverson.png" alt="">
+                        <i class="far fa-text">J'y vais</i>
+                      </div>
+                    </a>
                   <h4>Basketball</h4>
                   <p>Vous pensez être le futur LeBron James ?</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/pingpong.png" alt="">
-                    <i class="far fa-text">J'y vais</i>
-                  </div>
+                  <a href="Coach-SportComper.php?${pingpong}">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/pingpong.png" alt="">
+                      <i class="far fa-text">J'y vais</i>
+                    </div>
+                  </a>
                   <h4>Ping Pong</h4>
                   <p>Vous pensez être le futur *Je ne connais pas de joueur de pongiste* ?</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/sabrelaser.png" alt="">
-                    <i class="far fa-text">J'y vais</i>
-                  </div>
+                  <a href="Coach-SportComper.php?${badminton}">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/sabrelaser.png" alt="">
+                      <i class="far fa-text">J'y vais</i>
+                    </div>
+                  </a>
                   <h4>Sabre Laser</h4>
                   <p>Trouve ton maître Jedi.</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/quidditch.png" alt="">
-                    <i class="far fa-text">J'y vais</i>
-                  </div>
+                  <a href="Coach-SportComper.php?${tennis}">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/quidditch.png" alt="">
+                      <i class="far fa-text">J'y vais</i>
+                    </div>
+                  </a>
                   <h4>Quidditch</h4>
                   <p>Des lycéens qui se battent dans les airs sur des balais pour plaire aux lycéennes.</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/cornemuse.png" alt="">
-                    <i class="far fa-text">J'y vais</i>
-                  </div>
+                  <a href="Coach-SportComper.php?${rugby}">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/cornemuse.png" alt="">
+                      <i class="far fa-text">J'y vais</i>
+                    </div>
+                  </a>
                   <h4>Cornemuse</h4>
                   <p>Comment ça c'est pas un sport ? Vous avez jamais fais de cornemuse vous !</p>
                 </div>
