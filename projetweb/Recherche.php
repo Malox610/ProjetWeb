@@ -19,15 +19,15 @@
         <!-- NAVBAR LEFT -->
         <aside class="navbar-left">
           <div class="navbar-left-menu">
-            <a href="index.html">
+            <a href="index.php">
               <img class="navbar-logo desktop" src="./img/icons/logo-white.svg" alt="">
             </a>
-            <a href="index.html">
+            <a href="index.php">
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
               <li>
-                <a href="index.html">
+                <a href="index.php">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
                 </a>
@@ -71,7 +71,7 @@
             <?php
           //identifier le nom de base de données
               $database = "web";
-              
+
               $_recherche="";
 
               $choix = isset($_POST["choix"])? $_POST["choix"] : "";
@@ -95,7 +95,7 @@
                       case 1:
                       $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom LIKE '%$_recherche%'";
                       $result = mysqli_query($db_handle, $sql);
-                    
+
                         echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
                             echo "<tr class=\"ligne_head\">";
@@ -111,10 +111,10 @@
 
                         //afficher le resultat
                         while ($data = mysqli_fetch_assoc($result)) {
-                         
-                         
+
+
                             $_SESSION['id_coach']=$data['id_coach'];
-                        
+
                           echo"<tbody class=\"list-body\">";
                             echo "<tr class=\"ligne_body\">";
                               echo "<td>" . $data['nom'] . "</td>";
@@ -189,7 +189,7 @@
                               echo "<td>" . $data['email'] . "</td>";
                               echo "<td>" . $data['num_rue'] . $data['nom_rue']  . $data['code_postal'] . $data['ville']  . $data['pays'] ."</td>";
                               echo "<td class=\"big-td\">" ."<button onclick=\"window.location.href = 'Reservation.php'\">" . "J'y vais !" . "</button>". "</td>";
-                     
+
                             echo "</tr>";
                         }
                         echo "</tbody>";

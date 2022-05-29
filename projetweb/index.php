@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -21,15 +24,15 @@
         <!-- NAVBAR LEFT -->
         <aside class="navbar-left">
           <div class="navbar-left-menu">
-            <a href="index.html">
+            <a href="index.php">
               <img class="navbar-logo desktop" src="./img/icons/logo-white.svg" alt="">
             </a>
-            <a href="index.html">
+            <a href="index.php">
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
               <li class="active">
-                <a href="index.html">
+                <a href="index.php">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
                 </a>
@@ -54,19 +57,21 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="Login-Client.html">Se déconnecter</a>
+          <?php if($_SESSION["id_client"] != 0){ }?>
+
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se déconnecter</a>
+              </div>
             </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center" href="Login-Client.html">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="vertical-center" href="Login-Client.html">
+                  <img src="./img/icons/left-nav/profile.png" alt="">
+                  <h6>Votre compte</h6>
+                </a>
+              </div>
             </div>
-          </div>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">

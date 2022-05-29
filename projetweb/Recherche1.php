@@ -1,16 +1,19 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon Compte - Client</title>
+    <title>Recherche</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
     <script type="text/javascript" src="./js/script.js"></script>
     <!-- MAIN STYLE -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../projetweb/css/style.css">
   </head>
   <body>
     <!-- APPLICATION -->
@@ -33,7 +36,7 @@
                   <span>Accueil</span>
                 </a>
               </li>
-              <li>
+              <li class="active">
                 <a href="Recherche.html">
                   <img src="./img/icons/left-nav/search.svg" alt="">
                   <span>Recherche</span>
@@ -67,16 +70,39 @@
             </div>
           </div>
         </aside>
-        <!-- SCROLLABLE WINDOW -->
-        <div class="scrollable-container">
-          <!-- SCROLLABLE CONTENT -->
-          <div class="scrollable-content">
-            <!-- mettre le contenu de la page ici -->
-            <h2 id="new-title">Compte</h2>
-            <h3>Client</h3>
+      <!-- SCROLLABLE WINDOW -->
+      <div class="scrollable-container">
+        <!-- SCROLLABLE CONTENT -->
+        <div class="scrollable-content">
+          <h2 id="new-title">Recherche</h2>
+          <!-- input tag -->
+          <form action="Recherche.php" method="post">
+          <!-- <input id="searchbar" onkeyup="rechercher()" type="text" name="search" placeholder="Rechercher.."> -->
+          <input type="text" id="searchbar" name="recherche" placeholder="recherche" value="" required/>
+          <input class="submit" type="submit" name="submit" value="Rechercher"><br>
+          <input class="boutonradio" type="radio" name="choix" value="1"><label>Nom</label>
+          <input class="boutonradio" type="radio" name="choix" value="2"><label>Spécialité</label>
+          <input class="boutonradio" type="radio" name="choix" value="3"><label>Numéro</label>
+          <div class="resultat_recherche">
+            <table class="tableau_resultat">
+              <thead class="head_resultat">
+                <tr class="ligne_head">
+                  <th># Nom Prénom</th>
+                  <th>Spécialitié</th>
+                  <th>Établissement</th>
+                  <th>Bureau</th>
+                  <th>Telephone</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody class="list-body">
+              </tbody>
+            </table>
           </div>
+        </form>
         </div>
-      </section>
+      </div>
+    </section>
       <!-- FOOTER -->
       <footer class="player">
         <!-- PLAYER SONG -->

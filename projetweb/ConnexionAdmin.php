@@ -7,7 +7,6 @@
     if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
         $login = $_POST["Login"];
         $mdp = $_POST["mdp"];
-    
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -18,18 +17,19 @@
             $sql = "SELECT * FROM administrateur WHERE mail LIKE '$login'";
             $result = mysqli_query($db_handle, $sql);
             if ($data = mysqli_fetch_assoc($result)){
-                    if($data['password']== $mdp ){
-                        //$_SESSION["id_admin"] =$data['id_client'];
-                        //session_start();
-                        //header('Location:PageLogin-Client.html'); // connexion reussi chargement de la page suivante
+                    if($data['password']== $mdp){
+                        session_start();
+                        $_SESSION["id_admin"] =$data['id_client'];
+                        $_SESSION['role'] ="administrateur";
+                        header('Location:MonCompte-Admin.html'); // connexion reussi chargement de la page suivante
                     }
-                    else 
+                    else
                     { echo "Mot de passe incorrect";}
                 }
                 else {
                     echo "Utilisateur introuvable";
                 }
-           
+
         }//end if
     //si le BDD n'existe pas
     else {

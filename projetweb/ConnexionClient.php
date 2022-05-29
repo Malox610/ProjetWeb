@@ -7,7 +7,6 @@
     if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
         $login = $_POST["Login"];
         $mdp = $_POST["mdp"];
-
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -21,7 +20,8 @@
                     if($data['password']== $mdp ){
                         session_start();
                         $_SESSION["id_client"] =$data['id_client'];
-                        header('Location:index.html'); // connexion reussi chargement de la page suivante
+                        $_SESSION['role'] ="client";
+                        header('Location:index.php'); // connexion reussi chargement de la page suivante
                     }
                     else
                     { echo "Mot de passe incorrect";}
@@ -29,7 +29,6 @@
                 else {
                     echo "Utilisateur introuvable";
                 }
-
         }//end if
     //si le BDD n'existe pas
     else {
