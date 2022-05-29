@@ -852,7 +852,6 @@ label{
   padding: 10px;
   display: flex;
 
-  
 }
 .encadrer img{
   width: 164px;
@@ -861,6 +860,54 @@ label{
   object-fit: cover;
   display: flex;
 
+}
+.Profil{
+  margin-left: 3%;
+  margin-top: 2%;
+  width: 90%;
+  height: 40%;
+  background: #272727;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 10px;
+  display: flex;
+
+}
+.Calendar{
+  margin-left: 3%;
+  width: 90%;
+  height: 30%;
+  background: #272727;
+  
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px;
+  display: flex;
+  
+
+}
+.Calendar table{
+  border-collapse: collapse;
+  margin: auto;
+}
+.Calendar th,td{
+  text-align: left;
+  padding: 10px;;
+  border: 1px solid white;
+  color: white;
+}
+
+.Profil img{
+  width: 171px;
+  height: 183px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: flex;
+
+}
+.Profil .Info{
+  font-size: 80%;
+  padding-left: 2%;
 }
 .encadrer .descri{
   font-size: 80%;
