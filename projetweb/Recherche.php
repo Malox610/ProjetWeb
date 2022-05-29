@@ -71,8 +71,7 @@
             <?php
           //identifier le nom de base de données
               $database = "web";
-              $login = "" ;// recuperation du string mis dans le login
-              $mdp ="" ; // recuperation du string mis dans le mdp
+              
               $_recherche="";
 
               $choix = isset($_POST["choix"])? $_POST["choix"] : "";
@@ -86,15 +85,17 @@
               }
               //connectez-vous dans votre BDD
               //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-              $db_handle = mysqli_connect('localhost', 'root', 'root' );
+              $db_handle = mysqli_connect('localhost', 'root', '' );
               $db_found = mysqli_select_db($db_handle, $database);
               //si le BDD existe, faire le traitement
               if ($db_found) {
+                session_start();
                   switch ($choix) {
 
                       case 1:
-                      $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom LIKE '$_recherche'";
+                      $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom LIKE '%$_recherche%'";
                       $result = mysqli_query($db_handle, $sql);
+                    
                         echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
                             echo "<tr class=\"ligne_head\">";
@@ -110,6 +111,10 @@
 
                         //afficher le resultat
                         while ($data = mysqli_fetch_assoc($result)) {
+                         
+                         
+                            $_SESSION['id_coach']=$data['id_coach'];
+                        
                           echo"<tbody class=\"list-body\">";
                             echo "<tr class=\"ligne_body\">";
                               echo "<td>" . $data['nom'] . "</td>";
@@ -119,7 +124,7 @@
                               echo "<td>" . $data['bureau'] . "</td>";
                               echo "<td>" . $data['telephone'] . "</td>";
                               echo "<td>" . $data['email'] . "</td>";
-                              echo "<td class=\"big-td\">" ."<button onclick=\"#\">" . "J'y vais !" . "</button>". "</td>";
+                              echo "<td class=\"big-td\">" ."<button onclick=\"window.location.href = 'Reservation.php'\">" . "J'y vais !" . "</button>". "</td>";
                             echo "</tr>";
                           echo"</tbody>";
                         }
@@ -127,7 +132,7 @@
                       break;
 
                       case 2:
-                      $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom_sport LIKE '$_recherche'";
+                      $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom_sport LIKE '%$_recherche%'";
                       $result = mysqli_query($db_handle, $sql);
                         echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
@@ -144,6 +149,7 @@
 
                         //afficher le resultat
                         while ($data = mysqli_fetch_assoc($result)) {
+                          $_SESSION['id_coach']=$data['id_coach'];
                             echo"<tbody class=\"list-body\">";
                               echo "<tr class=\"ligne_body\">";
                               echo "<td>" . $data['nom_sport'] . "</td>";
@@ -153,7 +159,7 @@
                               echo "<td>" . $data['bureau'] . "</td>";
                               echo "<td>" . $data['telephone'] . "</td>";
                               echo "<td>" . $data['email'] . "</td>";
-                              echo "<td class=\"big-td\">" ."<button onclick=\"#\">" . "J'y vais !" . "</button>" ."</td>";
+                              echo "<td class=\"big-td\">" ."<button onclick=\"window.location.href = 'Reservation.php'\">" . "J'y vais !" . "</button>". "</td>";
                               echo "</tr>";
                             echo"</tbody>";
                         }
@@ -161,7 +167,7 @@
                       break;
 
                       case 3:
-                      $sql = "SELECT * FROM salle NATURAL JOIN adresse WHERE num_salle LIKE '$_recherche'";
+                      $sql = "SELECT * FROM salle NATURAL JOIN adresse WHERE num_salle LIKE '%$_recherche%'";
                       $result = mysqli_query($db_handle, $sql);
                         echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
@@ -175,14 +181,15 @@
 
                         //afficher le resultat
                         while ($data = mysqli_fetch_assoc($result)) {
+                          $_SESSION['id_coach']=$data['id_coach'];
                           echo"<tbody class=\"list-body\">";
                             echo "<tr class=\"ligne_body\">";
                               echo "<td>" . $data['num_salle'] . "</td>";
                               echo "<td>" . $data['telephone'] . "</td>";
                               echo "<td>" . $data['email'] . "</td>";
                               echo "<td>" . $data['num_rue'] . $data['nom_rue']  . $data['code_postal'] . $data['ville']  . $data['pays'] ."</td>";
-                              echo "<td class=\"big-td\">" ."<button onclick=\"#\">" . "J'y vais !" . "</button>" ."</td>";
-                            //  echo "<td> class="big-td"><button onclick="#">J'y vais !</button></td>
+                              echo "<td class=\"big-td\">" ."<button onclick=\"window.location.href = 'Reservation.php'\">" . "J'y vais !" . "</button>". "</td>";
+                     
                             echo "</tr>";
                         }
                         echo "</tbody>";
