@@ -16,7 +16,10 @@ body {
   font-family: 'Comfortaa', sans-serif;
   color: rgba(153, 153, 153, .7);
 }
-
+:root {
+  --card: #272727;
+}
+.card
 /* TYPOGRAPHY */
 
 h2,
@@ -56,6 +59,7 @@ a:hover {
 
 .txt-center {
   text-align: center;
+
 }
 
 ul.h-list {
@@ -285,6 +289,12 @@ ul.v-list li {
   width: calc((100% / 6) - 20px);
   margin: 10px;
   cursor: pointer;
+  
+}
+.albums-item2 {
+  width: calc((100% / 4) - 20px);
+  
+  
 }
 
 .albums-item:first-child {
@@ -903,4 +913,65 @@ fieldset{
 
 #fichier{
   width: 30vh;
+}
+
+.card {
+  height: 280px;
+  width: 192px;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 10px;
+  font-family: Montserrat;
+  display: flex;
+  color: var(--text);
+  flex-direction: column;
+  align-items: center;
+ 
+  
+}
+.card:hover{
+    transform: scale(1.09);
+}
+.card img{
+    width: 172px;
+    height: 128px;
+    border-radius: 14px;
+    object-fit: cover;
+
+}
+.card__title {color: var(--text);
+    margin-top: 21px;
+    font-size: 13px;
+    transition: color 0.3s;
+    opacity: 0.6;
+}
+.card__description{
+    margin-top: 8px;
+    display: block;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.card__action{
+    color: #4136f1;
+    margin-top: 8px;
+    display: block;
+    font-size: 15px;
+    transition: color 0.3s;
+    padding: 10%;
+    background-color: #4523c6;}
+.card__action span{
+    color: rgb(255, 255, 255);
+      font-size: 28px;
+}
+.cardbody{
+  
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+  align-items: center;
+  padding: 30px;
+  background-color: #171717;
+  background: var(--body);
+  gap: 20px;
 }
