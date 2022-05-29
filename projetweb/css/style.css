@@ -16,26 +16,27 @@ body {
   font-family: 'Comfortaa', sans-serif;
   color: rgba(153, 153, 153, .7);
 }
+
 :root {
   --card: #272727;
 }
 .card
 /* TYPOGRAPHY */
 
-h2,
-h4,
-h5 {
+h2,h4,h5 {
   font-weight: 400;
   color: #fff;
 }
 
 h2 {
   font-size: 28px;
+  color: #fff;
 }
 
 h4 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 h5 {
@@ -847,6 +848,47 @@ label{
   background: #272727;
   border-radius: 38px;
 }
+.encadrer{
+  margin-left: 3%;
+  margin-top: 2%;
+  width: 90%;
+  height: 30%;
+  background: #272727;
+  border-radius: 38px;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+
+  
+}
+.encadrer img{
+  width: 164px;
+  height: 109px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: flex;
+
+}
+.encadrer .descri{
+  font-size: 80%;
+  padding-left: 2%;
+}
+.encadrer .descri a{
+  color: #6D00F8;
+  border: 0.5vh solid #6D00F8;
+  background-color: white;
+  padding: 1.5vh 2.5vh;
+  border-radius: 30px;
+  position: relative;
+  top: 13%;
+  left: 37%
+}
+.encadrer .descri a:hover{
+  color: white;
+  border: 0.5vh solid white;
+  background-color: #6D00F8;
+}
+
 
 #connexion{
   height: 250px;
