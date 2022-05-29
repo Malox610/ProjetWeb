@@ -66,7 +66,7 @@
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
-            <h2 id="new-title">Reservations</h2>
+            <h2 id="new-title">Recherche</h2>
             <div class="resultat_recherche">
             <?php
           //identifier le nom de base de données
@@ -86,7 +86,7 @@
               }
               //connectez-vous dans votre BDD
               //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-              $db_handle = mysqli_connect('localhost', 'root', '' );
+              $db_handle = mysqli_connect('localhost', 'root', 'root' );
               $db_found = mysqli_select_db($db_handle, $database);
               //si le BDD existe, faire le traitement
               if ($db_found) {
@@ -129,7 +129,7 @@
                       case 2:
                       $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom_sport LIKE '$_recherche'";
                       $result = mysqli_query($db_handle, $sql);
-                        echo "<table border=1 class=\"tableau_resultat\">";
+                        echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
                             echo "<tr class=\"ligne_head\">";
                               echo "<th>" . "Spécialité" . "</th>";
@@ -163,7 +163,7 @@
                       case 3:
                       $sql = "SELECT * FROM salle NATURAL JOIN adresse WHERE num_salle LIKE '$_recherche'";
                       $result = mysqli_query($db_handle, $sql);
-                        echo "<table border=1 class=\"tableau_resultat\">";
+                        echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
                             echo "<tr class=\"ligne_head\">";
                               echo "<th>" . "Numéro de la salle" . "</th>";
@@ -185,6 +185,7 @@
                             //  echo "<td> class="big-td"><button onclick="#">J'y vais !</button></td>
                             echo "</tr>";
                         }
+                        echo "</tbody>";
                         echo "</table>";
                       break;
                   }
