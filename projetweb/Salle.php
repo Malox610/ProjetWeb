@@ -14,6 +14,10 @@
                   $result = mysqli_query($db_handle,$sql);
                   $sql2 = "SELECT * FROM salle WHERE id_salle = 2";
                   $result2 = mysqli_query($db_handle,$sql2);
+                  $sql3 = "SELECT nom_sport FROM sport WHERE id_salle = 1";
+                  $result3 = mysqli_query($db_handle,$sql3);
+                  $sql4 = "SELECT nom_sport FROM sport WHERE id_salle = 2";
+                  $result4 = mysqli_query($db_handle,$sql4);
                   }//end if
               //si le BDD n'existe pas
               else {
@@ -98,12 +102,16 @@
               <div class="Info">
                 <h2> Salle de sport OMNES</h2>
                   <br>
-                  <br>
                   <?php
                   while ($data = mysqli_fetch_assoc($result)){
                     echo "Salle:" . $data['num_salle']. "<br>";
                     echo "Téléphone:" . $data['telephone'] ."<br>";
                     echo "Email:" . $data['email'] . "<br>";
+                   }
+                   echo "Sports dans cette salle: <br>";
+                   echo "(cliquez sur le sport pour plus d'informations)<br>";
+                   while ($data = mysqli_fetch_assoc($result3)){
+                   echo "<span><a href=Parcourir.html>"  . $data['nom_sport'] . "</a></span><br>";
                    }
                   ?>
               </div>
@@ -113,12 +121,16 @@
               <div class="Info">
                 <h2> Salle de sport OMNES</h2>
                   <br>
-                  <br>
                   <?php
                   while ($data = mysqli_fetch_assoc($result2)){
                     echo "Salle:" . $data['num_salle']. "<br>";
                     echo "Téléphone:" . $data['telephone'] ."<br>";
                     echo "Email:" . $data['email'] . "<br>";
+                   }
+                   echo "Sports dans cette salle: <br>";
+                   echo "(cliquez sur le sport pour plus d'informations)<br>";
+                   while ($data = mysqli_fetch_assoc($result4)){
+                   echo "<span><a href=Parcourir.html>"  . $data['nom_sport'] . "</a></span><br>";
                    }
                   ?>
               </div>
