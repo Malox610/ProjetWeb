@@ -1,10 +1,36 @@
+<?php
+          //identifier le nom de base de données
+              $database = "web";
+              $login = "" ;// recuperation du string mis dans le login
+              $mdp ="" ; // recuperation du string mis dans le mdp
+              //connectez-vous dans votre BDD
+              //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
+              $db_handle = mysqli_connect('localhost', 'root', '' );
+              $db_found = mysqli_select_db($db_handle, $database);
+              //si le BDD existe, faire le traitement
+              if ($db_found) {
+
+                  $sql = "SELECT * FROM salle WHERE id_salle = 1";
+                  $result = mysqli_query($db_handle,$sql);
+                  $sql2 = "SELECT * FROM salle WHERE id_salle = 2";
+                  $result2 = mysqli_query($db_handle,$sql2);
+                  }//end if
+              //si le BDD n'existe pas
+              else {
+                  echo "Database not found";
+                  }//end else
+              //fermer la connection
+              mysqli_close($db_handle);
+          ?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Parcourir</title>
+    <title>Salle</title>
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
@@ -27,7 +53,7 @@
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li>
+              <li class="active">
                 <a href="index.html">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
@@ -39,7 +65,7 @@
                   <span>Recherche</span>
                 </a>
               </li>
-              <li class="active">
+              <li>
                 <a href="Parcourir.html">
                   <img src="./img/icons/left-nav/football.svg" alt="">
                   <span>Tout Parcourir</span>
@@ -55,11 +81,6 @@
           </div>
           <div class="navbar-left-user">
             <div class="user">
-              <a class="submit" id="seconnecter" href="Login-Client.html">Se déconnecter</a>
-            </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
               <a class="vertical-center" href="Login-Client.html">
                 <img src="./img/icons/left-nav/profile.png" alt="">
                 <h6>Votre compte</h6>
@@ -69,47 +90,38 @@
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
-         
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
-            <h2>Parcourir</h2>
-
-
-            <div class="encadrer">
-              <img src="./img/albums/Activitésport.png" alt="" />
-              <div class="descri">
-                <h2> Activités sportives</h2>
-                  <br>
-                <p>Tu souhaites pratiqué une activité physique amusante, atypique, mais tu ne sais pas laquelle choisir?</p>
-
-                  <a href="index.html"class="direction"> J'y vais </a>
-
-              </div>
-
-            </div>
-            <div class="encadrer">
-              <img src="./img/albums/SportCompet.png" alt="" />
-              <div class="descri">
-                <h2> Les Sports de compétitions</h2>
-                  <br>
-                <p>Tu es quelqu'un à la recherche de sport plus traditionnel où tu pourras faire de la compétition et t'amuser en même temps?  </p>
-
-                  <a href="SportCompet.html"class="direction"> J'y vais </a>
-
-              </div>
-
-            </div>
-            <div class="encadrer">
-              <img src="./img/albums/Salle.png" alt="" />
-              <div class="descri">
+            <h2> Les salles </h2>
+            <div class="Profil">
+              <img src="./img/albums/ron.png" alt="" />
+              <div class="Info">
                 <h2> Salle de sport OMNES</h2>
                   <br>
-                <p>Découvre ta salle de sport pour faire un max d'exercice , viens on s'amuse comme des petits fous</p>
-
-                  <a href="Salle.php"class="direction"> J'y vais </a>
-
+                  <br>
+                  <?php
+                  while ($data = mysqli_fetch_assoc($result)){
+                    echo "Salle:" . $data['num_salle']. "<br>";
+                    echo "Téléphone:" . $data['telephone'] ."<br>";
+                    echo "Email:" . $data['email'] . "<br>";
+                   }
+                  ?>
               </div>
-
+            </div>
+            <div class="Profil">
+              <img src="./img/albums/ron.png" alt="" />
+              <div class="Info">
+                <h2> Salle de sport OMNES</h2>
+                  <br>
+                  <br>
+                  <?php
+                  while ($data = mysqli_fetch_assoc($result2)){
+                    echo "Salle:" . $data['num_salle']. "<br>";
+                    echo "Téléphone:" . $data['telephone'] ."<br>";
+                    echo "Email:" . $data['email'] . "<br>";
+                   }
+                  ?>
+              </div>
             </div>
           </div>
         </div>
