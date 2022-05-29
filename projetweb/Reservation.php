@@ -186,7 +186,7 @@
                                 {
                                     $bout = $date ."/heure2";
                                     
-                                  $heure2="<button id=\"$bout\" onclick=\"window.location.href = 'Confirmation.php?${$bout}'\">". "Réserver" . "</button>";
+                                 $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                  // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
                                 }
                                 if($heure3 == 0)
