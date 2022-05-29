@@ -73,7 +73,7 @@
                 <div id="football" style="display: none" class="scrollable-content">
                     <!-- mettre le contenu de la page ici -->
                     <div class="albums-container description">
-                        <h4>Le football</h4>
+                        <h2 id="new-title">Le football</h2>
                         <br>
 
                         <p>Le football est un sport collectif joué entre deux équipes de onze joueurs (un gardien et dix
@@ -117,35 +117,21 @@
                                 </button>
                             </div>
                         </div>
-
-
-
                     </div>
                 </div>
                     <div id="basketball" style="display: none" class="scrollable-content">
                         <!-- mettre le contenu de la page ici -->
                         <div class="albums-container description">
-
-
                             <h4>Le Basketball</h4>
-
-
                             <br>
-
                             <p>Le basket-ball est un sport collectif de balle opposant deux équipes de cinq joueurs sur
                                 un terrain rectangulaire. L'objectif de chaque équipe est de faire passer un ballon au
                                 sein du panier. Chaque panier inscrit rapporte deux points à son équipe, à l'exception
                                 des tirs effectués au-delà de la ligne des trois points (qui rapportent trois points) et
                                 des lancers francs accordés à la suite d'une faute (qui rapportent un point). L'équipe
                                 avec le nombre de points le plus important remporte la partie.</p>
-
-
-
                         </div>
-
-
                         <div class="albums-container">
-
                             <h4>Coach basketball</h4>
                             <div class="cardbody">
                                 <div class="card">
@@ -208,7 +194,7 @@
                                         <span class="mdi mdi-chevron-right"></span>
                                     </button>
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -251,8 +237,8 @@
                                         <span class="mdi mdi-chevron-right"></span>
                                     </button>
                                 </div>
-                                
-                                
+
+
                             </div>
 
                         </div>
@@ -295,7 +281,7 @@
                                         <span class="mdi mdi-chevron-right"></span>
                                     </button>
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -338,7 +324,7 @@
                                         <span class="mdi mdi-chevron-right"></span>
                                     </button>
                                 </div>
-                                
+
                             </div>
 
                         </div>
@@ -351,7 +337,7 @@
                             case '?${foot}':
                             node = document.getElementById('football');
                             node.style.display = 'block';
-                                
+
                                 break;
                             case '?${basketball}':
                             node = document.getElementById('basketball');
@@ -373,8 +359,8 @@
                             node = document.getElementById('rugby');
                             node.style.display = 'block';
                             break;
-                            
-                            
+
+
                             default:
                                 console.log(`Sorry, we are out of ${expr}.`);
                         }

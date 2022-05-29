@@ -494,11 +494,13 @@ ul.v-list li {
  #new-title{
    margin-top: 3vh;
    margin-left: 2%;
+   color: white;
  }
 
  #new-title2{
    margin-top: 25vh;
    margin-left: 2%;
+   color: white;
  }
 
  .soustitre{
@@ -925,23 +927,23 @@ fieldset{
 .soustableau{
   padding: 5vh;
 }
+
 .card {
   height: 280px;
   width: 192px;
   background: var(--card);
   border-radius: 20px;
   padding: 10px;
-  font-family: Montserrat;
   display: flex;
   color: var(--text);
   flex-direction: column;
   align-items: center;
-
-
 }
+
 .card:hover{
     transform: scale(1.09);
 }
+
 .card img{
     width: 172px;
     height: 128px;
@@ -949,12 +951,14 @@ fieldset{
     object-fit: cover;
 
 }
+
 .card__title {color: var(--text);
     margin-top: 21px;
     font-size: 13px;
     transition: color 0.3s;
     opacity: 0.6;
 }
+
 .card__description{
     margin-top: 8px;
     display: block;
@@ -969,13 +973,15 @@ fieldset{
     font-size: 15px;
     transition: color 0.3s;
     padding: 10%;
-    background-color: #4523c6;}
+    background-color: #4523c6;
+}
+
 .card__action span{
     color: rgb(255, 255, 255);
       font-size: 28px;
 }
-.cardbody{
 
+.cardbody{
   display: flex;
   justify-content: center;
   flex-wrap:wrap;
@@ -984,5 +990,4 @@ fieldset{
   background-color: #171717;
   background: var(--body);
   gap: 20px;
->>>>>>> bd98cfebf525161093cddcc40c21ead855b63f16
 }
