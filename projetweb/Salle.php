@@ -123,7 +123,7 @@ session_start();
                    echo "Sports dans cette salle: <br>";
                    echo "(cliquez sur le sport pour plus d'informations)<br>";
                    while ($data = mysqli_fetch_assoc($result3)){
-                   echo "<span><a href=Parcourir.html>"  . $data['nom_sport'] . "</a></span><br>";
+                   echo "<span><a href=Parcourir.php>"  . $data['nom_sport'] . "</a></span><br>";
                    }
                   ?>
               </div>
@@ -142,7 +142,7 @@ session_start();
                    echo "Sports dans cette salle: <br>";
                    echo "(cliquez sur le sport pour plus d'informations)<br>";
                    while ($data = mysqli_fetch_assoc($result4)){
-                   echo "<span><a href=Parcourir.html>"  . $data['nom_sport'] . "</a></span><br>";
+                   echo "<span><a href=Parcourir.php>"  . $data['nom_sport'] . "</a></span><br>";
                    }
                   ?>
               </div>
