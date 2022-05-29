@@ -180,13 +180,13 @@
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
                                 {  $bout = $date ."/heure1";
-                                  $heure1="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                  $heure1="<button onclick=\"resa()\">" . "Réserver" . "</button>";
                                 }
                                 if($heure2 == 0)
                                 {
                                     $bout = $date ."/heure2";
                                     
-                                  $heure2="<button id=\"$bout\" onclick=\"resa()\">" . "Réserver" . "</button>";
+                                  $heure2="<button id=\"$bout\" onclick=\"window.location.href = 'Confirmation.php?${$bout}'\">". "Réserver" . "</button>";
                                  // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
                                 }
                                 if($heure3 == 0)
@@ -220,7 +220,7 @@
 
                   function resa ()
                   {
-                    header('Location:Reservation1.php');
+                    header('Location:index.html');
                   }
               ?>
             </div>
