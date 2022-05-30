@@ -77,12 +77,8 @@
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Confirmation</h2>
             <p class="soustitre">Demande bien prise en compte.</p>
-<<<<<<< HEAD
-        <?php
-=======
 
         <?php
->>>>>>> 07c3b21c21ab4b5c283cd2531d0be43407b87bb6
         session_start();
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         {
