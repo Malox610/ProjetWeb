@@ -92,6 +92,8 @@
        $_idcoach= $_SESSION['id_coach'];
 
       $database = "web";
+      $sport="";
+      $_idsport="";
 
       //connectez-vous dans votre BDD
       //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -99,12 +101,18 @@
       $db_found = mysqli_select_db($db_handle, $database);
       //si le BDD existe, faire le traitements
       if ($db_found) {
+<<<<<<< HEAD
 
           $sql = $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
+=======
+         
+          $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
+>>>>>>> 369ec631acd703c4e5e25b08db27016dc79a53d6
           $result = mysqli_query($db_handle, $sql);
           if($data = mysqli_fetch_assoc($result))
           {
             $nomcoach = $data['nom'];
+            $_idsport = $data['id_sport'];
             $sport = $data['nom_sport'];
 
           }
@@ -130,12 +138,21 @@
                 </div>
 
                 <div class="LigneForm">
+<<<<<<< HEAD
                   <label class="inputform">Coach : </label>
                   <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
                 </div>
                  <div class="LigneForm">
                   <label class="inputform">Sport : </label>
                   <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
+=======
+                  <label class="inputform">Coach :  <?php echo $nomcoach;?> </label>
+                  <input id=searchbar2 type="hidden" name="coach" placeholder="" value="<?php echo htmlspecialchars($_idcoach); ?>" required/>
+                </div>
+                 <div class="LigneForm">
+                  <label class="inputform">Sport :  <?php echo $sport;?> </label>
+                  <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($_idsport); ?>" required/>
+>>>>>>> 369ec631acd703c4e5e25b08db27016dc79a53d6
                 </div>
 
                 <div class="LigneForm">
