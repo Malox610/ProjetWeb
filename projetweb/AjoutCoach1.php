@@ -57,7 +57,7 @@ if($_SESSION["role"] == "administrateur"){
               </li>
             </ul>
           </div>
-          <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+          <?php if(($_SESSION["id_client"] != 0) || ($_SESSION["id_coach"] != 0) || ($_SESSION["id_admin"] != 0)){ ?>
                 <div class="navbar-left-user">
                   <div class="user">
                     <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
