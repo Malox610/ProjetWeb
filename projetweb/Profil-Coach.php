@@ -1,4 +1,57 @@
-<?php session_start(); ?>
+<?php
+session_start();
+
+          //identifier le nom de base de données
+              $database = "web";
+              $login = "" ;// recuperation du string mis dans le login
+              $mdp ="" ; // recuperation du string mis dans le mdp
+              //connectez-vous dans votre BDD
+              //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
+              $db_handle = mysqli_connect('localhost', 'root', '' );
+              $db_found = mysqli_select_db($db_handle, $database);
+              if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+          {
+            $url = "https";
+          }
+          else
+          {
+            $url = "http"; 
+          }  
+          $url .= "://"; 
+          $url .= $_SERVER['HTTP_HOST']; 
+          $url .= $_SERVER['REQUEST_URI']; 
+          
+          list($url,$Idcoach ) = explode("?", $url);
+          $idsport = "";
+          
+              if ($db_found) {
+                
+                $sql = "SELECT * FROM coach NATURAL JOIN `sport` WHERE id_coach LIKE '$Idcoach'";
+                $result = mysqli_query($db_handle,$sql);
+
+              
+               while ($sport = mysqli_fetch_assoc($result)){
+                  $idsport= $sport['id_sport'];
+                }
+                $sql = "SELECT * FROM coach NATURAL JOIN `sport` WHERE id_coach LIKE '$Idcoach'";
+                $result = mysqli_query($db_handle,$sql);
+                
+                $sql = "SELECT * FROM sport NATURAL JOIN `salle` WHERE id_sport LIKE '$idsport' ";
+                $result1 = mysqli_query($db_handle,$sql);
+                $sql3 = "SELECT * FROM dispo NATURAL JOIN coach WHERE id_coach LIKE '$Idcoach'";
+            $result3 = mysqli_query($db_handle, $sql3);
+
+            $sql4 = "SELECT heure FROM rdv WHERE id_coach LIKE '$Idcoach ' AND date like '$date' ";
+                $result4 = mysqli_query($db_handle, $sql4);
+       
+              }
+
+              else {
+                echo "Database not found";
+                }//end else
+            //fermer la connection
+            mysqli_close($db_handle);
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -89,58 +142,136 @@
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
           <div class="scrollable-content">
+          
+       
             <h2> Profil Coach</h2>
             <div class="Profil">
-              <img src="./img/albums/ron.png" alt="" />
+              
+            <img src="./img/albums/coach.png" alt="" />
               <div class="Info">
-                <h2> Ron le roux</h2>
-                  <br>
-                  <br>
-                <p>Coach, Musculation
-                  <br>
-                  <br>
-                  Salle: G-010
-                  <br>
-                  <br>
-                  Téléphone: +33 01 23 45 67 89
-                  <br>
-                  <br>
-                  Email: guy.dumais@omnessports.fr</p>
+              <?php 
+                while ($dataCoach = mysqli_fetch_assoc($result)){
+                  echo "<h2>" . $dataCoach['prenom']."  ". $dataCoach['nom'] . "<br>"."<br>"."</h2>";
+                  echo "Coach:  ". $dataCoach['nom_sport']. "<br>". "<br>";
+                  echo "Telepone:  ". $dataCoach['telephone']. "<br>". "<br>";
+                  echo "Email:  ". $dataCoach['email']. "<br>". "<br>";
+                  }
+                  while ($dataSalle = mysqli_fetch_assoc($result1)){
+                    echo "Salle:   " . $dataSalle['num_salle']."<br>"."<br>";
+
+                  }
+                ?>
+                
               </div>
+             
             </div>
-            <div class="Calendar">
-              <table>
-                <tr>
-                  <th> Heure </th>
-                  <th> Lundi </th>
-                  <th> Mardi </th>
-                  <th> Mercredi </th>
-                  <th> Jeudi </th>
-                  <th> Vendredi </th>
-                  <th> Samedi </th>
+            <?php 
+            
+                
 
-                </tr>
-                <tr>
-                  <td> AM</td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
-                 <td>  </td>
+            
+            echo "<table border=0 class=\"tableau_resultat\">";
+              echo "<thead class=\"head_resultat\">";
+                echo "<tr class=\"ligne_head\">";
+                  echo "<th>" . "Jour" . "</th>";
+                  echo "<th>" . "08H00" . "</th>";
+                  echo "<th>" . "10H00" . "</th>";
+                  echo "<th>" . "14H00" . "</th>";
+                  echo "<th>" . "16H00" . "</th>";
+                echo "</tr>";
+              echo "</thead>";
 
-                </tr>
-                <tr>
-                  <td> PM </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                  <td>  </td>
-                </tr>
-              </table>
-            </div>
+            while ($data = mysqli_fetch_assoc($result3)) {
+                $heure1=0;
+                $heure2=0;
+                $heure3=0;
+                $heure4=0;
+                $date = $data['jour'];
+
+                
+                    while($data1 = mysqli_fetch_assoc($result4))
+                    {
+
+                        if($data['matin']=="1")
+                        { //il est present
+                                if($data1['heure']=='08:00:00')
+                                {
+                                    //ducoup il est pas dispo
+                                    $heure1=1;
+                                }
+                                if($data1['heure']=='10:00:00')
+                                {// ducoup il est pas dispo
+                                    $heure2=1;
+                                }
+                                }else{
+                                //il est  pas present
+                                    $heure1=1;
+                                    $heure2=1;
+                                }
+
+                        if($data['aprem']==1)
+                        { //il est present
+
+                                if($data1['heure']=='14:00:00')
+                                {
+                                    //ducoup il est pas dispo
+                                    $heure3=1;
+                                }
+                                if($data1['heure']=='16:00:00')
+                                {
+                                        //ducoup il est pas dispo
+                                    $heure4=1;
+                                }
+                                }else
+                                {
+                                    $heure3=1;
+                                    $heure4=1;
+                                }
+
+                      }
+                                $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
+                                // extraction des jour, mois, an de la date
+                                list($annee, $mois,$jour ) = explode('-', $date);
+                                // calcul du timestamp
+
+                                $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
+                                if($heure1 == 0)
+                                {  $bout = $date ."/heure1";
+                                  $heure1="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                }
+                                if($heure2 == 0)
+                                {
+                                    $bout = $date ."/heure2";
+                                    $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                 // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
+                                }
+                                if($heure3 == 0)
+                                {
+                                    $bout = $date ."/heure3";
+                                  $heure3="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                }
+                                if($heure4 == 0)
+                                {
+                                    $bout = $date ."/heure4";
+                                  $heure4="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                }
+                                // affichage du jour de la semaine
+                                //afficher le resultat
+                                    echo "<tr>";
+                                        echo "<td>" . $joursem[date("w",$timestamp)] . "</td>";
+                                        echo "<td>" . $heure1 . "</td>";
+                                        echo "<td>" . $heure2 . "</td>";
+                                        echo "<td>" . $heure3 . "</td>";
+                                        echo "<td>" . $heure4 . "</td>";
+                                    echo "</tr>";
+                          }
+                          echo "</table>";
+                      //end if
+                  //si le BDD n'existe pas
+                  
+
+                  
+            ?>
 
             <!-- mettre le contenu de la page ici -->
           </div>

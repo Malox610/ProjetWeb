@@ -128,32 +128,32 @@ session_start();
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
                     <a href="Coach-SportComper.php?${badminton}">
-                    <img class="img-responsive" src="./img/albums/sabrelaser.png" alt="">
+                    <img class="img-responsive" src="./img/albums/badminton.png" alt="" style=" width:170%">
                     <i class="far fa-text">J'y vais</i>
                   </a>
                   </div>
-                  <h4>Sabre Laser</h4>
-                  <p>Trouve ton maître Jedi.</p>
+                  <h4>Badminton</h4>
+                  <p>Surpasses ton adversaire en lui volant ses points!</p>
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
                     <a href="Coach-SportComper.php?${tennis}">
-                    <img class="img-responsive" src="./img/albums/quidditch.png" alt="">
+                    <img class="img-responsive" src="./img/albums/tennis.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>
                   </div>
-                  <h4>Quidditch</h4>
-                  <p>Des lycéens qui se battent dans les airs sur des balais pour plaire aux lycéennes.</p>
+                  <h4>Tennis</h4>
+                  <p>Cours sur le court pour renvoyer la balle!</p>
                 </div>
                 <div class="albums-item albums-item2 txt-center">
                   <div class="img-album">
                     <a href="Coach-SportComper.php?${rugby}">
-                    <img class="img-responsive" src="./img/albums/cornemuse.png" alt="">
+                    <img class="img-responsive" src="./img/albums/rugby.png" alt="">
                     <i class="far fa-text">J'y vais</i>
                   </a>
                   </div>
-                  <h4>Cornemuse</h4>
-                  <p>Comment ça c'est pas un sport ? Vous avez jamais fais de cornemuse vous !</p>
+                  <h4>Rugby</h4>
+                  <p>Rejoins la mêlée!</p>
                 </div>
               </div>
             </div>

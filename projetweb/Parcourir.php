@@ -96,7 +96,7 @@
                 <h2> Activités sportives</h2>
                   <br>
                 <p>Tu souhaites pratiqué une activité physique amusante, atypique, mais tu ne sais pas laquelle choisir?</p>
-                  <a href="index.php"class="direction"> J'y vais </a>
+                  <a href="ActivitesSport.php"class="direction"> J'y vais </a>
               </div>
             </div>
             <div class="encadrer">

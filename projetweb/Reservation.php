@@ -274,10 +274,7 @@ session_start();
                   //fermer la connection
                   mysqli_close($db_handle);
 
-                  function resa ()
-                  {
-                    header('Location:index.html');
-                  }
+                  
               ?>
             </div>
           </div>

@@ -118,10 +118,10 @@
                                 <a class="submit">Profil</a>
                             </div>
                             <div class="card">
-                                <img src="./img/albums/football.png" alt="" />
+                                <img src="./img/albums/neymar.png" alt="" />
                                 <h2 class="card__title">Jean Neymar</h2>
                                 <span class="card__description">Football</span>
-                                <a class="submit">Profil</a>
+                                <a href="Profil-Coach.php?1" class="submit">Profil</a>
                             </div>
                         </div>
                     </div>
@@ -142,10 +142,10 @@
                             <h4>Coach basketball</h4>
                             <div class="cardbody">
                                 <div class="card">
-                                    <img src="./img/albums/iverson.png" alt="" />
-                                    <h2 class="card__title">Gregg Popovich</h2>
+                                    <img src="./img/albums/Mimie.png" alt="" />
+                                    <h2 class="card__title">Mimie Mathy</h2>
                                     <span class="card__description">Basketball</span>
-                                    <a class="submit">Profil</a>
+                                    <a href="Profil-Coach.php?4" class="submit">Profil</a>
                                 </div>
                                 <div class="card">
                                     <img src="./img/albums/luc.png" alt="" />
@@ -167,15 +167,15 @@
                             <h4>Coach Ping-Pong</h4>
                             <div class="cardbody">
                                 <div class="card">
-                                    <img src="football.png" alt="" />
-                                    <h2 class="card__title">simon gauzy</h2>
+                                    <img src="./img/albums/sonic.png" alt="" />
+                                    <h2 class="card__title">Sonic Le hérisson bleu</h2>
                                     <span class="card__description">Ping-pong</span>
-                                    <a class="submit">Profil</a>
+                                    <a href="Profil-Coach.php?5" class="submit">Profil</a>
                                 </div>
                                 <div class="card">
                                     <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
                                         alt="" />
-                                    <h2 class="card__title">fdsfdf</h2>
+                                    <h2 class="card__title">nicson</h2>
                                     <span class="card__description">Ping-pong</span>
                                     <a class="submit">Profil</a>
                                 </div>
@@ -262,6 +262,81 @@
                             </div>
                         </div>
                     </div>
+                    <div id="Cornemuse" style="display: none" class="scrollable-content">
+                        <!-- mettre le contenu de la page ici -->
+                        <div class="albums-container description">
+                            <h4>Cornemuse</h4>  <br>
+                            <p>Soufflez et le son sortira tout seul</p>
+                        </div>
+                        <div class="albums-container">
+                            <h4>Coach Cornemuse</h4>
+                            <div class="cardbody">
+                                <div class="card">
+                                <img src="./img/albums/willie.png" alt="" />
+                                    <h2 class="card__title"> Willie L'écossais</h2>
+                                    <span class="card__description">Cornemuse</span>
+                                    <a href="Profil-Coach.php?6" class="submit">Profil</a>
+                                </div>
+                                <div class="card">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                        alt="" />
+                                    <h2 class="card__title">Eddie Jones</h2>
+                                    <span class="card__description">Cornemuse</span>
+                                    <a class="submit">Profil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Jedi" style="display: none" class="scrollable-content">
+                        <!-- mettre le contenu de la page ici -->
+                        <div class="albums-container description">
+                            <h4>Sabre laser</h4>  <br>
+                            <p>Viens affronter les plus grands Jedi</p>
+                        </div>
+                        <div class="albums-container">
+                            <h4>Coach Jedi</h4>
+                            <div class="cardbody">
+                                <div class="card">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" />
+                                    <h2 class="card__title"> Dark Vador</h2>
+                                    <span class="card__description">Sabre laser</span>
+                                    <a class="submit">Profil</a>
+                                </div>
+                                <div class="card">
+                                    <img src="./img/albums/luc.png"
+                                        alt="" />
+                                    <h2 class="card__title">Luc CielMarcheur</h2>
+                                    <span class="card__description">Sabre laser</span>
+                                    <a href="Profil-Coach.php?2" class="submit">Profil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Quiddich" style="display: none" class="scrollable-content">
+                        <!-- mettre le contenu de la page ici -->
+                        <div class="albums-container description">
+                            <h4>Quiddich</h4>  <br>
+                            <p>Des lycéens qui se battent dans les airs sur des balais pour plaire aux lycéennes.</p>
+                        </div>
+                        <div class="albums-container">
+                            <h4>Coach Quidditch</h4>
+                            <div class="cardbody">
+                                <div class="card">
+                                <img src="./img/albums/ron.png" alt="" />
+                                    <h2 class="card__title">Ron LeRoux</h2>
+                                    <span class="card__description">Quidditch</span>
+                                    <a href="Profil-Coach.php?3" class="submit">Profil</a>
+                                </div>
+                                <div class="card">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                                        alt="" />
+                                    <h2 class="card__title">Harry le sorcier</h2>
+                                    <span class="card__description">Quidditch</span>
+                                    <a class="submit">Profil</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <script> const query = window.location.search;
                         var node;
 
@@ -289,6 +364,18 @@
                                 break;
                             case '?${rugby}':
                             node = document.getElementById('rugby');
+                            node.style.display = 'block';
+                            break;
+                            case '?Cornemuse':
+                            node = document.getElementById('Cornemuse');
+                            node.style.display = 'block';
+                            break;
+                            case '?Quiddich':
+                            node = document.getElementById('Quiddich');
+                            node.style.display = 'block';
+                            break;
+                            case '?Jedi':
+                            node = document.getElementById('Jedi');
                             node.style.display = 'block';
                             break;
 

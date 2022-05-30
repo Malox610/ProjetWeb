@@ -198,7 +198,7 @@ session_start();
                   <p>Vous pensez être le futur *Je ne connais pas de joueur de pongiste* ?</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <a href="Coach-SportComper.php?${badminton}">
+                  <a href="Coach-SportComper.php?Jedi">
                     <div class="img-album">
                       <img class="img-responsive" src="./img/albums/sabrelaser.png" alt="">
                       <i class="far fa-text">J'y vais</i>
@@ -208,7 +208,7 @@ session_start();
                   <p>Trouve ton maître Jedi.</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <a href="Coach-SportComper.php?${tennis}">
+                  <a href="Coach-SportComper.php?Quidditch">
                     <div class="img-album">
                       <img class="img-responsive" src="./img/albums/quidditch.png" alt="">
                       <i class="far fa-text">J'y vais</i>
@@ -218,7 +218,7 @@ session_start();
                   <p>Des lycéens qui se battent dans les airs sur des balais pour plaire aux lycéennes.</p>
                 </div>
                 <div class="albums-item txt-center">
-                  <a href="Coach-SportComper.php?${rugby}">
+                  <a href="Coach-SportComper.php?Cornemuse">
                     <div class="img-album">
                       <img class="img-responsive" src="./img/albums/cornemuse.png" alt="">
                       <i class="far fa-text">J'y vais</i>
