@@ -90,8 +90,8 @@ session_start();
               echo "Prenom de l'utilisateur" . " " . $_SESSION['prenom'] . "<br>";
               echo "Bureau" . " " . $_SESSION['bureau'] . "<br>";
               echo "Email" . " " . $_SESSION['email'] . "<br>";
-              echo "telephone associé" . " +33" . $_SESSION['telephone'] . "<br>";
-              echo "Sport" . $_SESSION['id_sport'] . "<br>";
+              echo "Téléphone" . " ". " +33" . $_SESSION['telephone'] . "<br>";
+              echo "Sport" . " " . $_SESSION['id_sport'] . "<br>";
             } ?>
           </div>
         </div>
