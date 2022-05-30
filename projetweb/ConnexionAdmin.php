@@ -24,7 +24,7 @@
                         $_SESSION["prenom"] =$data['prenom'];
                         $_SESSION["nom"] =$data['nom'];
                         $_SESSION["email"] =$data['email'];
-                        header('Location:MonCompte-Admin.html'); // connexion reussi chargement de la page suivante
+                        header('Location:MonCompte-Admin.php'); // connexion reussi chargement de la page suivante
                     }
                     else
                     { echo "Mot de passe incorrect";}

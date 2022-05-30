@@ -63,7 +63,7 @@
             </div>
             <div class="navbar-left-user">
               <div class="user">
-                <a class="vertical-center" href="MonCompte-Client.html">
+                <a class="vertical-center" href="MonCompte-Client.php">
                   <img src="./img/icons/left-nav/profile.png" alt="">
                   <h6>Votre compte</h6>
                 </a>

@@ -27,7 +27,7 @@
                         $_SESSION["email"] =$data['email'];
                         $_SESSION["bureau"] =$data['bureau'];
                         $_SESSION["id_sport"] =$data['id_sport'];
-                        header('Location:MonCompte-Coach.html'); // connexion reussi chargement de la page suivante
+                        header('Location:MonCompte-Coach.php'); // connexion reussi chargement de la page suivante
                     }
                     else
                     { echo "Mot de passe incorrect";}
