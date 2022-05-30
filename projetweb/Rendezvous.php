@@ -106,7 +106,7 @@ session_start();
                 </thead>
               </table>
               <div class="soustableau">
-                <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+                <?php if((isset($_SESSION["id_client"]))||(isset($_SESSION["id_coach"] ))||(isset($_SESSION["id_admin"] ))){ ?>
 
 <!-- insérer les rendez-vous clients -->
 
