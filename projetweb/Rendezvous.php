@@ -109,7 +109,67 @@ session_start();
                 <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
 
 <!-- insérer les rendez-vous clients -->
+<?php 
+$database = "web";
 
+$_recherche="";
+
+$choix = isset($_POST["choix"])? $_POST["choix"] : "";
+if (empty($choix)) {
+$choix = 0;
+}
+$choix = (int)$choix;
+
+if (isset($_POST["submit"])){ //si $_POST est declare. si formulaire soumis
+    $_recherche = $_POST["recherche"];
+}
+if((isset($_SESSION["id_client"])))
+{
+ $id_client= $_SESSION["id_client"];
+
+
+//connectez-vous dans votre BDD
+//Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
+$db_handle = mysqli_connect('localhost', 'root', '' );
+$db_found = mysqli_select_db($db_handle, $database);
+//si le BDD existe, faire le traitement
+if ($db_found) {
+
+        $sql = "SELECT * FROM rdv NATURAL JOIN coach WHERE id_client LIKE '$id_client'";
+        $result = mysqli_query($db_handle, $sql);
+        $sql1 = "SELECT * FROM rdv NATURAL JOIN sport WHERE id_client LIKE '$id_client'";
+        $result1 = mysqli_query($db_handle, $sql1);
+          echo "<table border=0 class=\"tableau_resultat\">";
+            echo "<thead class=\"head_resultat\">";
+              echo "<tr class=\"ligne_head\">";
+                echo "<th>" . "Sport" . "</th>";
+                echo "<th>" . "Coach" . "</th>"; 
+                echo "<th>" . "Date" . "</th>";
+                echo "<th>" . "Heure" . "</th>";
+                
+              echo "</tr>";
+          echo "</thead>";
+
+          //afficher le resultat && $data2 = mysqli_fetch_assoc($result1)
+          while (($data = mysqli_fetch_assoc($result)) && ($data2 = mysqli_fetch_assoc($result1)))   {
+             
+            echo"<tbody class=\"list-body\">";
+              echo "<tr class=\"ligne_body\">";
+                echo "<td>" . $data2['nom_sport'] . "</td>";
+                echo "<td>" . $data['prenom'] ." ".$data['nom']. "</td>";
+                echo "<td>" . $data2['date'] . "</td>";
+                echo "<td>" . $data2['heure'] . "</td>";
+                echo "</tr>";
+            echo"</tbody>";
+          }
+          echo "</table>";
+        }
+      }
+      else{
+        echo "Vous n'ete pas connecter ";
+      }
+
+?>
               <?php }else{ ?>
                 <h2 id="surbouton">Vous n'êtes pas connecté</h2>
                 <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
