@@ -166,7 +166,7 @@ if ($db_found) {
         }
       }
       else{
-        echo "Vous n'ete pas connecter ";
+        echo "Vous n'êtes pas connecté ";
       }
 
 ?>
