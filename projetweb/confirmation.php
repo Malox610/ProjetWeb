@@ -134,7 +134,7 @@
         ?> 
        
            
-            <form class="formulaire" id="commande" action="ConnexionCoach.php" method="post">
+            <form class="formulaire" id="commande" action="final.php" method="post">
               <fieldset>
                 <div class="LigneForm">
                   <label class="inputform">Heure :  <?php echo $heure;?></label>
@@ -147,11 +147,11 @@
 
                 <div class="LigneForm">
                   <label class="inputform">Coach :  <?php echo $nomcoach;?> </label>
-                  <input id=searchbar2 type="hidden" name="Coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
+                  <input id=searchbar2 type="hidden" name="coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
                 </div>
                  <div class="LigneForm">
                   <label class="inputform">Sport :  <?php echo $sport;?> </label>
-                  <input id=searchbar2 type="hidden" name="Coach" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
+                  <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
                 </div>
 
                 <div class="LigneForm">

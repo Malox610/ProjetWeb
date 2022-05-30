@@ -1,24 +1,13 @@
 <?php
-//identifier le nom de base de données
-    $database = "web";
-    $login = "" ;// recuperation du string mis dans le login
-    $mdp ="" ; // recuperation du string mis dans le mdp
-
-    if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
-        $nom = $_POST["nom"];
-        $prenom = $_POST["prenom"];
-        $numEtudiant = $_POST["numEtudiant"];
-        $email = $_POST["email"];
-        $telephone = $_POST["telephone"];
-        $numero = $_POST["numero"];
-        $adresse = $_POST["adresse"];
-        $ville = $_POST["ville"];
-        $codepostal = $_POST["codepostal"];
-        $pays = $_POST["pays"];
-        $password = $_POST["mdp"];
-
-    }
-    //connectez-vous dans votre BDD
+session_start();
+$database = "web";
+if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
+    $sport = $_POST["sport"];
+    $coach= $_POST["coach"];
+    $date = $_POST["date"];
+    $heure = $_POST["heure"];
+}
+//connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
     $db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
@@ -35,7 +24,7 @@
             $sql = "INSERT INTO `client` (`nom`, `prenom`, `telephone`, `email`, `password`, `num_etudiant`,`id_adresse`) VALUES ('$nom','$prenom','$telephone','$email','$password','$numEtudiant','$idadresse')";
             $result = mysqli_query($db_handle, $sql);
             echo "Inscription réussie";
-            header ('location:index.php');
+             header ('location:index.php');
         }//end if
     //si le BDD n'existe pas
     else {
@@ -43,4 +32,5 @@
         }//end else
     //fermer la connection
     mysqli_close($db_handle);
-?>
+   // header ('location:index.php');
+    ?>
