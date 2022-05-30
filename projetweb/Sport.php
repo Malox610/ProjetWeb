@@ -49,7 +49,7 @@ session_start();
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
@@ -65,11 +65,20 @@ session_start();
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
-                    <a class="vertical-center" href="MonCompte-Admin.php">
-                      <img src="./img/icons/left-nav/profile.png" alt="">
-                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
-                    </a>
-                  </div>
+                    <div class="user">
+                      <?php if($_SESSION['role'] ='administrateur'){ ?>
+                      <a class="vertical-center" href="MonCompte-Admin.php">
+                      <?php } ?>
+                      <?php if($_SESSION['role'] ='coach'){ ?>
+                      <a class="vertical-center" href="MonCompte-Coach.php">
+                      <?php } ?>
+                      <?php if($_SESSION['role'] ='client'){ ?>
+                      <a class="vertical-center" href="MonCompte-Client.php">
+                      <?php } ?>
+                        <img src="./img/icons/left-nav/profile.png" alt="">
+                        <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                      </a>
+                    </div>
                 </div>
           <?php }else{ ?>
             <div class="navbar-left-user">

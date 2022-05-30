@@ -46,7 +46,7 @@
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
@@ -55,7 +55,15 @@
           </div>
           <div class="navbar-left-user">
             <div class="user">
+              <?php if($_SESSION['role'] ='administrateur'){ ?>
+              <a class="vertical-center" href="MonCompte-Admin.php">
+              <?php } ?>
+              <?php if($_SESSION['role'] ='coach'){ ?>
+              <a class="vertical-center" href="MonCompte-Coach.php">
+              <?php } ?>
+              <?php if($_SESSION['role'] ='client'){ ?>
               <a class="vertical-center" href="MonCompte-Client.php">
+              <?php } ?>
                 <img src="./img/icons/left-nav/profile.png" alt="">
                 <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
               </a>
@@ -69,7 +77,6 @@
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Confirmation</h2>
             <p class="soustitre">Demande bien prise en compte.</p>
-
         <?php
         session_start();
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
@@ -105,7 +112,7 @@
 
           $sql = $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
 =======
-         
+
           $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
 >>>>>>> 369ec631acd703c4e5e25b08db27016dc79a53d6
           $result = mysqli_query($db_handle, $sql);
