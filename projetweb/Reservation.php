@@ -8,20 +8,7 @@
     <!-- BROWSER ICON -->
     <link rel="icon" href="./img/icons/favicon.ico">
     <!-- JAVASCRIPT -->
-    <script type="text/javascript" src="./js/script.js">
-
-    function redirection(pp)
-    {
-
-     signe = window.prompt("caca");
-       /* $('#conteneur-parent > button').click(function(){
-    var x = $(this).attr('id');
-    alert(x);
-        });*/
-
-    }
-
-    </script>
+    <script type="text/javascript" src="./js/script.js"></script>
     <!-- MAIN STYLE -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -66,7 +53,9 @@
               </li>
             </ul>
           </div>
-          <?php if($_SESSION["id_client"] != 0){ ?>
+          <?php
+          session_start();
+          if($_SESSION["id_client"] != 0){ ?>
             <div class="navbar-left-user">
               <div class="user">
                 <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
@@ -99,6 +88,7 @@
             //identifier le nom de base de données
             $database = "web";
             $_recherche="";
+
             //connectez-vous dans votre BDD
             //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
             $db_handle = mysqli_connect('localhost', 'root', '' );
@@ -177,13 +167,12 @@
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
                                 {  $bout = $date ."/heure1";
-                                  $heure1="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                  $heure1="<button onclick=\"resa()\">" . "Réserver" . "</button>";
                                 }
                                 if($heure2 == 0)
                                 {
                                     $bout = $date ."/heure2";
-                                    $script = '<script type="text/javascript">reservation(that);</script>' ;
-                                  $heure2="<button id=.$bout. onclick=\"$script\">" . "Réserver" . "</button>";
+                                    $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                  // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
                                 }
                                 if($heure3 == 0)
@@ -214,6 +203,11 @@
                       }//end else
                   //fermer la connection
                   mysqli_close($db_handle);
+
+                  function resa ()
+                  {
+                    header('Location:index.html');
+                  }
               ?>
             </div>
           </div>

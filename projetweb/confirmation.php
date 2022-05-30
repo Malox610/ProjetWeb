@@ -68,7 +68,55 @@
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Confirmation</h2>
-            <p class="soustitre"> Demande bien prise en compte.</p>
+            <p class="soustitre">Demande bien prise en compte.</p>
+        <script type="text/javascript" >
+          const query = window.location.search;
+          <?php
+             $dateheure = "<script>document.write(query)</script>";  
+             list($date, $heure ) = explode('/', $dateheure);
+             echo $date ;
+             echo $heure ;
+             ?>
+
+        </script>
+           
+            <form class="formulaire" id="commande" action="ConnexionCoach.php" method="post">
+              <fieldset>
+                <div class="LigneForm">
+                  <label class="inputform">Heure : </label>
+                  <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure); ?>" required/>
+                </div>
+                <div class="LigneForm">
+                  <label class="inputform">Date : </label>
+                  <input id=searchbar2 type="texte" name="date" placeholder="" value="<?php $date ?>" required/>
+                </div>
+
+                <div class="LigneForm">
+                  <label class="inputform">Coach : </label>
+                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php $bla ?>" required/>
+                </div>
+                 <div class="LigneForm">
+                  <label class="inputform">Coach : </label>
+                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="" required/>
+                </div>
+
+                <div class="LigneForm">
+                  <input class="submit" id="connecter" type="submit" name="envoi" value="Se connecter"/>
+                </div>
+              </fieldset>
+            </form>
+
+            <div class="LigneForm">
+                <label class="inputform">Heure</label>
+                <label class="inputform">Jour</label>
+            </div>
+            <div class="LigneForm">
+                <label class="inputform">Coach</label>
+                <label class="inputform">Spécialité</label>
+            </div>
+            <div class="LigneForm">
+              <input class="submit" id="payer" type="submit" name="envoi" value="Confirmer"/>
+            </div>
           </div>
         </div>
       </section>

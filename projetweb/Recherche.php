@@ -52,7 +52,9 @@
                 </a>
               </li>
             </ul>
-            <?php if($_SESSION["id_client"] != 0){ ?>
+        
+
+            <?php if(isset($_SESSION['id_client'])){ ?>
               <div class="navbar-left-user">
                 <div class="user">
                   <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
@@ -102,7 +104,7 @@
               $db_found = mysqli_select_db($db_handle, $database);
               //si le BDD existe, faire le traitement
               if ($db_found) {
-                session_start();
+
                   switch ($choix) {
 
                       case 1:
