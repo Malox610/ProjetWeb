@@ -16,7 +16,6 @@
         $codepostal = $_POST["codepostal"];
         $pays = $_POST["pays"];
         $password = $_POST["mdp"];
-
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -35,7 +34,7 @@
             $sql = "INSERT INTO `client` (`nom`, `prenom`, `telephone`, `email`, `password`, `num_etudiant`,`id_adresse`) VALUES ('$nom','$prenom','$telephone','$email','$password','$numEtudiant','$idadresse')";
             $result = mysqli_query($db_handle, $sql);
             echo "Inscription réussie";
-
+            header ('location:index.php');
         }//end if
     //si le BDD n'existe pas
     else {

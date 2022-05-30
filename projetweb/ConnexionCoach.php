@@ -11,7 +11,7 @@
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-    $db_handle = mysqli_connect('localhost', 'root', '' );
+    $db_handle = mysqli_connect('localhost', 'root', 'root' );
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
@@ -21,7 +21,7 @@
                     if($data['password']== $mdp ){
                         session_start();
                         $_SESSION["id_coach"] =$data['id_coach'];
-                        $_SESSION['role'] ="coach";
+                        $_SESSION["role"] ="coach";
                         $_SESSION["prenom"] =$data['prenom'];
                         $_SESSION["nom"] =$data['nom'];
                         $_SESSION["email"] =$data['email'];

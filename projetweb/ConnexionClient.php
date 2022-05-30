@@ -20,10 +20,12 @@
                     if($data['password']== $mdp ){
                         session_start();
                         $_SESSION["id_client"] =$data['id_client'];
-                        $_SESSION['role'] ="client";
+                        $_SESSION["role"] ="client";
                         $_SESSION["prenom"] =$data['prenom'];
                         $_SESSION["nom"] =$data['nom'];
                         $_SESSION["email"] =$data['email'];
+                        $_SESSION["telephone"]=$data['telephone'];
+                        $_SESSION["num_etudiant"]=$data['num_etudiant'];
                         header('Location:index.php'); // connexion reussi chargement de la page suivante
                     }
                     else

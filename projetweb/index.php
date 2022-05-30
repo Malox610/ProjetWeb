@@ -50,7 +50,7 @@ session_start();
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
@@ -65,9 +65,17 @@ session_start();
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
+                    <?php if($_SESSION["id_admin"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Admin.php">
+                    <?php } ?>
+                    <?php if($_SESSION["id_coach"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Coach.php">
+                    <?php } ?>
+                    <?php if($_SESSION["id_client"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Client.php">
+                    <?php } ?>
                       <img src="./img/icons/left-nav/profile.png" alt="">
-                      <h6>Votre compte</h6>
+                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
                     </a>
                   </div>
                 </div>
@@ -226,27 +234,34 @@ session_start();
               <p class="soustitre">Les meilleurs dans leur domaine, parfois les seuls.</p>
               <div class="albums-row">
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?1">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/neymar.png" alt="">
                     <i class="far fa-text">Football</i>
                   </div>
+                  </a>
                   <h4>Jean Neymar</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?2">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/luc.png" alt="">
                     <i class="far fa-text">Sabre Laser</i>
                   </div>
+                  </a>
                   <h4>Luc CielMarcheur</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?3">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/ron.png" alt="">
                     <i class="far fa-text">Quidditch</i>
                   </div>
+                  </a>
                   <h4>Ron LeRoux</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?4">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/mimie.png" alt="">
                     <i class="far fa-text">Basketball</i>
@@ -254,17 +269,21 @@ session_start();
                   <h4>Mimie Mathy</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?5">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/sonic.png" alt="">
                     <i class="far fa-text">Ping Pong</i>
                   </div>
+                  </a>
                   <h4>Sonic</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/willie.png" alt="">
-                    <i class="far fa-text">Cornemuse</i>
-                  </div>
+                  <a href="Profil-Coach.php?6">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/willie.png" alt="">
+                      <i class="far fa-text">Cornemuse</i>
+                    </div>
+                  </a>
                   <h4>Willy</h4>
                 </div>
               </div>
@@ -279,8 +298,9 @@ session_start();
     <!-- PLAYER SONG -->
     <div class="player-song">
         <div class="song-txt">
-          <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">37 Quai de Grenelles</a></h4></address>
+          <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">37 Quai de Grenelle</a></h4></address>
           <span><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">75015, Paris, France</a></span>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337709887617!2d2.284293215569461!3d48.85177030912713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653928781929!5m2!1sfr!2sfr" width="500px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <div class="player-song">

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -46,26 +49,34 @@
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+                  </div>
+                </div>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="vertical-center" href="MonCompte-Client.php">
+                      <img src="./img/icons/left-nav/profile.png" alt="">
+                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                    </a>
+                  </div>
+                </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
             </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
-            </div>
-          </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
@@ -73,7 +84,14 @@
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Compte</h2>
-            <p class="soustitre">Client</h3>
+            <p class="soustitre">Client</p>
+            <?php if($_SESSION["id_client"]!= 0){
+              echo "Nom de l'utilisateur" . " " . $_SESSION['nom'] . "<br>";
+              echo "Prenom de l'utilisateur" . " " . $_SESSION['prenom'] . "<br>";
+              echo "Numéro d'étudiant de l'utilisateur" . " " . $_SESSION['num_etudiant'] . "<br>";
+              echo "Email" . " " . $_SESSION['email'] . "<br>";
+              echo "telephone" . " +33" . $_SESSION['telephone'] . "<br>";
+            } ?>
           </div>
         </div>
       </section>
@@ -82,7 +100,7 @@
         <!-- PLAYER SONG -->
         <div class="player-song">
             <div class="song-txt">
-              <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">37 Quai de Grenelles</a></h4></address>
+              <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">37 Quai de Grenelle</a></h4></address>
               <span><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">75015, Paris, France</a></span>
             </div>
         </div>

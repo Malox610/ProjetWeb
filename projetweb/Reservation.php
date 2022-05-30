@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -46,29 +49,35 @@
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <?php
-          session_start();
-          if($_SESSION["id_client"] != 0){ ?>
-            <div class="navbar-left-user">
-              <div class="user">
-                <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
-              </div>
-            </div>
-            <div class="navbar-left-user">
-              <div class="user">
-                <a class="vertical-center" href="MonCompte-Client.php">
-                  <img src="./img/icons/left-nav/profile.png" alt="">
-                  <h6>Votre compte</h6>
-                </a>
-              </div>
-            </div>
+          <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+                  </div>
+                </div>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <?php if($_SESSION["id_admin"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Admin.php">
+                    <?php } ?>
+                    <?php if($_SESSION["id_coach"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Coach.php">
+                    <?php } ?>
+                    <?php if($_SESSION["id_client"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Client.php">
+                    <?php } ?>
+                      <img src="./img/icons/left-nav/profile.png" alt="">
+                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                    </a>
+                  </div>
+                </div>
           <?php }else{ ?>
             <div class="navbar-left-user">
               <div class="user">
@@ -91,7 +100,7 @@
 
             //connectez-vous dans votre BDD
             //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-            $db_handle = mysqli_connect('localhost', 'root', '' );
+            $db_handle = mysqli_connect('localhost', 'root', 'root' );
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
@@ -167,7 +176,7 @@
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
                                 {  $bout = $date ."/heure1";
-                                  $heure1="<button onclick=\"resa()\">" . "Réserver" . "</button>";
+                                  $heure1="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                 }
                                 if($heure2 == 0)
                                 {
@@ -178,12 +187,12 @@
                                 if($heure3 == 0)
                                 {
                                     $bout = $date ."/heure3";
-                                  $heure3="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                  $heure3="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                 }
                                 if($heure4 == 0)
                                 {
                                     $bout = $date ."/heure4";
-                                  $heure4="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                  $heure4="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                 }
                                 // affichage du jour de la semaine
                                 //afficher le resultat
