@@ -99,7 +99,7 @@
                 <?php if($_SESSION["id_client"] == 0){ ?>
                 <h2 id="surbouton">Vous n'êtes pas connecté</h2>
                 <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
-              <?php }else{ }?>
+              <?php }else{  }?>
               </div>
             </div>
           </div>
