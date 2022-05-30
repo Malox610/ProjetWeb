@@ -108,6 +108,8 @@
        $_idcoach= $_SESSION['id_coach'];
 
       $database = "web";
+      $sport="";
+      $_idsport="";
 
       //connectez-vous dans votre BDD
       //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -116,12 +118,12 @@
       //si le BDD existe, faire le traitements
       if ($db_found) {
          
-          $sql = $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
+          $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
           $result = mysqli_query($db_handle, $sql);
           if($data = mysqli_fetch_assoc($result))
           {
             $nomcoach = $data['nom'];
-            $id_sport = $date['id_sport'];
+            $_idsport = $data['id_sport'];
             $sport = $data['nom_sport'];
             
           }
@@ -152,7 +154,7 @@
                 </div>
                  <div class="LigneForm">
                   <label class="inputform">Sport :  <?php echo $sport;?> </label>
-                  <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($id_sport); ?>" required/>
+                  <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($_idsport); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
