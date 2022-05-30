@@ -55,7 +55,7 @@
           </div>
           <div class="navbar-left-user">
             <div class="user">
-              <a class="vertical-center" href="MonCompte-Client.html">
+              <a class="vertical-center" href="MonCompte-Client.php">
                 <img src="./img/icons/left-nav/profile.png" alt="">
                 <h6>Votre compte</h6>
               </a>
@@ -70,21 +70,47 @@
             <h2 id="new-title">Confirmation</h2>
             <p class="soustitre">Demande bien prise en compte.</p>
         <script type="text/javascript" >
-          const query = window.location.search;
-          <?php
-             $dateheure = "<script>document.write(query)</script>";  
-             list($date, $heure ) = explode('/', $dateheure);
-             echo $date ;
-             echo $heure ;
-             ?>
-
+          var query = window.location.search;
+          query=query.substring(1);
+        
         </script>
+       
+
+
+        
+        <?php 
+        if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+        {
+            $url = "https";
+        }
+        else
+        {
+            $url = "http"; 
+        }  
+        $url .= "://"; 
+        $url .= $_SERVER['HTTP_HOST']; 
+        $url .= $_SERVER['REQUEST_URI']; 
+       // echo $url; 
+          list($url,$dateheure ) = explode("?", $url);
+         // echo $dateheure;
+          list($date, $heure ) = explode("/", $dateheure);
+         // echo $date ; 
+          echo $heure ;
+        ?> 
+        <?php
+            /* $dateheure ="<script>document.write(query)</script>";
+             // "<script>document.write(query)</script>";  
+             echo $dateheure;
+            // list($date, $heure ) = explode("/", $dateheure);
+            // echo $date;
+            */
+             ?>
            
             <form class="formulaire" id="commande" action="ConnexionCoach.php" method="post">
               <fieldset>
                 <div class="LigneForm">
                   <label class="inputform">Heure : </label>
-                  <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure); ?>" required/>
+                 <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($dateheure);?>" required/>
                 </div>
                 <div class="LigneForm">
                   <label class="inputform">Date : </label>

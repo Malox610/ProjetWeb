@@ -73,7 +73,7 @@
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Compte</h2>
-            <h3>administrateur</h3>
+            <p class="soustitre">administrateur</p>
           </div>
         </div>
       </section>
