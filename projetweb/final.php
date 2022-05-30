@@ -7,6 +7,7 @@ if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
     $date = $_POST["date"];
     $heure = $_POST["heure"];
 }
+
 //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
     $db_handle = mysqli_connect('localhost', 'root', '' );
@@ -16,12 +17,12 @@ if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
         $sql = "INSERT INTO `rdv`( `date`, `heure`, `id_coach`, `id_sport`) VALUES ('$date','$heure','$coach','$sport')";
         $result= mysqli_query($db_handle, $sql);
             echo "Inscription réussie";
-            
+            echo $sql;
             echo '<script type ="text/JavaScript">';  
             echo 'alert("Rdv Pris")';  
             echo '</script>';  
 
-             header ('location:index.php');
+            // header ('location:index.php');
         }//end if
     //si le BDD n'existe pas
     else {

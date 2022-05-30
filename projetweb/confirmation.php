@@ -121,6 +121,7 @@
           if($data = mysqli_fetch_assoc($result))
           {
             $nomcoach = $data['nom'];
+            $id_sport = $date['id_sport'];
             $sport = $data['nom_sport'];
             
           }
@@ -147,11 +148,11 @@
 
                 <div class="LigneForm">
                   <label class="inputform">Coach :  <?php echo $nomcoach;?> </label>
-                  <input id=searchbar2 type="hidden" name="coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
+                  <input id=searchbar2 type="hidden" name="coach" placeholder="" value="<?php echo htmlspecialchars($_idcoach); ?>" required/>
                 </div>
                  <div class="LigneForm">
                   <label class="inputform">Sport :  <?php echo $sport;?> </label>
-                  <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
+                  <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($id_sport); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
