@@ -125,7 +125,7 @@ session_start();
                   <?php
                   while ($data = mysqli_fetch_assoc($result)){
                     echo "Salle:" . $data['num_salle']. "<br>";
-                    echo "Téléphone:" . $data['telephone'] ."<br>";
+                    echo "Téléphone: +33" . $data['telephone'] ."<br>";
                     echo "Email:" . $data['email'] . "<br>";
                    }
                    echo "Sports dans cette salle: <br>";
@@ -144,7 +144,7 @@ session_start();
                   <?php
                   while ($data = mysqli_fetch_assoc($result2)){
                     echo "Salle:" . $data['num_salle']. "<br>";
-                    echo "Téléphone:" . $data['telephone'] ."<br>";
+                    echo "Téléphone: +33" . $data['telephone'] ."<br>";
                     echo "Email:" . $data['email'] . "<br>";
                    }
                    echo "Sports dans cette salle: <br>";
