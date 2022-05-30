@@ -65,7 +65,7 @@
               <a class="vertical-center" href="MonCompte-Client.php">
               <?php } ?>
                 <img src="./img/icons/left-nav/profile.png" alt="">
-                <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                <h6>Votre compte</h6>
               </a>
             </div>
           </div>
@@ -77,7 +77,12 @@
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Confirmation</h2>
             <p class="soustitre">Demande bien prise en compte.</p>
+<<<<<<< HEAD
         <?php
+=======
+      
+        <?php 
+>>>>>>> 07c3b21c21ab4b5c283cd2531d0be43407b87bb6
         session_start();
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         {
@@ -85,22 +90,40 @@
         }
         else
         {
-            $url = "http";
-        }
-        $url .= "://";
-        $url .= $_SERVER['HTTP_HOST'];
-        $url .= $_SERVER['REQUEST_URI'];
-       // echo $url;
+            $url = "http"; 
+        }  
+        $url .= "://"; 
+        $url .= $_SERVER['HTTP_HOST']; 
+        $url .= $_SERVER['REQUEST_URI']; 
+       // echo $url; 
           list($url,$dateheure ) = explode("?", $url);
          // echo $dateheure;
           list($date, $heure ) = explode("/", $dateheure);
-         // echo $date ;
-       //
+         // echo $date ; 
+       if($heure=="heure1")
+       {
+        $heure = "08:00:00";
+       }
+       if($heure=="heure2")
+       {
+        $heure = "10:00:00";
+       }
+       if($heure=="heure3")
+       {
+        $heure = "14:00:00";
+       }
+       if($heure=="heure4")
+       {
+        $heure = "16:00:00";
+       }
+       
        $_idcoach= $_SESSION['id_coach'];
+      
 
       $database = "web";
       $sport="";
       $_idsport="";
+
 
       //connectez-vous dans votre BDD
       //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -109,19 +132,22 @@
       //si le BDD existe, faire le traitements
       if ($db_found) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
           $sql = $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
 =======
 
+=======
+         
+>>>>>>> 07c3b21c21ab4b5c283cd2531d0be43407b87bb6
           $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
->>>>>>> 369ec631acd703c4e5e25b08db27016dc79a53d6
           $result = mysqli_query($db_handle, $sql);
           if($data = mysqli_fetch_assoc($result))
           {
             $nomcoach = $data['nom'];
             $_idsport = $data['id_sport'];
             $sport = $data['nom_sport'];
-
+            
           }
           }//end if
       //si le BDD n'existe pas
@@ -130,55 +156,35 @@
           }//end else
       //fermer la connection
       mysqli_close($db_handle);
-        ?>
-
-
-            <form class="formulaire" id="commande" action="ConnexionCoach.php" method="post">
+        ?> 
+       
+           
+            <form class="formulaire" id="commande" action="final.php" method="post">
               <fieldset>
                 <div class="LigneForm">
-                  <label class="inputform">Heure : </label>
-                 <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure);?>" required/>
+                  <label class="inputform">Heure :  <?php echo $heure;?></label>
+                 <input id=searchbar2 type="hidden" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure);?>" required/>
                 </div>
                 <div class="LigneForm">
-                  <label class="inputform">Date : </label>
-                  <input id=searchbar2 type="texte" name="date" placeholder="" value="<?php echo htmlspecialchars($date); ?>" required/>
+                  <label class="inputform">Date :  <?php echo $date;?> </label>
+                  <input id=searchbar2 type="hidden" name="date" placeholder="" value="<?php echo htmlspecialchars($date); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
-<<<<<<< HEAD
-                  <label class="inputform">Coach : </label>
-                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
-                </div>
-                 <div class="LigneForm">
-                  <label class="inputform">Sport : </label>
-                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
-=======
                   <label class="inputform">Coach :  <?php echo $nomcoach;?> </label>
                   <input id=searchbar2 type="hidden" name="coach" placeholder="" value="<?php echo htmlspecialchars($_idcoach); ?>" required/>
                 </div>
                  <div class="LigneForm">
                   <label class="inputform">Sport :  <?php echo $sport;?> </label>
                   <input id=searchbar2 type="hidden" name="sport" placeholder="" value="<?php echo htmlspecialchars($_idsport); ?>" required/>
->>>>>>> 369ec631acd703c4e5e25b08db27016dc79a53d6
                 </div>
 
                 <div class="LigneForm">
-                  <input class="submit" id="connecter" type="submit" name="envoi" value="Se connecter"/>
+                  <input class="submit" id="connecter" type="submit" name="envoi" value="Confirmer"/>
                 </div>
               </fieldset>
             </form>
 
-            <div class="LigneForm">
-                <label class="inputform">Heure</label>
-                <label class="inputform">Jour</label>
-            </div>
-            <div class="LigneForm">
-                <label class="inputform">Coach</label>
-                <label class="inputform">Spécialité</label>
-            </div>
-            <div class="LigneForm">
-              <input class="submit" id="payer" type="submit" name="envoi" value="Confirmer"/>
-            </div>
           </div>
         </div>
       </section>
