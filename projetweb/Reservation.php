@@ -166,7 +166,6 @@ session_start();
                                     $heure3=1;
                                     $heure4=1;
                                 }
-
                       }
                                 $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
                                 // extraction des jour, mois, an de la date
@@ -174,26 +173,88 @@ session_start();
                                 // calcul du timestamp
 
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
-                                if($heure1 == 0)
-                                {  $bout = $date ."/heure1";
-                                  $heure1="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
-                                }
-                                if($heure2 == 0)
-                                {
-                                    $bout = $date ."/heure2";
-                                    $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
-                                 // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
-                                }
-                                if($heure3 == 0)
-                                {
-                                    $bout = $date ."/heure3";
-                                  $heure3="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
-                                }
-                                if($heure4 == 0)
-                                {
-                                    $bout = $date ."/heure4";
-                                  $heure4="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
-                                }
+                               
+                                if((isset($_SESSION["id_client"])))
+                                {   $id_client=$_SESSION["id_client"];
+                                  $sql3 = "SELECT * FROM client WHERE id_client LIKE '$id_client'";
+                                  $result3 = mysqli_query($db_handle, $sql3);
+                                 
+                                    while ($data3 = mysqli_fetch_assoc($result3)){
+                                      $idpayment= $data3['id_paiement'];
+                                     
+                                    }
+                                   if(isset($idpayment))
+                                   {
+                                    
+                                    if($heure1 == 0)
+                                    {  $bout = $date ."/heure1";
+                                      $heure1="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure2 == 0)
+                                    {
+                                        $bout = $date ."/heure2";
+                                        $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure3 == 0)
+                                    {
+                                        $bout = $date ."/heure3";
+                                      $heure3="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure4 == 0)
+                                    {
+                                        $bout = $date ."/heure4";
+                                      $heure4="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                   }else{
+                                    
+                                    if($heure1 == 0)
+                                    {  $bout = $date ."/heure1";
+                                      $heure1="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure2 == 0)
+                                    {
+                                        $bout = $date ."/heure2";
+                                        $heure2="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                     // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
+                                    }
+                                    if($heure3 == 0)
+                                    {
+                                        $bout = $date ."/heure3";
+                                      $heure3="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure4 == 0)
+                                    {
+                                        $bout = $date ."/heure4";
+                                      $heure4="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+          
+          
+                                  }
+          
+                                  }else
+                                  {
+                                   
+                                    if($heure1 == 0)
+                                    {  $bout = $date ."/heure1";
+                                      $heure1="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure2 == 0)
+                                    {
+                                        $bout = $date ."/heure2";
+                                        $heure2="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                     // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
+                                    }
+                                    if($heure3 == 0)
+                                    {
+                                        $bout = $date ."/heure3";
+                                      $heure3="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                    if($heure4 == 0)
+                                    {
+                                        $bout = $date ."/heure4";
+                                      $heure4="<button onclick=\"window.location.href = 'Paiement1.php?${bout}'\">". "Réserver" . "</button>";
+                                    }
+                                  }
                                 // affichage du jour de la semaine
                                 //afficher le resultat
                                     echo "<tr>";

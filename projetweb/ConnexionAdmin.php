@@ -22,7 +22,7 @@
                         $_SESSION["id_admin"] =$data['id_admin'];
                         $_SESSION["role"] ="administrateur";
                         $_SESSION["prenom"] =$data['prenom'];
-                        $_SESSION["nom"] =$data['nom'];
+                        $_SESSION['nom'] =$data['nom'];
                         $_SESSION["email"] =$data['email'];
                         header('Location:MonCompte-Admin.php'); // connexion reussi chargement de la page suivante
                     }
