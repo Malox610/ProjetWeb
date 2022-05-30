@@ -91,7 +91,7 @@
 
             //connectez-vous dans votre BDD
             //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-            $db_handle = mysqli_connect('localhost', 'root', '' );
+            $db_handle = mysqli_connect('localhost', 'root', 'root' );
             $db_found = mysqli_select_db($db_handle, $database);
             //si le BDD existe, faire le traitement
             if ($db_found) {
@@ -172,8 +172,7 @@
                                 if($heure2 == 0)
                                 {
                                     $bout = $date ."/heure2";
-                                    
-                                 $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
+                                    $heure2="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                  // $heure2="<button id=.$bout. onclick=\"window.location.href = 'Paiement.php'\">" . "Réserver" . "</button>";
                                 }
                                 if($heure3 == 0)
