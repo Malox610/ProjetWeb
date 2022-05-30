@@ -65,7 +65,15 @@ session_start();
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
+                    <?php if($_SESSION['role'] ='administrateur'){ ?>
                     <a class="vertical-center" href="MonCompte-Admin.php">
+                    <?php } ?>
+                    <?php if($_SESSION['role'] ='coach'){ ?>
+                    <a class="vertical-center" href="MonCompte-Coach.php">
+                    <?php } ?>
+                    <?php if($_SESSION['role'] ='client'){ ?>
+                    <a class="vertical-center" href="MonCompte-Client.php">
+                    <?php } ?>
                       <img src="./img/icons/left-nav/profile.png" alt="">
                       <h6>Votre compte</h6>
                     </a>

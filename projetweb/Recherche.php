@@ -52,22 +52,20 @@
                 </a>
               </li>
             </ul>
-
-
-            <?php if(isset($_SESSION['id_client'])){ ?>
-              <div class="navbar-left-user">
-                <div class="user">
-                  <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
-                </div>
-              </div>
-              <div class="navbar-left-user">
-                <div class="user">
-                  <a class="vertical-center" href="MonCompte-Client.php">
-                    <img src="./img/icons/left-nav/profile.png" alt="">
-                    <h6>Votre compte</h6>
-                  </a>
-                </div>
-              </div>
+            <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+                  <div class="navbar-left-user">
+                    <div class="user">
+                      <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+                    </div>
+                  </div>
+                  <div class="navbar-left-user">
+                    <div class="user">
+                      <a class="vertical-center" href="MonCompte-Admin.php">
+                        <img src="./img/icons/left-nav/profile.png" alt="">
+                        <h6>Votre compte</h6>
+                      </a>
+                    </div>
+                  </div>
             <?php }else{ ?>
               <div class="navbar-left-user">
                 <div class="user">
@@ -110,7 +108,6 @@
                       case 1:
                       $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE nom LIKE '%$_recherche%'";
                       $result = mysqli_query($db_handle, $sql);
-
                         echo "<table border=0 class=\"tableau_resultat\">";
                           echo "<thead class=\"head_resultat\">";
                             echo "<tr class=\"ligne_head\">";
@@ -126,10 +123,7 @@
 
                         //afficher le resultat
                         while ($data = mysqli_fetch_assoc($result)) {
-
-
                             $_SESSION['id_coach']=$data['id_coach'];
-
                           echo"<tbody class=\"list-body\">";
                             echo "<tr class=\"ligne_body\">";
                               echo "<td>" . $data['nom'] . "</td>";

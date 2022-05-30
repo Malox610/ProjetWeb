@@ -16,7 +16,6 @@
         $codepostal = $_POST["codepostal"];
         $pays = $_POST["pays"];
         $password = $_POST["mdp"];
-
     }
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)

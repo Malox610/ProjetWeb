@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -53,19 +56,27 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+          <?php if($_SESSION["id_admin"] != 0){ ?>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+                  </div>
+                </div>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="vertical-center" href="MonCompte-Admin.php">
+                      <img src="./img/icons/left-nav/profile.png" alt="">
+                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                    </a>
+                  </div>
+                </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
             </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
-            </div>
-          </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">

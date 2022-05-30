@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -53,19 +56,27 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+          <?php if($_SESSION["id_client"] != 0){ ?>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+                  </div>
+                </div>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="vertical-center" href="MonCompte-Admin.php">
+                      <img src="./img/icons/left-nav/profile.png" alt="">
+                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                    </a>
+                  </div>
+                </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
             </div>
-          </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <a class="vertical-center">
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
-            </div>
-          </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
@@ -73,7 +84,14 @@
           <div class="scrollable-content">
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Compte</h2>
-            <p class="soustitre">Client</h3>
+            <p class="soustitre">Client</p>
+            <?php if($_SESSION["id_client"]!= 0){
+              echo "Nom de l'utilisateur" . " " . $_SESSION['nom'] . "<br>";
+              echo "Prenom de l'utilisateur" . " " . $_SESSION['prenom'] . "<br>";
+              echo "Numéro d'étudiant de l'utilisateur" . " " . $_SESSION['num_etudiant'] . "<br>";
+              echo "Email" . " " . $_SESSION['email'] . "<br>";
+              echo "telephone associé" . " +33" . $_SESSION['telephone'] . "<br>";
+            } ?>
           </div>
         </div>
       </section>
