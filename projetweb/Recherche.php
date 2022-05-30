@@ -62,7 +62,7 @@
                     <div class="user">
                       <a class="vertical-center" href="MonCompte-Admin.php">
                         <img src="./img/icons/left-nav/profile.png" alt="">
-                        <h6>Votre compte</h6>
+                        <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
                       </a>
                     </div>
                   </div>

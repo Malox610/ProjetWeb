@@ -85,6 +85,11 @@ session_start();
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Compte</h2>
             <p class="soustitre">administrateur</p>
+            <?php if($_SESSION["id_admin"]!= 0){
+              echo "Nom de l'admin" . " " . $_SESSION['nom'] . "<br>";
+              echo "Prenom de l'admin" . " " . $_SESSION['prenom'] . "<br>";
+              echo "Email" . " " . $_SESSION['email'] . "<br>";
+            } ?>
           </div>
         </div>
       </section>
