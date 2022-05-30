@@ -106,10 +106,12 @@
        }
        
        $_idcoach= $_SESSION['id_coach'];
+      
 
       $database = "web";
       $sport="";
       $_idsport="";
+
 
       //connectez-vous dans votre BDD
       //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
@@ -163,10 +165,6 @@
               </fieldset>
             </form>
 
-          
-            <div class="LigneForm">
-              <input class="submit" id="payer" type="submit" name="envoi" value="Conr"/>
-            </div>
           </div>
         </div>
       </section>
