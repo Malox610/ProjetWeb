@@ -103,7 +103,7 @@ session_start();
                     <p class="text__background">FOOT</p>
                   </div>
                   <div class="flex__item flex__item--right"></div>
-                  <img class="pokemon__img" src="./img/albums/football.png"/>
+                  <img class="pokemon__img" src="./img/albums/footballcarousel.png"/>
                 </div>
                 <div class="flex__container flex--piplup animate--start" data-slide="2">
                   <div class="flex__item flex__item--left">
@@ -115,7 +115,7 @@ session_start();
                     <p class="text__background">FIVE</p>
                   </div>
                   <div class="flex__item flex__item--right"></div>
-                  <img class="pokemon__img" src="./img/albums/football.png" />
+                  <img class="pokemon__img" src="./img/albums/five.png" />
                 </div>
                 <div class="flex__container flex--blaziken animate--start" data-slide="3">
                   <div class="flex__item flex__item--left">
@@ -127,7 +127,7 @@ session_start();
                     <p class="text__background">POTTER</p>
                   </div>
                   <div class="flex__item flex__item--right"></div>
-                  <img class="pokemon__img" src="./img/albums/quidditch.png" />
+                  <img class="pokemon__img" src="./img/albums/quidditchcarousel.png" />
                 </div>
                 <div class="flex__container flex--dialga animate--start" data-slide="4">
                   <div class="flex__item flex__item--left">
@@ -139,7 +139,7 @@ session_start();
                     <p class="text__background">PingPong</p>
                   </div>
                   <div class="flex__item flex__item--right"></div>
-                  <img class="pokemon__img" src="./img/albums/pingpong.png" />
+                  <img class="pokemon__img" src="./img/albums/pingpongcarousel.png" />
                 </div>
                 <div class="flex__container flex--zekrom animate--start" data-slide="5">
                   <div class="flex__item flex__item--left">
@@ -151,7 +151,7 @@ session_start();
                     <p class="text__background">LASER</p>
                   </div>
                   <div class="flex__item flex__item--right"></div>
-                  <img class="pokemon__img" src="./img/albums/sabrelaser.png" />
+                  <img class="pokemon__img" src="./img/albums/sabrelasercarousel.png" />
                 </div>
 
               <div class="slider__navi">
@@ -300,7 +300,7 @@ session_start();
         <div class="song-txt">
           <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">37 Quai de Grenelle</a></h4></address>
           <span><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">75015, Paris, France</a></span>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337709887617!2d2.284293215569461!3d48.85177030912713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653928781929!5m2!1sfr!2sfr" width="500px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337709887617!2d2.284293215569461!3d48.85177030912713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653928781929!5m2!1sfr!2sfr" width="250px" height="250px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <div class="player-song">
