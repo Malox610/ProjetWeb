@@ -69,16 +69,9 @@
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Confirmation</h2>
             <p class="soustitre">Demande bien prise en compte.</p>
-        <script type="text/javascript" >
-          var query = window.location.search;
-          query=query.substring(1);
-        
-        </script>
-       
-
-
-        
+      
         <?php 
+        session_start();
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
         {
             $url = "https";
@@ -95,35 +88,54 @@
          // echo $dateheure;
           list($date, $heure ) = explode("/", $dateheure);
          // echo $date ; 
-          echo $heure ;
+       //
+       $_idcoach= $_SESSION['id_coach'];
+
+      $database = "web";
+
+      //connectez-vous dans votre BDD
+      //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
+      $db_handle = mysqli_connect('localhost', 'root', '' );
+      $db_found = mysqli_select_db($db_handle, $database);
+      //si le BDD existe, faire le traitements
+      if ($db_found) {
+         
+          $sql = $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
+          $result = mysqli_query($db_handle, $sql);
+          if($data = mysqli_fetch_assoc($result))
+          {
+            $nomcoach = $data['nom'];
+            $sport = $data['nom_sport'];
+            
+          }
+          }//end if
+      //si le BDD n'existe pas
+          else {
+          echo "Database not found";
+          }//end else
+      //fermer la connection
+      mysqli_close($db_handle);
         ?> 
-        <?php
-            /* $dateheure ="<script>document.write(query)</script>";
-             // "<script>document.write(query)</script>";  
-             echo $dateheure;
-            // list($date, $heure ) = explode("/", $dateheure);
-            // echo $date;
-            */
-             ?>
+       
            
             <form class="formulaire" id="commande" action="ConnexionCoach.php" method="post">
               <fieldset>
                 <div class="LigneForm">
                   <label class="inputform">Heure : </label>
-                 <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($dateheure);?>" required/>
+                 <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure);?>" required/>
                 </div>
                 <div class="LigneForm">
                   <label class="inputform">Date : </label>
-                  <input id=searchbar2 type="texte" name="date" placeholder="" value="<?php $date ?>" required/>
+                  <input id=searchbar2 type="texte" name="date" placeholder="" value="<?php echo htmlspecialchars($date); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
                   <label class="inputform">Coach : </label>
-                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php $bla ?>" required/>
+                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
                 </div>
                  <div class="LigneForm">
-                  <label class="inputform">Coach : </label>
-                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="" required/>
+                  <label class="inputform">Sport : </label>
+                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
