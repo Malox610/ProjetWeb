@@ -30,7 +30,7 @@ session_start();
               <img class="navbar-logo mobile" src="./img/icons/logo-small-white.svg" alt="">
             </a>
             <ul class="v-list nav">
-              <li class="active">
+              <li>
                 <a href="index.php">
                   <img src="./img/icons/left-nav/home.svg" alt="">
                   <span>Accueil</span>
@@ -85,10 +85,10 @@ session_start();
             <!-- mettre le contenu de la page ici -->
             <h2 id="new-title">Compte</h2>
             <p class="soustitre">Coach</p>
-            <?php if($_SESSION["id_client"]!= 0){
+            <?php if($_SESSION["id_coach"]!= 0){
               echo "Nom de l'utilisateur" . " " . $_SESSION['nom'] . "<br>";
               echo "Prenom de l'utilisateur" . " " . $_SESSION['prenom'] . "<br>";
-              echo "Bureau" . " " . $_SESSION['Bureau'] . "<br>";
+              echo "Bureau" . " " . $_SESSION['bureau'] . "<br>";
               echo "Email" . " " . $_SESSION['email'] . "<br>";
               echo "telephone associé" . " +33" . $_SESSION['telephone'] . "<br>";
               echo "Sport" . $_SESSION['id_sport'] . "<br>";

@@ -53,22 +53,35 @@
               </li>
             </ul>
           </div>
-          <div class="navbar-left-user">
-            <div class="user">
-              <?php if($_SESSION['role'] ='administrateur'){ ?>
-              <a class="vertical-center" href="MonCompte-Admin.php">
-              <?php } ?>
-              <?php if($_SESSION['role'] ='coach'){ ?>
-              <a class="vertical-center" href="MonCompte-Coach.php">
-              <?php } ?>
-              <?php if($_SESSION['role'] ='client'){ ?>
-              <a class="vertical-center" href="MonCompte-Client.php">
-              <?php } ?>
-                <img src="./img/icons/left-nav/profile.png" alt="">
-                <h6>Votre compte</h6>
-              </a>
+          <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
+                  </div>
+                </div>
+                <div class="navbar-left-user">
+                  <div class="user">
+                    <?php if($_SESSION["id_admin"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Admin.php">
+                    <?php } ?>
+                    <?php if($_SESSION["id_coach"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Coach.php">
+                    <?php } ?>
+                    <?php if($_SESSION["id_client"] != 0){ ?>
+                    <a class="vertical-center" href="MonCompte-Client.php">
+                    <?php } ?>
+                      <img src="./img/icons/left-nav/profile.png" alt="">
+                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                    </a>
+                  </div>
+                </div>
+          <?php }else{ ?>
+            <div class="navbar-left-user">
+              <div class="user">
+                <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
+              </div>
             </div>
-          </div>
+          <?php } ?>
         </aside>
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
@@ -123,7 +136,7 @@
 
       //connectez-vous dans votre BDD
       //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-      $db_handle = mysqli_connect('localhost', 'root', '' );
+      $db_handle = mysqli_connect('localhost', 'root', 'root' );
       $db_found = mysqli_select_db($db_handle, $database);
       //si le BDD existe, faire le traitements
       if ($db_found) {

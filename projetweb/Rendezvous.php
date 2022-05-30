@@ -64,13 +64,13 @@ session_start();
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
-                    <?php if($_SESSION['role'] ='administrateur'){ ?>
+                    <?php if($_SESSION["id_admin"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Admin.php">
                     <?php } ?>
-                    <?php if($_SESSION['role'] ='coach'){ ?>
+                    <?php if($_SESSION["id_coach"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Coach.php">
                     <?php } ?>
-                    <?php if($_SESSION['role'] ='client'){ ?>
+                    <?php if($_SESSION["id_client"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Client.php">
                     <?php } ?>
                       <img src="./img/icons/left-nav/profile.png" alt="">
@@ -107,9 +107,13 @@ session_start();
               </table>
               <div class="soustableau">
                 <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+
+<!-- insérer les rendez-vous clients -->
+
+              <?php }else{ ?>
                 <h2 id="surbouton">Vous n'êtes pas connecté</h2>
                 <a class="submit" id="seconnecter" href="Login-Client.html">Se connecter</a>
-              <?php }else{  }?>
+              <?php } ?>
               </div>
             </div>
           </div>

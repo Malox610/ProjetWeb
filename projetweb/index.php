@@ -65,13 +65,13 @@ session_start();
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
-                    <?php if($_SESSION['role'] ='administrateur'){ ?>
+                    <?php if($_SESSION["id_admin"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Admin.php">
                     <?php } ?>
-                    <?php if($_SESSION['role'] ='coach'){ ?>
+                    <?php if($_SESSION["id_coach"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Coach.php">
                     <?php } ?>
-                    <?php if($_SESSION['role'] ='client'){ ?>
+                    <?php if($_SESSION["id_client"] != 0){ ?>
                     <a class="vertical-center" href="MonCompte-Client.php">
                     <?php } ?>
                       <img src="./img/icons/left-nav/profile.png" alt="">
@@ -300,6 +300,7 @@ session_start();
         <div class="song-txt">
           <address><h4><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">37 Quai de Grenelle</a></h4></address>
           <span><a href="https://www.google.com/maps/place/ECE+Paris+Lyon/@48.8517703,2.2842932,17z/data=!3m1!4b1!4m5!3m4!1s0x47e6701b4f58251b:0x167f5a60fb94aa76!8m2!3d48.8517668!4d2.2864819" target="_blank">75015, Paris, France</a></span>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.337709887617!2d2.284293215569461!3d48.85177030912713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6701b4f58251b%3A0x167f5a60fb94aa76!2sECE%20Paris%20Lyon!5e0!3m2!1sfr!2sfr!4v1653928781929!5m2!1sfr!2sfr" width="500px" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
     <div class="player-song">
