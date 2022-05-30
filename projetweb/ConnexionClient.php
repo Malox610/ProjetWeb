@@ -21,6 +21,9 @@
                         session_start();
                         $_SESSION["id_client"] =$data['id_client'];
                         $_SESSION['role'] ="client";
+                        $_SESSION["prenom"] =$data['prenom'];
+                        $_SESSION["nom"] =$data['nom'];
+                        $_SESSION["email"] =$data['email'];
                         header('Location:index.php'); // connexion reussi chargement de la page suivante
                     }
                     else
