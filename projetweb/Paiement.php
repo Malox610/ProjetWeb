@@ -1,14 +1,11 @@
 <?php
 session_start();
 
-
-
 if(isset($_SESSION['id_client']))
 {
-  
 //identifier le nom de base de données
     $database = "web";
-   
+
     if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
         $type = $_POST["paiement"];
         $numero = $_POST["num"];
@@ -23,7 +20,7 @@ if(isset($_SESSION['id_client']))
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitements
     if ($db_found) {
-        $id_client = $_SESSION['id_client']; 
+        $id_client = $_SESSION['id_client'];
         $sql1 = "SELECT * FROM client WHERE id_client LIKE  $id_client "; // $id_paiement de la session...
         $result1 = mysqli_query($db_handle, $sql1);
         if($data1 = mysqli_fetch_assoc($result1))
@@ -43,7 +40,7 @@ if(isset($_SESSION['id_client']))
                 echo "Paiement réussi";
             }else{
                 echo "Paiement échoué";
-                header("Refresh: 1;URL=Paiement.html");
+                header("Refresh: 1;URL=Paiement.php");
             }
         }
         }//end if
@@ -53,9 +50,9 @@ if(isset($_SESSION['id_client']))
         }//end else
     //fermer la connection
     mysqli_close($db_handle);
-}else 
+}else
 {
-  
+
    header("Refresh: 1;URL=Login-Client.html");
 
 }
