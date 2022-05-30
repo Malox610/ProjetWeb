@@ -118,7 +118,7 @@ session_start();
           <div class="scrollable-content">
             <h2> Les salles </h2>
             <div class="Profil">
-              <img src="./img/albums/ron.png" alt="" />
+              <img src="./img/albums/lassalle.png" alt="" />
               <div class="Info">
                 <h2> Salle de sport OMNES</h2>
                   <br>
@@ -137,7 +137,7 @@ session_start();
               </div>
             </div>
             <div class="Profil">
-              <img src="./img/albums/ron.png" alt="" />
+              <img src="./img/albums/lassalle.png" alt="" />
               <div class="Info">
                 <h2> Salle de sport OMNES</h2>
                   <br>
