@@ -3,8 +3,7 @@ session_start();
 
           //identifier le nom de base de données
               $database = "web";
-              $login = "" ;// recuperation du string mis dans le login
-              $mdp ="" ; // recuperation du string mis dans le mdp
+             
               //connectez-vous dans votre BDD
               //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
               $db_handle = mysqli_connect('localhost', 'root', '' );
@@ -23,7 +22,7 @@ session_start();
           
           list($url,$Idcoach ) = explode("?", $url);
           $idsport = "";
-          
+         
               if ($db_found) {
                 
                 $sql = "SELECT * FROM coach NATURAL JOIN `sport` WHERE id_coach LIKE '$Idcoach'";
@@ -36,14 +35,9 @@ session_start();
                 $sql = "SELECT * FROM coach NATURAL JOIN `sport` WHERE id_coach LIKE '$Idcoach'";
                 $result = mysqli_query($db_handle,$sql);
                 
-                $sql = "SELECT * FROM sport NATURAL JOIN `salle` WHERE id_sport LIKE '$idsport' ";
-                $result1 = mysqli_query($db_handle,$sql);
-                $sql3 = "SELECT * FROM dispo NATURAL JOIN coach WHERE id_coach LIKE '$Idcoach'";
-            $result3 = mysqli_query($db_handle, $sql3);
-
-            $sql4 = "SELECT heure FROM rdv WHERE id_coach LIKE '$Idcoach ' AND date like '$date' ";
-                $result4 = mysqli_query($db_handle, $sql4);
-       
+                $sql1 = "SELECT * FROM sport NATURAL JOIN `salle` WHERE id_sport LIKE '$idsport' ";
+                $result1 = mysqli_query($db_handle,$sql1);
+              
               }
 
               else {
@@ -166,10 +160,13 @@ session_start();
              
             </div>
             <?php 
-            
-                
-
-            
+            $db_handle = mysqli_connect('localhost', 'root', '' );
+            $db_found = mysqli_select_db($db_handle, $database);
+            if ($db_found) {  
+              
+              $sql3 = "SELECT * FROM dispo NATURAL JOIN coach WHERE id_coach LIKE '$Idcoach'";
+              $result3 = mysqli_query($db_handle, $sql3);
+           
             echo "<table border=0 class=\"tableau_resultat\">";
               echo "<thead class=\"head_resultat\">";
                 echo "<tr class=\"ligne_head\">";
@@ -181,25 +178,27 @@ session_start();
                 echo "</tr>";
               echo "</thead>";
 
-            while ($data = mysqli_fetch_assoc($result3)) {
+            while ($data3 = mysqli_fetch_assoc($result3)) {
                 $heure1=0;
                 $heure2=0;
                 $heure3=0;
                 $heure4=0;
-                $date = $data['jour'];
-
-                
-                    while($data1 = mysqli_fetch_assoc($result4))
+                $date = $data3['jour'];
+               // echo $date;
+                $sql4 = "SELECT heure FROM rdv WHERE id_coach LIKE '$Idcoach' AND date like '$date' ";
+                $result4 = mysqli_query($db_handle, $sql4);
+               
+                    while($data4 = mysqli_fetch_assoc($result4))
                     {
-
-                        if($data['matin']=="1")
+                     
+                        if($data3['matin']=="1")
                         { //il est present
-                                if($data1['heure']=='08:00:00')
+                                if($data4['heure']=='08:00:00')
                                 {
                                     //ducoup il est pas dispo
                                     $heure1=1;
                                 }
-                                if($data1['heure']=='10:00:00')
+                                if($data4['heure']=='10:00:00')
                                 {// ducoup il est pas dispo
                                     $heure2=1;
                                 }
@@ -209,15 +208,15 @@ session_start();
                                     $heure2=1;
                                 }
 
-                        if($data['aprem']==1)
+                        if($data3['aprem']==1)
                         { //il est present
 
-                                if($data1['heure']=='14:00:00')
+                                if($data4['heure']=='14:00:00')
                                 {
                                     //ducoup il est pas dispo
                                     $heure3=1;
                                 }
-                                if($data1['heure']=='16:00:00')
+                                if($data4['heure']=='16:00:00')
                                 {
                                         //ducoup il est pas dispo
                                     $heure4=1;
@@ -228,7 +227,7 @@ session_start();
                                     $heure4=1;
                                 }
 
-                      }
+                             }
                                 $joursem = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
                                 // extraction des jour, mois, an de la date
                                 list($annee, $mois,$jour ) = explode('-', $date);
@@ -266,9 +265,11 @@ session_start();
                                     echo "</tr>";
                           }
                           echo "</table>";
-                      //end if
+                         }else{
+                           echo "database not found";
+                         } //end if
                   //si le BDD n'existe pas
-                  
+                  mysqli_close($db_handle);
 
                   
             ?>
