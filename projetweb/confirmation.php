@@ -80,8 +80,8 @@
 <<<<<<< HEAD
         <?php
 =======
-      
-        <?php 
+
+        <?php
 >>>>>>> 07c3b21c21ab4b5c283cd2531d0be43407b87bb6
         session_start();
         if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
@@ -90,16 +90,16 @@
         }
         else
         {
-            $url = "http"; 
-        }  
-        $url .= "://"; 
-        $url .= $_SERVER['HTTP_HOST']; 
-        $url .= $_SERVER['REQUEST_URI']; 
-       // echo $url; 
+            $url = "http";
+        }
+        $url .= "://";
+        $url .= $_SERVER['HTTP_HOST'];
+        $url .= $_SERVER['REQUEST_URI'];
+       // echo $url;
           list($url,$dateheure ) = explode("?", $url);
          // echo $dateheure;
           list($date, $heure ) = explode("/", $dateheure);
-         // echo $date ; 
+         // echo $date ;
        if($heure=="heure1")
        {
         $heure = "08:00:00";
@@ -116,9 +116,9 @@
        {
         $heure = "16:00:00";
        }
-       
+
        $_idcoach= $_SESSION['id_coach'];
-      
+
 
       $database = "web";
       $sport="";
@@ -131,15 +131,7 @@
       $db_found = mysqli_select_db($db_handle, $database);
       //si le BDD existe, faire le traitements
       if ($db_found) {
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-          $sql = $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
-=======
-
-=======
-         
->>>>>>> 07c3b21c21ab4b5c283cd2531d0be43407b87bb6
           $sql = "SELECT * FROM coach NATURAL JOIN sport WHERE id_coach LIKE '$_idcoach'";
           $result = mysqli_query($db_handle, $sql);
           if($data = mysqli_fetch_assoc($result))
@@ -147,7 +139,6 @@
             $nomcoach = $data['nom'];
             $_idsport = $data['id_sport'];
             $sport = $data['nom_sport'];
-            
           }
           }//end if
       //si le BDD n'existe pas
@@ -156,9 +147,7 @@
           }//end else
       //fermer la connection
       mysqli_close($db_handle);
-        ?> 
-       
-           
+        ?>
             <form class="formulaire" id="commande" action="final.php" method="post">
               <fieldset>
                 <div class="LigneForm">
