@@ -52,7 +52,7 @@
                 </a>
               </li>
             </ul>
-            <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+            <?php if((isset($_SESSION["id_client"]))||(isset($_SESSION["id_coach"] ))||(isset($_SESSION["id_admin"] ))){ ?>
                   <div class="navbar-left-user">
                     <div class="user">
                       <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
@@ -60,13 +60,13 @@
                   </div>
                   <div class="navbar-left-user">
                     <div class="user">
-                      <?php if($_SESSION["id_admin"] != 0){ ?>
+                      <?php if((isset($_SESSION["id_admin"] ))){ ?>
                       <a class="vertical-center" href="MonCompte-Admin.php">
                       <?php } ?>
-                      <?php if($_SESSION["id_coach"] != 0){ ?>
+                      <?php if((isset($_SESSION["id_coach"] ))){ ?>
                       <a class="vertical-center" href="MonCompte-Coach.php">
                       <?php } ?>
-                      <?php if($_SESSION["id_client"] != 0){ ?>
+                      <?php if((isset($_SESSION["id_client"]))){ ?>
                       <a class="vertical-center" href="MonCompte-Client.php">
                       <?php } ?>
                         <img src="./img/icons/left-nav/profile.png" alt="">
