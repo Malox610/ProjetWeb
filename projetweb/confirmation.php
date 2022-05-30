@@ -88,7 +88,23 @@
          // echo $dateheure;
           list($date, $heure ) = explode("/", $dateheure);
          // echo $date ; 
-       //
+       if($heure=="heure1")
+       {
+        $heure = "08:00:00";
+       }
+       if($heure=="heure2")
+       {
+        $heure = "10:00:00";
+       }
+       if($heure=="heure3")
+       {
+        $heure = "14:00:00";
+       }
+       if($heure=="heure4")
+       {
+        $heure = "16:00:00";
+       }
+       
        $_idcoach= $_SESSION['id_coach'];
 
       $database = "web";
@@ -121,21 +137,21 @@
             <form class="formulaire" id="commande" action="ConnexionCoach.php" method="post">
               <fieldset>
                 <div class="LigneForm">
-                  <label class="inputform">Heure : </label>
-                 <input id=searchbar2 type="text" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure);?>" required/>
+                  <label class="inputform">Heure :  <?php echo $heure;?></label>
+                 <input id=searchbar2 type="hidden" name="heure" placeholder="heure" value="<?php echo htmlspecialchars($heure);?>" required/>
                 </div>
                 <div class="LigneForm">
-                  <label class="inputform">Date : </label>
-                  <input id=searchbar2 type="texte" name="date" placeholder="" value="<?php echo htmlspecialchars($date); ?>" required/>
+                  <label class="inputform">Date :  <?php echo $date;?> </label>
+                  <input id=searchbar2 type="hidden" name="date" placeholder="" value="<?php echo htmlspecialchars($date); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
-                  <label class="inputform">Coach : </label>
-                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
+                  <label class="inputform">Coach :  <?php echo $nomcoach;?> </label>
+                  <input id=searchbar2 type="hidden" name="Coach" placeholder="" value="<?php echo htmlspecialchars($nomcoach); ?>" required/>
                 </div>
                  <div class="LigneForm">
-                  <label class="inputform">Sport : </label>
-                  <input id=searchbar2 type="texte" name="Coach" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
+                  <label class="inputform">Sport :  <?php echo $sport;?> </label>
+                  <input id=searchbar2 type="hidden" name="Coach" placeholder="" value="<?php echo htmlspecialchars($sport); ?>" required/>
                 </div>
 
                 <div class="LigneForm">
