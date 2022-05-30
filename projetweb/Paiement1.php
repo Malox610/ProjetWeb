@@ -72,7 +72,7 @@
                     <a class="vertical-center" href="MonCompte-Client.php">
                     <?php } ?>
                       <img src="./img/icons/left-nav/profile.png" alt="">
-                      <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
+                      <?php echo "<h6>" . $_SESSION["nom"] . "</h6>"; ?>
                     </a>
                   </div>
                 </div>
