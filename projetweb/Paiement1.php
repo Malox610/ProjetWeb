@@ -87,9 +87,25 @@
         <!-- SCROLLABLE WINDOW -->
         <div class="scrollable-container">
           <!-- SCROLLABLE CONTENT -->
+          <?php 
+           if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+           {
+               $url = "https";
+           }
+           else
+           {
+               $url = "http";
+           }
+           $url .= "://";
+           $url .= $_SERVER['HTTP_HOST'];
+           $url .= $_SERVER['REQUEST_URI'];
+          // echo $url;
+             list($url,$dateheure ) = explode("?", $url);
+             $bout = "Paiement.php?".$dateheure;
+          ?>
           <div class="scrollable-content">
             <h1 id="new-title"> Paiement</h1>
-            <form class="formulaire" id="paiement" action="Paiement.php" method="post">
+            <form class="formulaire" id="paiement" action="<?php echo htmlspecialchars($bout);?>" method="post">
               <fieldset>
                 <div class="LigneForm">
                 <label class="inputform" for="Paiement">Moyen de paiement</label>

@@ -3,6 +3,22 @@ session_start();
 
 if(isset($_SESSION['id_client']))
 {
+
+             if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+            {
+               $url = "https";
+           }
+           else
+           {
+               $url = "http";
+           }
+           $url .= "://";
+           $url .= $_SERVER['HTTP_HOST'];
+           $url .= $_SERVER['REQUEST_URI'];
+          // echo $url;
+             list($url,$dateheure ) = explode("?", $url);
+             $bout = "confirmation.php?".$dateheure."";
+          
 //identifier le nom de base de données
     $database = "web";
 
@@ -14,9 +30,10 @@ if(isset($_SESSION['id_client']))
         $code = $_POST["code"];
 
     }
+    header("Refresh: 1;URL=".$bout);
     //connectez-vous dans votre BDD
     //Rappel : votre serveur = localhost | votre login = root | votre mot de pass = '' (rien)
-    $db_handle = mysqli_connect('localhost', 'root', '' );
+    /*$db_handle = mysqli_connect('localhost', 'root', '' );
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitements
     if ($db_found) {
@@ -38,7 +55,7 @@ if(isset($_SESSION['id_client']))
             }
             if ($type == $type1 && $numero == $numero1 && $nom == $nom1 && $date == $date1 && $code == $code1){
                 echo "Paiement réussi";
-                header("Refresh: 1;URL=confirmation.php");
+                header("Refresh: 1;URL=".$bout);
             }else{
                 echo "Paiement échoué";
                 header("Refresh: 1;URL=Paiement.php");
@@ -50,7 +67,7 @@ if(isset($_SESSION['id_client']))
         echo "Database not found";
         }//end else
     //fermer la connection
-    mysqli_close($db_handle);
+    mysqli_close($db_handle);*/
 }else
 {
 
