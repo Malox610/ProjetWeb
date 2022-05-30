@@ -64,7 +64,7 @@ session_start();
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
-                    <a class="vertical-center" href="MonCompte-Admin.php">
+                    <a class="vertical-center" href="MonCompte-Coach.php">
                       <img src="./img/icons/left-nav/profile.png" alt="">
                       <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
                     </a>
