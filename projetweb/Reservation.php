@@ -169,7 +169,7 @@ session_start();
                                 $timestamp = mktime (0, 0, 0, $mois, $jour, $annee);
                                 if($heure1 == 0)
                                 {  $bout = $date ."/heure1";
-                                  $heure1="<button onclick=\"resa()\">" . "Réserver" . "</button>";
+                                  $heure1="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                 }
                                 if($heure2 == 0)
                                 {
@@ -180,12 +180,12 @@ session_start();
                                 if($heure3 == 0)
                                 {
                                     $bout = $date ."/heure3";
-                                  $heure3="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                  $heure3="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                 }
                                 if($heure4 == 0)
                                 {
                                     $bout = $date ."/heure4";
-                                  $heure4="<button onclick=\"#\">" . "Réserver" . "</button>";
+                                  $heure4="<button onclick=\"window.location.href = 'Confirmation.php?${bout}'\">". "Réserver" . "</button>";
                                 }
                                 // affichage du jour de la semaine
                                 //afficher le resultat
