@@ -23,7 +23,7 @@
                         $_SESSION["id_coach"] =$data['id_coach'];
                         $_SESSION["role"] ="coach";
                         $_SESSION["prenom"] =$data['prenom'];
-                        $_SESSION["nom"] =$data['nom'];
+                        $_SESSION['nom'] =$data['nom'];
                         $_SESSION["email"] =$data['email'];
                         $_SESSION["bureau"] =$data['bureau'];
                         $_SESSION["id_sport"] =$data['id_sport'];
