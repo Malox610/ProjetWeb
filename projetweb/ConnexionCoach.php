@@ -26,6 +26,7 @@
                         $_SESSION['nom'] =$data['nom'];
                         $_SESSION["email"] =$data['email'];
                         $_SESSION["bureau"] =$data['bureau'];
+                        $_SESSION["telephone"] =$data['telephone'];
                         $_SESSION["id_sport"] =$data['id_sport'];
                         header('Location:MonCompte-Coach.php'); // connexion reussi chargement de la page suivante
                     }
