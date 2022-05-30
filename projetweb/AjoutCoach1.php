@@ -50,14 +50,14 @@ if($_SESSION["role"] == "administrateur"){
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
               </li>
             </ul>
           </div>
-          <?php if(($_SESSION["id_client"] != 0)||($_SESSION["id_coach"] != 0)||($_SESSION["id_admin"] != 0)){ ?>
+          <?php if(($_SESSION["id_client"] != 0) || ($_SESSION["id_coach"] != 0) || ($_SESSION["id_admin"] != 0)){ ?>
                 <div class="navbar-left-user">
                   <div class="user">
                     <a class="submit" id="seconnecter" href="deconnexion.php">Se déconnecter</a>
@@ -65,7 +65,15 @@ if($_SESSION["role"] == "administrateur"){
                 </div>
                 <div class="navbar-left-user">
                   <div class="user">
+                    <?php if($_SESSION['role'] ='administrateur'){ ?>
                     <a class="vertical-center" href="MonCompte-Admin.php">
+                    <?php } ?>
+                    <?php if($_SESSION['role'] ='coach'){ ?>
+                    <a class="vertical-center" href="MonCompte-Coach.php">
+                    <?php } ?>
+                    <?php if($_SESSION['role'] ='client'){ ?>
+                    <a class="vertical-center" href="MonCompte-Client.php">
+                    <?php } ?>
                       <img src="./img/icons/left-nav/profile.png" alt="">
                       <?php echo "<h6>" . $_SESSION['nom'] . "</h6>"; ?>
                     </a>

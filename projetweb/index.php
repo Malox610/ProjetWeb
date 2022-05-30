@@ -50,7 +50,7 @@ session_start();
                 </a>
               </li>
               <li>
-                <a href="rendezvous.php">
+                <a href="Rendezvous.php">
                   <img src="./img/icons/left-nav/calendar.svg" alt="">
                   <span>Rendez-vous</span>
                 </a>
@@ -234,27 +234,34 @@ session_start();
               <p class="soustitre">Les meilleurs dans leur domaine, parfois les seuls.</p>
               <div class="albums-row">
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?1">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/neymar.png" alt="">
                     <i class="far fa-text">Football</i>
                   </div>
+                  </a>
                   <h4>Jean Neymar</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?2">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/luc.png" alt="">
                     <i class="far fa-text">Sabre Laser</i>
                   </div>
+                  </a>
                   <h4>Luc CielMarcheur</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?3">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/ron.png" alt="">
                     <i class="far fa-text">Quidditch</i>
                   </div>
+                  </a>
                   <h4>Ron LeRoux</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?4">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/mimie.png" alt="">
                     <i class="far fa-text">Basketball</i>
@@ -262,17 +269,21 @@ session_start();
                   <h4>Mimie Mathy</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
+                  <a href="Profil-Coach.php?5">
                   <div class="img-album">
                     <img class="img-responsive" src="./img/albums/sonic.png" alt="">
                     <i class="far fa-text">Ping Pong</i>
                   </div>
+                  </a>
                   <h4>Sonic</h4>
                 </div>
                 <div class="albums-item rounded txt-center">
-                  <div class="img-album">
-                    <img class="img-responsive" src="./img/albums/willie.png" alt="">
-                    <i class="far fa-text">Cornemuse</i>
-                  </div>
+                  <a href="Profil-Coach.php?6">
+                    <div class="img-album">
+                      <img class="img-responsive" src="./img/albums/willie.png" alt="">
+                      <i class="far fa-text">Cornemuse</i>
+                    </div>
+                  </a>
                   <h4>Willy</h4>
                 </div>
               </div>
