@@ -160,14 +160,7 @@
               </fieldset>
             </form>
 
-            <div class="LigneForm">
-                <label class="inputform">Heure</label>
-                <label class="inputform">Jour</label>
-            </div>
-            <div class="LigneForm">
-                <label class="inputform">Coach</label>
-                <label class="inputform">Spécialité</label>
-            </div>
+          
             <div class="LigneForm">
               <input class="submit" id="payer" type="submit" name="envoi" value="Confirmer"/>
             </div>
