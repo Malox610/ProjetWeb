@@ -155,14 +155,14 @@
                 </div>
 
                 <div class="LigneForm">
-                  <input class="submit" id="connecter" type="submit" name="envoi" value="Se connecter"/>
+                  <input class="submit" id="connecter" type="submit" name="envoi" value="Confirmer"/>
                 </div>
               </fieldset>
             </form>
 
           
             <div class="LigneForm">
-              <input class="submit" id="payer" type="submit" name="envoi" value="Confirmer"/>
+              <input class="submit" id="payer" type="submit" name="envoi" value="Conr"/>
             </div>
           </div>
         </div>

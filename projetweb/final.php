@@ -13,17 +13,14 @@ if (isset($_POST["envoi"])){ //si $_POST est declare. si formulaire soumis
     $db_found = mysqli_select_db($db_handle, $database);
     //si le BDD existe, faire le traitement
     if ($db_found) {
-        $ad = "INSERT INTO `adresse`( `nom_rue`, `num_rue`, `code_postal`, `pays`, `ville`) VALUES ('$adresse','$numero','$codepostal','$pays','$ville')";
-        $result= mysqli_query($db_handle, $ad);
-            $sport = "SELECT id_adresse FROM adresse WHERE nom_rue LIKE '$adresse'";
-            $result1 = mysqli_query($db_handle, $sport);
-            if ($data = mysqli_fetch_assoc($result1)){
-                $idadresse = $data['id_adresse'];
-
-            }
-            $sql = "INSERT INTO `client` (`nom`, `prenom`, `telephone`, `email`, `password`, `num_etudiant`,`id_adresse`) VALUES ('$nom','$prenom','$telephone','$email','$password','$numEtudiant','$idadresse')";
-            $result = mysqli_query($db_handle, $sql);
+        $sql = "INSERT INTO `rdv`( `date`, `heure`, `id_coach`, `id_sport`) VALUES ('$date','$heure','$coach','$sport')";
+        $result= mysqli_query($db_handle, $sql);
             echo "Inscription réussie";
+            
+            echo '<script type ="text/JavaScript">';  
+            echo 'alert("Rdv Pris")';  
+            echo '</script>';  
+
              header ('location:index.php');
         }//end if
     //si le BDD n'existe pas
