@@ -38,6 +38,7 @@ if(isset($_SESSION['id_client']))
             }
             if ($type == $type1 && $numero == $numero1 && $nom == $nom1 && $date == $date1 && $code == $code1){
                 echo "Paiement réussi";
+                header("Refresh: 1;URL=confirmation.php");
             }else{
                 echo "Paiement échoué";
                 header("Refresh: 1;URL=Paiement.php");
