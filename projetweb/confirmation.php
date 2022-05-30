@@ -102,7 +102,7 @@
        }
        if($heure=="heure4")
        {
-        $heure = "16:00:00";
+        $heure = "16:30:00";
        }
        
        $_idcoach= $_SESSION['id_coach'];
