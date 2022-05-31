@@ -198,14 +198,14 @@
 
                         //afficher le resultat
                         while ($data = mysqli_fetch_assoc($result)) {
-                          $_SESSION['id_coach']=$data['id_coach'];
+                        //  $_SESSION['id_coach']=$data['id_coach'];
                           echo"<tbody class=\"list-body\">";
                             echo "<tr class=\"ligne_body\">";
                               echo "<td>" . $data['num_salle'] . "</td>";
                               echo "<td>" . $data['telephone'] . "</td>";
                               echo "<td>" . $data['email'] . "</td>";
                               echo "<td>" . $data['num_rue'] . $data['nom_rue']  . $data['code_postal'] . $data['ville']  . $data['pays'] ."</td>";
-                              echo "<td class=\"big-td\">" ."<button onclick=\"window.location.href = 'Reservation.php'\">" . "J'y vais !" . "</button>". "</td>";
+                              echo "<td class=\"big-td\">" ."<button onclick=\"window.location.href = 'Salle.php'\">" . "J'y vais !" . "</button>". "</td>";
 
                             echo "</tr>";
                         }
