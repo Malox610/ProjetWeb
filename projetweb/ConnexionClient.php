@@ -29,10 +29,12 @@
                         header('Location:index.php'); // connexion reussi chargement de la page suivante
                     }
                     else
-                    { echo "Mot de passe incorrect";}
+                    { echo "Mot de passe incorrect";
+                        header('Location:Login-Client.html');}
                 }
                 else {
                     echo "Utilisateur introuvable";
+                    header('Location:Login-Client.html');
                 }
         }//end if
     //si le BDD n'existe pas
